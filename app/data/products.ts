@@ -42,8 +42,6 @@ export const categories = [
   },
 ];
 
-const brassImage = `${assetBase}/brass-connectors.webp`;
-
 const brassConnector = (
   code: string,
   slug: string,
@@ -55,7 +53,7 @@ const brassConnector = (
   name,
   code,
   category: "Brass Fittings & Valves",
-  image: brassImage,
+  image: `${assetBase}/catalogue/${code.toLowerCase()}.jpg`,
   summary,
   features,
   applications: ["Garden hoses", "Sprinklers", "Nozzles", "Irrigation lines"],
