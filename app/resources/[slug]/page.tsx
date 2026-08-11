@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((item) => item.slug === slug);
-  return post ? { title: post.title, description: post.description, alternates: { canonical: `/resources/${post.slug}` } } : {};
+  return post ? { title: `${post.title} | Garden Product Buyer Guide`, description: post.description, alternates: { canonical: `/resources/${post.slug}` } } : {};
 }
 
 export default async function ResourceArticlePage({ params }: Props) {

@@ -7,8 +7,8 @@ import { WhatsAppFloat } from "./components/WhatsAppFloat";
 import { categories, products } from "./data/products";
 
 export const metadata: Metadata = {
-  title: "CIXI LINHAO | Garden Tools & Watering Solutions",
-  description: "B2B garden hand tools, brass hose fittings, watering products and private-label programs for global buyers.",
+  title: "Garden Tools & Brass Hose Fittings Supplier | CIXI LINHAO",
+  description: "China B2B supplier of garden hand tools, brass hose connectors, hose splitters and private-label watering products for global buyers.",
   alternates: { canonical: "/" },
 };
 
@@ -28,8 +28,8 @@ export default function Home() {
           <div className="container hero-grid">
             <div className="hero-copy">
               <span className="eyebrow">Garden tools · Watering · OEM / ODM</span>
-              <h1>Engineered garden products. Ready for global supply.</h1>
-              <p>From brass hose fittings to complete garden tool kits, CIXI LINHAO helps importers, distributors and retailers build reliable product programs under their own brand.</p>
+              <h1>Garden tools and brass hose fittings for global B2B supply.</h1>
+              <p>From brass hose connectors and splitters to complete garden tool kits, CIXI LINHAO helps importers, distributors and retailers build reliable private-label product programs.</p>
               <div className="hero-actions">
                 <a className="button" href="/contact">Request a Quote</a>
                 <a className="button button-ghost" href="/products">Explore Products</a>

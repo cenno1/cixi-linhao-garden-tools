@@ -17,7 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
   if (!product) return {};
-  return { title: `${product.name} | ${product.code}`, description: product.summary, alternates: { canonical: `/products/${product.slug}` }, openGraph: { title: `${product.name} | ${product.code}`, description: product.summary, url: `/products/${product.slug}`, images: [{ url: product.image, alt: product.name }] } };
+  const description = `CIXI LINHAO ${product.summary} B2B supplier with OEM packaging support for global garden product buyers.`;
+  return { title: `${product.name} | ${product.code} | OEM Supplier`, description, alternates: { canonical: `/products/${product.slug}` }, openGraph: { title: `${product.name} | ${product.code}`, description, url: `/products/${product.slug}`, images: [{ url: product.image, alt: product.name }] } };
 }
 
 export default async function ProductDetailPage({ params }: Props) {
