@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { categories } from "../data/products";
+import { trackEvent } from "../lib/analytics";
 
 type Status = { state: "idle" | "loading" | "success" | "error"; message?: string };
 
@@ -44,6 +45,7 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
       if (!response.ok) throw new Error(result.error || "We could not send your request.");
       form.reset();
       setFile(null);
+      trackEvent("generate_lead", { form_location: compact ? "contact_page" : "homepage_quote_form", product_category: String(payload.productType || "unspecified") });
       setStatus({ state: "success", message: "Thank you — your request has been received. We will reply within 24 business hours." });
     } catch (error) {
       setStatus({ state: "error", message: error instanceof Error ? error.message : "Please try again or contact us on WhatsApp." });
@@ -117,4 +119,3 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
     </form>
   );
 }
-
