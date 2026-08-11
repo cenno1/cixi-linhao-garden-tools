@@ -251,6 +251,17 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .resource-cta { padding: 90px 0; background: var(--green-800); color: white; text-align: center; }
 .resource-cta h2 { margin: 0; font-size: 3rem; letter-spacing: -.04em; }
 .resource-cta p { margin: 14px auto 28px; color: #d3e2d6; }
+.article-hero { padding: 150px 0 82px; background: linear-gradient(120deg, #09291c, #19603d); color: white; }
+.article-hero h1 { max-width: 900px; margin: 14px 0 18px; font-size: clamp(2.8rem, 5.4vw, 5rem); line-height: 1; letter-spacing: -.05em; }
+.article-hero p { max-width: 720px; margin: 0; color: #d3e2d6; font-size: 1.1rem; }
+.article-content { max-width: 850px; padding-top: 86px; padding-bottom: 110px; }
+.article-content section { margin-bottom: 56px; }
+.article-content h2 { margin: 0 0 18px; color: var(--green-950); font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -.04em; }
+.article-content p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; }
+.article-content li { margin: 12px 0; color: var(--green-900); line-height: 1.55; }
+.article-content aside { margin-top: 70px; padding: 40px; background: var(--green-50); border-left: 5px solid var(--green-600); }
+.article-content aside strong { display: block; color: var(--green-950); font-size: 1.5rem; }
+.article-content aside p { margin: 12px 0 22px; }
 
 .site-footer { padding-top: 75px; background: #081d14; color: #c4d1c8; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 70px; padding-bottom: 60px; }
