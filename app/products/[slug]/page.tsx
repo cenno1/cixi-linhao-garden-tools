@@ -30,6 +30,12 @@ export default async function ProductDetailPage({ params }: Props) {
   const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
   const productSchema = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.summary, image: productImage, sku: product.code, category: product.category, brand: { "@type": "Brand", name: "CIXI LINHAO" }, url: productUrl, additionalProperty: product.features.map((feature) => ({ "@type": "PropertyValue", name: "Key feature", value: feature })) };
   const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products` }, { "@type": "ListItem", position: 3, name: product.name, item: productUrl }] };
+  const faqs = [
+    { question: `Can I request OEM packaging for ${product.name}?`, answer: "Yes. Share your target market, packaging preference, artwork and expected quantity so we can review the appropriate product and packing configuration." },
+    { question: `What should I confirm before ordering ${product.code}?`, answer: "Confirm the intended application, connection or size requirement, product features, packaging format and target quantity. Our team can review the specification before quotation." },
+    { question: "Are prices shown on this website?", answer: "No. This is a B2B enquiry website. Contact CIXI LINHAO for product specifications, packaging options and a quotation for your required quantity." },
+  ];
+  const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) };
 
   return <>
     <Header />
@@ -37,9 +43,11 @@ export default async function ProductDetailPage({ params }: Props) {
       <section className="product-detail-hero"><div className="container"><a className="breadcrumb" href="/products">Products</a><span className="eyebrow eyebrow-light">{product.category}</span><h1>{product.name}</h1><p>{product.summary}</p></div></section>
       <section className="section"><div className="container product-detail-grid"><div className="product-detail-image"><img src={product.image} alt={`${product.name} ${product.code}`} /></div><div className="product-detail-copy"><span className="product-code">{product.code}</span><h2>Product overview</h2><p>{product.summary} Contact our team for current specification options, packing format and an OEM quotation.</p><div className="product-detail-columns"><div><h3>Key features</h3><ul>{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul></div><div><h3>Typical applications</h3><ul>{product.applications.map((application) => <li key={application}>{application}</li>)}</ul></div></div><a className="button" href={`/contact?product=${encodeURIComponent(`${product.code} ${product.name}`)}`}>Request specifications</a></div></div></section>
       <section className="section section-soft"><div className="container"><div className="section-heading"><span className="eyebrow">Related products</span><h2>Build a coordinated range.</h2></div><div className="related-products">{related.map((item) => <a href={`/products/${item.slug}`} key={item.slug}><img src={item.image} alt={item.name} /><span>{item.code}</span><h3>{item.name}</h3></a>)}</div></div></section>
+      <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer FAQ</span><h2>Questions before you request a quote.</h2>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
     </main>
     <Footer /><WhatsAppFloat />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
   </>;
 }

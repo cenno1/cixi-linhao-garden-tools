@@ -282,6 +282,12 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .related-products img { width: 100%; height: 190px; object-fit: contain; }
 .related-products span { display: block; margin-top: 16px; color: var(--green-600); font-size: .72rem; font-weight: 900; letter-spacing: .12em; }
 .related-products h3 { margin: 9px 0 0; font-size: 1.2rem; line-height: 1.16; }
+.product-faq { max-width: 850px; }
+.product-faq h2 { margin: 14px 0 30px; color: var(--green-950); font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -.04em; }
+.product-faq details { padding: 22px 0; border-top: 1px solid var(--line); }
+.product-faq details:last-child { border-bottom: 1px solid var(--line); }
+.product-faq summary { cursor: pointer; color: var(--green-950); font-weight: 800; }
+.product-faq p { max-width: 760px; margin: 14px 0 0; color: var(--muted); line-height: 1.7; }
 
 .site-footer { padding-top: 75px; background: #081d14; color: #c4d1c8; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 70px; padding-bottom: 60px; }

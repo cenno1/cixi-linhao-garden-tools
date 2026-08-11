@@ -19,6 +19,14 @@ const highlights = [
   ["One partner", "Tools + watering range"],
 ];
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://linhaogarden.com/#organization", name: "CIXI LINHAO", url: "https://linhaogarden.com", logo: "https://linhaogarden.com/images/cixi-linhao-logo.png", email: "info@lh-industrial.com", telephone: "+86-150-8845-2259", address: { "@type": "PostalAddress", addressLocality: "Cixi", addressRegion: "Zhejiang", addressCountry: "CN" }, contactPoint: { "@type": "ContactPoint", contactType: "sales", telephone: "+86-150-8845-2259", email: "info@lh-industrial.com", availableLanguage: ["English", "Chinese"] } },
+    { "@type": "WebSite", "@id": "https://linhaogarden.com/#website", url: "https://linhaogarden.com", name: "CIXI LINHAO" },
+  ],
+};
+
 export default function Home() {
   return (
     <>
@@ -142,6 +150,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
     </>
   );
 }
