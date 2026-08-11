@@ -9,6 +9,7 @@ import { categories, products } from "./data/products";
 export const metadata: Metadata = {
   title: "CIXI LINHAO | Garden Tools & Watering Solutions",
   description: "B2B garden hand tools, brass hose fittings, watering products and private-label programs for global buyers.",
+  alternates: { canonical: "/" },
 };
 
 const highlights = [

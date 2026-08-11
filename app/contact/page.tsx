@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 import { InquiryForm } from "../components/InquiryForm";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
 
-export const metadata: Metadata = { title: "Request a Quote", description: "Send CIXI LINHAO your garden product requirements and receive a B2B response within 24 business hours." };
+export const metadata: Metadata = { title: "Request a Quote", description: "Send CIXI LINHAO your garden product requirements and receive a B2B response within 24 business hours.", alternates: { canonical: "/contact" } };
 
 export default function ContactPage() {
   const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "8615088452259";
