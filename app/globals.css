@@ -258,10 +258,18 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .article-content section { margin-bottom: 56px; }
 .article-content h2 { margin: 0 0 18px; color: var(--green-950); font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -.04em; }
 .article-content p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; }
+.article-byline { margin: 0 0 42px; color: var(--green-700) !important; font-size: .83rem !important; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .article-content li { margin: 12px 0; color: var(--green-900); line-height: 1.55; }
 .article-content aside { margin-top: 70px; padding: 40px; background: var(--green-50); border-left: 5px solid var(--green-600); }
 .article-content aside strong { display: block; color: var(--green-950); font-size: 1.5rem; }
 .article-content aside p { margin: 12px 0 22px; }
+.article-products { margin-top: 72px; }
+.article-products h2 { margin: 14px 0 24px; }
+.article-products > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.article-products a { display: grid; gap: 11px; min-height: 170px; padding: 24px; border: 1px solid var(--line); background: white; color: var(--green-950); }
+.article-products a span { color: var(--green-600); font-size: .72rem; font-weight: 900; letter-spacing: .12em; }
+.article-products a strong { font-size: 1.1rem; line-height: 1.2; }
+.article-products a em { align-self: end; color: var(--green-700); font-size: .8rem; font-style: normal; font-weight: 800; }
 .product-detail-hero { padding: 145px 0 76px; background: linear-gradient(120deg, #09291c, #19603d); color: white; }
 .product-detail-hero .breadcrumb { display: inline-block; margin-bottom: 26px; color: #d9e7dc; font-size: .85rem; font-weight: 800; }
 .product-detail-hero .breadcrumb::before { content: "← "; }
@@ -352,6 +360,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   .page-hero { min-height: 420px; }
   .product-grid { grid-template-columns: 1fr; }
   .related-products { grid-template-columns: 1fr; }
+  .article-products > div { grid-template-columns: 1fr; }
   .catalog-cta .container { display: block; }
   .catalog-cta .button { margin-top: 28px; }
   .quality-copy { padding-right: 0; }
