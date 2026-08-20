@@ -12,6 +12,7 @@
     "build:vinext": "node ./node_modules/vinext/dist/cli.js build",
     "check:vinext": "node ./node_modules/vinext/dist/cli.js check",
     "test": "npm run build:vinext",
+    "test:seo": "node --test tests/seo-sitemap-source.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },
@@ -47,3 +48,4 @@
   },
   "type": "module"
 }
+
