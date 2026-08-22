@@ -23,6 +23,16 @@ This log is updated by the daily SEO growth loop. Do not invent unavailable metr
 - Tomorrow: Establish the correct `linhaogarden.com` Search Console 28-day baseline, then select the highest-value conversion or opportunity-page action.
 - Owner confirmation needed: Confirm whether “quote support in 24h” is a service promise that CIXI LINHAO can consistently meet; it is currently displayed on the homepage.
 
+## 2026-08-21
+
+- Conclusion: The main WhatsApp button on `/contact` opened the correct business conversation but did not emit `whatsapp_click`, so GA4 undercounted a primary inquiry path.
+- Evidence: The live contact page returned 200 and loaded GA4 measurement ID `G-EBCQN2G7KJ`; source inspection showed `whatsapp_click` only on the floating button while the prominent contact-page link was an untracked raw `wa.me` anchor. Vercel runtime logs had no retained inquiry records for the requested seven-day window on the Hobby plan, so lead volume remains unavailable.
+- Primary action: Added one reusable tracked WhatsApp link and applied it to both visible entry points. GA4 now receives `whatsapp_click` with `placement=contact_page_primary` or `placement=floating_button`, enabling placement-level conversion analysis without changing the destination or message.
+- Validation: Added dependency-free source tests for the event name, safe new-tab attributes, and both placement values; local test and production deployment validation are recorded in the daily report.
+- KPI snapshot: high-quality commercial-page index rate N/A; non-brand impressions/clicks N/A; top-20 buyer-intent queries N/A; qualified organic inquiries N/A; organic conversion rate N/A; AI mentions N/A. Correct `linhaogarden.com` Search Console and GA4 exports are still required for a reliable baseline.
+- Tomorrow: Prepare one fact-checked, non-published authority asset draft based only on verified LINHAO product information.
+- Owner confirmation needed: Confirm whether “response within 24 business hours” is a service promise CIXI LINHAO can consistently meet; provide the number of qualified website or WhatsApp inquiries received since launch if available.
+
 ## Entry template
 
 ### YYYY-MM-DD
