@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...products.map((product) => ({
       url: `${siteUrl}/products/${product.slug}`,
-      lastModified: "2026-08-11",
+      lastModified: product.updatedAt || "2026-08-11",
       changeFrequency: "monthly" as const,
       priority: product.category === "Brass Fittings & Valves" ? 0.8 : 0.7,
     })),

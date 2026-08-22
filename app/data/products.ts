@@ -14,6 +14,8 @@ export type Product = {
   code: string;
   category: ProductCategory;
   image: string;
+  images?: { src: string; alt: string }[];
+  updatedAt?: string;
   summary: string;
   features: string[];
   applications: string[];
@@ -92,6 +94,32 @@ const brassConnectorModels: Product[] = [
 ];
 
 export const products: Product[] = [
+  {
+    slug: "hose-reel-brass-swivel",
+    name: "Hose Reel Brass Swivel",
+    code: "LH-HRS Series",
+    category: "Brass Fittings & Valves",
+    image: `${assetBase}/hose-reel-brass-swivel.png`,
+    updatedAt: "2026-08-22",
+    images: [
+      {
+        src: `${assetBase}/hose-reel-brass-swivel.png`,
+        alt: "Hose reel brass swivel elbow installed on a reel and shown from two angles",
+      },
+      {
+        src: `${assetBase}/hose-reel-brass-swivel-360-rotation.png`,
+        alt: "Brass hose reel swivel showing the 360 degree rotating joint and installation position",
+      },
+    ],
+    summary: "360° rotating brass swivel elbow for hose reel water-inlet connections and OEM replacement assemblies.",
+    features: [
+      "Brass body",
+      "360° rotating swivel joint",
+      "Compact 90° elbow layout",
+      "Thread, seal and size confirmed before quotation",
+    ],
+    applications: ["Hose reels", "Retractable hose reels", "Garden hose storage systems", "Replacement and OEM assemblies"],
+  },
   {
     slug: "brass-quick-connectors",
     name: "Brass Quick Connectors",
