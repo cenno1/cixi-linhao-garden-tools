@@ -8,6 +8,13 @@ export type LandingPage = {
   productSlugs: string[];
   benefits: { title: string; text: string }[];
   specificationPoints: string[];
+  selectionGroups?: {
+    need: string;
+    bestFor: string;
+    productSlugs: string[];
+    confirm: string;
+  }[];
+  resourceLink?: { href: string; title: string; text: string };
   faqs: { question: string; answer: string }[];
 };
 
@@ -15,19 +22,45 @@ export const landingPages: LandingPage[] = [
   {
     slug: "brass-hose-connectors-manufacturer",
     eyebrow: "Brass hose connector supplier",
-    title: "Brass hose connectors for garden product buyers.",
-    description: "Source brass hose connectors, adapters, elbows and water-stop fittings with practical specification and OEM packaging support from CIXI LINHAO.",
-    lead: "Build a durable hose-fitting range around the connection types and packaging formats your market needs. We help buyers compare configurations before a quotation is prepared.",
+    title: "Brass Hose Connectors for B2B & OEM Programs",
+    description: "Compare brass quick connectors, adapters, elbows and water-stop fittings by connection job, catalogue size and OEM packaging requirement.",
+    lead: "Use the catalogue-backed model guide below to narrow the connection job and nominal size before requesting a quote. Exact thread form, brass grade, seal material and packaging are confirmed for the selected model.",
     image: "/images/products/brass-connectors.webp",
-    productSlugs: ["brass-quick-connectors", "brass-connector-set-3601", "brass-water-stop-connector-3604z"],
+    productSlugs: ["brass-quick-connectors", "brass-quick-connector-3603", "brass-water-stop-connector-3604z", "brass-90-degree-elbow-3638", "brass-double-male-connector-3641", "hose-reel-brass-swivel"],
     benefits: [
       { title: "Range-ready selection", text: "Quick connectors, male and female adapters, elbows, repair parts and closing caps can be combined into one practical buying program." },
       { title: "Connection review", text: "Share the hose size, thread standard and end-use equipment so the right fitting configuration can be reviewed before sampling or quotation." },
       { title: "OEM packing support", text: "Discuss individual packs, sets, labels, barcodes and presentation requirements for your retail or distributor program." },
     ],
-    specificationPoints: ["Target market and connection standard", "Required size, thread and water-stop function", "Material or finish preference", "Individual, set or retail-ready packaging", "Expected quantity and delivery timing"],
+    specificationPoints: ["Target market and connection standard", "Required nominal size, exact thread form and water-stop function", "Brass grade, finish and seal material to confirm", "Individual, set or retail-ready packaging", "Expected quantity and delivery timing"],
+    selectionGroups: [
+      {
+        need: "Quick accessory changes",
+        bestFor: "Hose-end connections that need frequent nozzle or sprinkler changes, with a water-stop option where required.",
+        productSlugs: ["brass-quick-connector-3603", "brass-quick-connector-3604", "brass-water-stop-connector-3604z"],
+        confirm: "Choose the catalogue size first: LH-3603 is listed as 3/4 in, while LH-3604 and LH-3604Z are listed as 1/2 in. Confirm the connector system and exact thread form before quotation.",
+      },
+      {
+        need: "Joining, repair and size adaptation",
+        bestFor: "Joining compatible fittings, closing repair gaps or adapting between listed hose sizes.",
+        productSlugs: ["brass-double-male-connector-3641", "brass-female-connector-3656", "brass-male-connector-3652a"],
+        confirm: "LH-3641 and LH-3656 are listed as 3/4 in; LH-3652A is listed for 1/2 in to 3/4 in adaptation. Confirm male/female orientation, seal and mating component.",
+      },
+      {
+        need: "Direction changes and hose-reel inlets",
+        bestFor: "Right-angle routing where a straight fitting would create a sharp bend or interfere with a reel assembly.",
+        productSlugs: ["brass-90-degree-elbow-3638", "brass-elbow-connector-3639", "hose-reel-brass-swivel"],
+        confirm: "LH-3638 and LH-3639 are listed as 3/4 in elbow options. The LH-HRS Series adds a 360-degree rotating elbow for hose-reel inlet assemblies; confirm installation dimensions and seals.",
+      },
+    ],
+    resourceLink: {
+      href: "/resources/why-garden-hose-connectors-leak",
+      title: "Why Garden Hose Connectors Leak: A Buyer Checklist",
+      text: "Use the checklist to review thread matching, washers, assembly and leak-test expectations before approving a connector range.",
+    },
     faqs: [
       { question: "Which brass hose connector types can I source?", answer: "The current range includes quick connectors, male and female adapters, water-stop connectors, elbows, double-ended connectors, hose caps and related hose-end components." },
+      { question: "Which connector sizes are shown in the current catalogue?", answer: "Depending on the model, the current LH range lists 1/2 in, 5/8 in to 3/4 in, 3/4 in and 3/4 in to 1 in configurations. These are catalogue nominal sizes, not a universal compatibility claim; confirm the exact thread form, mating component and seal before ordering." },
       { question: "Can I request a mixed brass connector program?", answer: "Yes. Send a list of required types, reference photos or a target assortment. We can help organise the enquiry around compatible connection options and packaging." },
       { question: "Do you show prices online?", answer: "No. CIXI LINHAO is a B2B enquiry website. A quotation depends on the selected configuration, packaging and quantity." },
     ],
