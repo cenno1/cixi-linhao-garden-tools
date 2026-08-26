@@ -29,13 +29,17 @@ export default async function ResourceArticlePage({ params }: Props) {
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) notFound();
   const related = (relatedProductSlugs[post.slug] || []).map((productSlug) => products.find((item) => item.slug === productSlug)).filter((item): item is (typeof products)[number] => Boolean(item));
+  const decisionGroups = (post.decisionGroups || []).map((group) => ({
+    ...group,
+    products: group.productSlugs.map((productSlug) => products.find((item) => item.slug === productSlug)).filter((item): item is (typeof products)[number] => Boolean(item)),
+  }));
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.description,
     datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
     mainEntityOfPage: `${siteUrl}/resources/${post.slug}`,
     author: { "@type": "Organization", name: "CIXI LINHAO", url: siteUrl },
     publisher: { "@type": "Organization", name: "CIXI LINHAO", logo: { "@type": "ImageObject", url: `${siteUrl}/images/cixi-linhao-logo.png` } },
@@ -48,6 +52,8 @@ export default async function ResourceArticlePage({ params }: Props) {
       <section className="article-hero"><div className="container"><span className="eyebrow eyebrow-light">{post.topic}</span><h1>{post.title}</h1><p>{post.description}</p></div></section>
       <article className="article-content container"><p className="article-byline">Published {post.publishedAt} · CIXI LINHAO Buyer Resources</p>
         {post.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}</section>)}
+        {decisionGroups.length > 0 && <section><span className="eyebrow">Compatibility review</span><h2>Match the leak location to the connection job.</h2><p>Use the catalogue models below as a shortlist, then confirm the actual mating parts before approving a sample or production order.</p><div className="solution-benefits">{decisionGroups.map((group) => <article key={group.problem}><h3>{group.problem}</h3><p>{group.check}</p><p><strong>Catalogue models:</strong> {group.products.map((product, index) => <span key={product.slug}>{index > 0 ? ", " : ""}<a href={`/products/${product.slug}`}>{product.code}</a></span>)}</p><p><strong>Confirm before sampling:</strong> {group.confirm.join("; ")}.</p></article>)}</div></section>}
+        {post.commercialLink && <section><span className="eyebrow">Commercial next step</span><h2>{post.commercialLink.label}</h2><p>{post.commercialLink.description}</p><a className="button button-secondary" href={post.commercialLink.href}>Open sourcing page →</a></section>}
         {related.length > 0 && <section className="article-products"><span className="eyebrow">Related LH products</span><h2>Products referenced in this guide.</h2><div>{related.map((product) => <a href={`/products/${product.slug}`} key={product.slug}><span>{product.code}</span><strong>{product.name}</strong><em>View product details →</em></a>)}</div></section>}
         <aside><strong>Planning a hose fitting or watering range?</strong><p>Send your target market, product references and expected quantity for an OEM recommendation.</p><a className="button" href="/contact">Request a quote</a></aside>
       </article>

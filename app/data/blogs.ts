@@ -4,7 +4,15 @@ export type BlogPost = {
   description: string;
   topic: string;
   publishedAt: string;
+  updatedAt?: string;
   sections: Array<{ heading: string; paragraphs: string[]; bullets?: string[] }>;
+  decisionGroups?: Array<{
+    problem: string;
+    check: string;
+    productSlugs: string[];
+    confirm: string[];
+  }>;
+  commercialLink?: { href: string; label: string; description: string };
 };
 
 export const blogPosts: BlogPost[] = [
@@ -14,6 +22,32 @@ export const blogPosts: BlogPost[] = [
     description: "The product details B2B buyers should check before selecting quick connectors, adapters and hose-end sets.",
     topic: "Hose fittings",
     publishedAt: "2026-08-11",
+    updatedAt: "2026-08-26",
+    decisionGroups: [
+      {
+        problem: "Leak at the tap or threaded hose end",
+        check: "First separate a damaged seal from a thread or size mismatch. Catalogue nominal sizes describe the listed model; they do not by themselves confirm compatibility with every tap or hose thread.",
+        productSlugs: ["brass-connector-set-3601", "brass-female-nipple-adapter-3617", "brass-female-nipple-adapter-3619"],
+        confirm: ["Mating male and female thread forms", "Target-market thread standard", "Required washer or O-ring position", "Measured connection dimensions"],
+      },
+      {
+        problem: "Leak after repeated accessory changes",
+        check: "Review whether the connection needs a standard quick connector or a water-stop configuration, then test the complete mating pair through repeated connect and disconnect cycles.",
+        productSlugs: ["brass-quick-connector-3603", "brass-quick-connector-3604", "brass-water-stop-connector-3604z"],
+        confirm: ["1/2 in or 3/4 in catalogue size", "Mating nipple profile", "Seal fit and replacement plan", "Cycle and leak test method"],
+      },
+      {
+        problem: "Leak or strain at a bend or hose-reel inlet",
+        check: "A right-angle connector or rotating hose-reel swivel may reduce awkward hose routing, but the inlet and outlet interfaces must be matched to the actual reel and hose assembly.",
+        productSlugs: ["brass-90-degree-elbow-3638", "brass-elbow-connector-3639", "hose-reel-brass-swivel"],
+        confirm: ["Reel inlet and hose-end interfaces", "Required rotation and installation clearance", "Seal location and service access", "Sample fit on the intended assembly"],
+      },
+    ],
+    commercialLink: {
+      href: "/solutions/brass-hose-connectors-manufacturer",
+      label: "Review brass hose connector sourcing options",
+      description: "Compare catalogue-backed connector families, OEM support and the information needed for a compatibility review.",
+    },
     sections: [
       { heading: "The recurring complaint is usually not just the connector", paragraphs: ["Gardeners regularly report a new hose system leaking at the tap, reel or accessory connection. The visible leak is often blamed on the connector body, but the root cause can be a mismatched thread, a displaced washer, cross-threading or a seal compressed too hard.", "For importers and private-label programs, this is a useful reminder: a connector range should be specified as a system, not as isolated SKUs. The tap adapter, hose-end connector, quick connector and nozzle inlet all need to work together in the target market."] },
       { heading: "What to verify before placing an order", paragraphs: ["A practical buying brief should record the details that determine compatibility and reliable use."], bullets: ["Thread system and target market: confirm the required 1/2 in, 3/4 in, BSP or other market-specific format.", "Seal specification: request the washer material, fit and replacement-part option.", "Connection function: identify whether each position needs a standard quick connector, water-stop version, male adapter, female adapter or elbow.", "Assembly checks: test hand tightening, repeated connect/disconnect cycles and leak performance on the intended hose and tap configuration."] },
