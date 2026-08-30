@@ -569,3 +569,25 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   .material-option-list article { padding: 24px 22px 24px 68px; }
   .material-option-list article > span { left: 22px; }
 }
+
+/* Thread options and product engineering parameters */
+.capability-threads { background: #fff; }
+.thread-option-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.thread-option-grid article { min-height: 220px; padding: 28px 24px; border-top: 4px solid var(--gold); background: var(--soft); }
+.thread-option-grid h3 { margin: 0 0 18px; color: var(--green-950); font-size: 1.15rem; line-height: 1.2; }
+.thread-option-grid p { margin: 0; color: var(--muted); font-size: .86rem; }
+.product-engineering { background: var(--green-50); }
+.engineering-spec-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.engineering-spec-grid > div { min-height: 145px; padding: 26px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+.engineering-spec-grid dt { margin-bottom: 10px; color: var(--green-800); font-size: .76rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.engineering-spec-grid dd { margin: 0; color: #3e4d44; font-size: .92rem; }
+@media (max-width: 1050px) {
+  .thread-option-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 820px) {
+  .thread-option-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .thread-option-grid, .engineering-spec-grid { grid-template-columns: 1fr; }
+  .thread-option-grid article, .engineering-spec-grid > div { min-height: 0; }
+}

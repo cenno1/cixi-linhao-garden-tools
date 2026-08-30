@@ -13,11 +13,19 @@ export const metadata: Metadata = {
 
 const capabilityAreas = [
   ["Custom dimensions", "Dimensions are reviewed against the drawing, sample and mating components."],
-  ["Thread systems", "GHT, BSP and NPT thread requirements are confirmed before quotation."],
+  ["Thread systems", "GHT / NH, BSP / BSPP / BSPT, NPT, metric and custom thread requirements are reviewed before quotation."],
   ["Brass options", "Material grades and market requirements are reviewed for each project."],
   ["Surface finishes", "Natural brass and nickel-plated finish requirements can be specified."],
   ["Custom tooling", "Tooling requirements are reviewed for non-standard part geometry."],
   ["OEM packing", "Packaging and export-packing requirements are confirmed with the order specification."],
+];
+
+const threadOptions = [
+  ["GHT / NH", "Garden hose thread requirements; confirm nominal size, mating component and gauge requirement."],
+  ["BSP / BSPP / BSPT", "Confirm parallel or tapered form, nominal size, pitch, tolerance and sealing method."],
+  ["NPT", "Confirm nominal size, taper requirement, pitch and the mating threaded component."],
+  ["Metric Threads", "Specify major diameter, pitch, tolerance class, engagement length and mating component."],
+  ["Custom Threads", "Provide the drawing, thread profile, pitch, tolerances and inspection or gauge requirement."],
 ];
 
 const inspectionPoints = [
@@ -81,6 +89,18 @@ export default function CapabilitiesPage() {
               <article><span>01</span><h3>Standard brass</h3><p>Specify the required grade or performance requirement for confirmation before quotation.</p></article>
               <article><span>02</span><h3>Lead-free brass</h3><p>Provide the required material grade and applicable market or compliance standard for feasibility confirmation.</p></article>
               <article><span>03</span><h3>Customer-specified material</h3><p>Send the grade designation, drawing notes and any material-certificate requirements for review.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section capability-threads" id="threads">
+          <div className="container">
+            <div className="section-heading split-heading">
+              <div><span className="eyebrow">Thread options</span><h2>Specify the complete thread interface.</h2></div>
+              <p>A family name alone is not enough for production. The approved file should define thread form, size, pitch, tolerance, sealing method, mating part and any gauge requirement.</p>
+            </div>
+            <div className="thread-option-grid">
+              {threadOptions.map(([name, description]) => <article key={name}><h3>{name}</h3><p>{description}</p></article>)}
             </div>
           </div>
         </section>

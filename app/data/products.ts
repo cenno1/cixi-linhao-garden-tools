@@ -69,7 +69,7 @@ const brassConnector = (
   slug: string,
   name: string,
   summary: string,
-  features: string[] = ["Solid brass construction", "Common garden-hose sizes", "OEM packaging", "Specification confirmation available"],
+  features: string[] = ["Solid brass construction", "Thread and size confirmed per specification", "OEM packaging", "Drawing or sample review available"],
 ): Product => ({
   slug,
   name,
