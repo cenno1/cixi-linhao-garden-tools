@@ -53,7 +53,7 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <form className={`inquiry-form ${compact ? "inquiry-form-compact" : ""}`} onSubmit={handleSubmit}>
+    <form id="quote-form" className={`inquiry-form ${compact ? "inquiry-form-compact" : ""}`} onSubmit={handleSubmit}>
       <div className="form-intro">
         <span className="eyebrow">Get a free quote</span>
         <h2>Tell us what you need</h2>
