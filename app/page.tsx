@@ -58,6 +58,39 @@ const homepageProductCategories = [
   },
 ];
 
+const customDevelopmentSteps = [
+  {
+    number: "01",
+    title: "Drawing / Sample",
+    text: "Send CAD files, PDF drawings, reference images or a physical sample.",
+  },
+  {
+    number: "02",
+    title: "Engineering Review",
+    text: "Confirm dimensions, thread standards, brass material and sealing structure.",
+  },
+  {
+    number: "03",
+    title: "Prototype / Sample",
+    text: "Produce and review a prototype or sample before approval.",
+  },
+  {
+    number: "04",
+    title: "Mass Production",
+    text: "Run the approved specification in batch production.",
+  },
+  {
+    number: "05",
+    title: "Inspection",
+    text: "Check dimensions, threads, sealing performance and surface appearance.",
+  },
+  {
+    number: "06",
+    title: "Packaging & Shipping",
+    text: "Complete OEM packaging, export packing and shipment coordination.",
+  },
+];
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -113,6 +146,25 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section custom-development-process" id="oem">
+          <div className="container">
+            <div className="section-heading centered-heading">
+              <span className="eyebrow eyebrow-light">Custom manufacturing process</span>
+              <h2>Built to Your Drawing, Sample or Specification</h2>
+              <p>A mechanical component development workflow from technical input through production inspection and export packing.</p>
+            </div>
+            <div className="custom-process-grid">
+              {customDevelopmentSteps.map((step) => (
+                <article key={step.number}>
+                  <span>{step.number}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="trust-strip">
           <div className="container trust-grid">
             {highlights.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
@@ -132,19 +184,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section oem-section" id="oem">
-          <div className="container">
-            <div className="section-heading centered-heading"><span className="eyebrow">OEM / ODM workflow</span><h2>From your brief to a shelf-ready program</h2><p>A clear process keeps sourcing decisions moving and reduces avoidable back-and-forth.</p></div>
-            <div className="process-grid">
-              {[
-                ["01", "Share your brief", "Tell us the market, product mix, quantity, target cost and reference requirements."],
-                ["02", "Confirm the solution", "We align materials, colors, specifications, packaging and sample expectations."],
-                ["03", "Sample & validate", "Review appearance, fit, function and packaging before production approval."],
-                ["04", "Produce & deliver", "Quality checkpoints, export packing and shipment coordination complete the program."],
-              ].map(([number, title, text]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}
-            </div>
-          </div>
-        </section>
+        
 
         <section className="section bestseller-section">
           <div className="container">
