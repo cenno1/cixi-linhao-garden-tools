@@ -19,6 +19,13 @@ export type Product = {
   summary: string;
   features: string[];
   applications: string[];
+  buyerGuide?: {
+    heading: string;
+    introduction: string;
+    checklist: string[];
+    guideHref: string;
+    guideLabel: string;
+  };
 };
 
 export const categories = [
@@ -240,5 +247,27 @@ export const products: Product[] = [
     features: ["Adjustable spray pattern", "Brass nozzle options", "Hose-end use", "OEM packaging"],
     applications: ["Hand watering", "Cleaning", "Greenhouses", "Garden maintenance"],
   },
-  ...brassConnectorModels,
+  ...brassConnectorModels.map((product) =>
+    product.code === "LH-3672A"
+      ? {
+          ...product,
+          updatedAt: "2026-08-30",
+          features: ["Solid brass construction", "2-way splitter configuration", "3/4 in catalogue size", "OEM packaging"],
+          applications: ["Two-line garden watering", "Garden tap distribution", "Sprinkler and nozzle setups", "Retail and private-label assortments"],
+          buyerGuide: {
+            heading: "Confirm the splitter configuration before sampling.",
+            introduction:
+              "LH-3672A is a catalogue-listed 3/4 in brass 2-way splitter for running two watering lines from one tap. The nominal size does not by itself confirm compatibility with every market or mating fitting.",
+            checklist: [
+              "Confirm the tap-side thread form and measured dimensions.",
+              "Confirm the required connection for each outlet and mating hose fitting.",
+              "Check available installation clearance around the tap and both hose lines.",
+              "Agree the seal, leak-test and packaging requirements before quotation.",
+            ],
+            guideHref: "/resources/choosing-a-garden-hose-splitter",
+            guideLabel: "Read the 2-way vs 4-way hose splitter buyer guide",
+          },
+        }
+      : product,
+  ),
 ];

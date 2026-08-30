@@ -8,9 +8,10 @@ test("sitemap uses truthful, stable modification dates", async () => {
   const source = await readFile(sitemapPath, "utf8");
 
   assert.doesNotMatch(source, /lastModified:\s*new Date\(\)/);
-  assert.match(source, /lastModified:\s*post\.publishedAt/);
+  assert.match(source, /lastModified:\s*post\.updatedAt\s*\|\|\s*post\.publishedAt/);
   assert.match(source, /lastModified:\s*"2026-08-12"/);
-  assert.match(source, /lastModified:\s*"2026-08-11"/);
+  assert.match(source, /productTemplateUpdatedAt\s*=\s*"2026-08-30"/);
+  assert.match(source, /latestDate\(product\.updatedAt, productTemplateUpdatedAt\)/);
 });
 
 test("sitemap keeps every public route collection and absolute site URLs", async () => {
