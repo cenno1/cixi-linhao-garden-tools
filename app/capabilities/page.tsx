@@ -78,6 +78,51 @@ export default function CapabilitiesPage() {
           </div>
         </section>
 
+        <section className="section capability-manufacturing" id="manufacturing">
+          <div className="container">
+            <div className="section-heading split-heading">
+              <div>
+                <span className="eyebrow">Manufacturing</span>
+                <h2>Real production equipment for precision components.</h2>
+              </div>
+              <p>These production-floor images document CNC turning, machining and automated machine loading. Part-specific process scope is confirmed against the approved drawing, sample and technical file.</p>
+            </div>
+            <div className="manufacturing-photo-grid">
+              <article>
+                <div className="manufacturing-photo manufacturing-photo-floor">
+                  <Image src="/images/factory/cnc-production-floor.png" alt="CNC turning machines arranged on the production floor" width={1320} height={438} sizes="(max-width: 820px) 100vw, 34vw" />
+                </div>
+                <div className="manufacturing-card-copy">
+                  <span>01</span>
+                  <h3>CNC Turning</h3>
+                  <p>CNC turning centers support production to the approved dimensions, thread interfaces and part specification.</p>
+                </div>
+              </article>
+              <article>
+                <div className="manufacturing-photo manufacturing-photo-robot">
+                  <Image src="/images/factory/automated-cnc-machining.png" alt="Robotic loading system operating beside a CNC machine" width={1322} height={308} sizes="(max-width: 820px) 100vw, 34vw" />
+                </div>
+                <div className="manufacturing-card-copy">
+                  <span>02</span>
+                  <h3>Automated Machine Loading</h3>
+                  <p>Robotic loading supports repeatable work handling on selected CNC production operations.</p>
+                </div>
+              </article>
+              <article>
+                <div className="manufacturing-photo manufacturing-photo-line">
+                  <Image src="/images/factory/automated-cnc-machining.png" alt="Automated machining line with components at the machine output" width={1322} height={308} sizes="(max-width: 820px) 100vw, 34vw" />
+                </div>
+                <div className="manufacturing-card-copy">
+                  <span>03</span>
+                  <h3>Machining</h3>
+                  <p>Machining cells support approved component geometries and batch requirements after engineering review.</p>
+                </div>
+              </article>
+            </div>
+            <p className="manufacturing-evidence-note">Photographs supplied as production evidence. Additional processes are added only after capability confirmation and supporting documentation.</p>
+          </div>
+        </section>
+
         <section className="section capability-materials" id="materials">
           <div className="container capability-split">
             <div>
