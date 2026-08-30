@@ -7,8 +7,8 @@ import { WhatsAppFloat } from "./components/WhatsAppFloat";
 import { categories, products } from "./data/products";
 
 export const metadata: Metadata = {
-  title: "Garden Tools & Brass Hose Fittings Supplier | CIXI LINHAO",
-  description: "China B2B supplier of garden hand tools, brass hose connectors, hose splitters and private-label watering products for global buyers.",
+  title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
+  description: "OEM & ODM brass hose connectors, adapters, swivels and valves manufactured to buyer drawings, samples and specifications.",
   alternates: { canonical: "/" },
 };
 
@@ -35,12 +35,12 @@ export default function Home() {
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow">Garden tools · Watering · OEM / ODM</span>
-              <h1>Garden tools and brass hose fittings for global B2B supply.</h1>
-              <p>From brass hose connectors and splitters to complete garden tool kits, CIXI LINHAO helps importers, distributors and retailers build reliable private-label product programs.</p>
+              <span className="eyebrow">Custom brass fittings · OEM / ODM · B2B</span>
+              <h1>Custom Brass Garden Hose Fittings Manufacturer</h1>
+              <p>OEM &amp; ODM brass hose connectors, adapters, swivels and valves manufactured to your drawings, samples and specifications.</p>
               <div className="hero-actions">
-                <a className="button" href="/contact">Request a Quote</a>
-                <a className="button button-ghost" href="/products">Explore Products</a>
+                <a className="button" href="/contact?product=Custom%20Brass%20Garden%20Hose%20Fittings">Request a Custom Quote</a>
+                <a className="button button-ghost" href="/contact?product=Custom%20Brass%20Fitting%20Drawing">Send Your Drawing</a>
               </div>
               <div className="hero-proof">
                 <span><strong>EU / US</strong> connection options</span>
