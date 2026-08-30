@@ -95,7 +95,7 @@ const brassConnectorModels: Product[] = [
   brassConnector("LH-365Y", "brass-female-connector-365y", "Brass Female Connector", "1/2 in to 3/4 in brass female connector."),
   brassConnector("LH-9812", "brass-hose-cap-9812", "Brass Hose Cap", "3/4 in brass hose cap for closing unused hose ends."),
   brassConnector("LH-9812AP", "nickel-plated-hose-cap-9812ap", "Nickel-Plated Brass Hose Cap", "3/4 in nickel-plated brass hose cap."),
-  brassConnector("LH-3672A", "brass-two-way-splitter-3672a", "Brass 2-Way Hose Splitter", "3/4 in brass splitter for running two watering lines from one tap."),
+  brassConnector("LH-3672A", "brass-two-way-splitter-3672a", "Brass 2-Way Hose Splitter", "Brass splitter with 1/2 in and 3/4 in GHT thread options for running two watering lines from one tap."),
   brassConnector("LH-3630", "hose-protector-3630", "Hose Protector with PVC Hose", "3/4 in hose protector with PVC hose section for reducing sharp bends."),
   brassConnector("LH-3630A", "hose-protector-3630a", "Hose Protector with PVC Hose", "3/4 in hose protector variation with PVC hose section."),
 ];
@@ -252,14 +252,14 @@ export const products: Product[] = [
       ? {
           ...product,
           updatedAt: "2026-08-30",
-          features: ["Solid brass construction", "2-way splitter configuration", "3/4 in catalogue size", "OEM packaging"],
+          features: ["Solid brass construction", "2-way splitter configuration", "1/2 in and 3/4 in GHT thread options", "OEM packaging"],
           applications: ["Two-line garden watering", "Garden tap distribution", "Sprinkler and nozzle setups", "Retail and private-label assortments"],
           buyerGuide: {
             heading: "Confirm the splitter configuration before sampling.",
             introduction:
-              "LH-3672A is a catalogue-listed 3/4 in brass 2-way splitter for running two watering lines from one tap. The nominal size does not by itself confirm compatibility with every market or mating fitting.",
+              "LH-3672A is a catalogue-listed brass 2-way splitter available with 1/2 in and 3/4 in GHT thread options for running two watering lines from one tap. Confirm the required inlet and outlet configuration before ordering.",
             checklist: [
-              "Confirm the tap-side thread form and measured dimensions.",
+              "Confirm which GHT size applies to the tap-side inlet and each outlet for the required configuration.",
               "Confirm the required connection for each outlet and mating hose fitting.",
               "Check available installation clearance around the tap and both hose lines.",
               "Agree the seal, leak-test and packaging requirements before quotation.",
