@@ -12,18 +12,23 @@ type Props = { params: Promise<{ slug: string }> };
 const getEngineeringSpecs = (product: Product) => {
   const listedSizes = Array.from(new Set(product.summary.match(/\d+\/\d+\s*in(?:\s+to\s+\d+\/\d+\s*in)?/gi) || []));
   const isNickelPlated = /nickel-plated/i.test(product.name) || /nickel-plated/i.test(product.summary);
-  const threadAndSize = product.code === "LH-3672A"
-    ? "1/2 in and 3/4 in GHT options; confirm the required inlet and outlet configuration."
-    : listedSizes.length
-      ? `${listedSizes.join(", ")} nominal size listed; confirm thread family, pitch, tolerance and mating component.`
-      : "Confirm thread family, nominal size, pitch, tolerance and mating component from the approved drawing or sample.";
+  const sizeOptions = product.code === "LH-HRS Series"
+    ? "Project options: 1/2 in, 3/4 in, 1 in or custom; confirm the inlet, outlet and mating-part combination."
+    : product.code === "LH-3672A"
+      ? "1/2 in and 3/4 in GHT options confirmed for this model; confirm the inlet and outlet configuration."
+      : listedSizes.length
+        ? `${listedSizes.join(", ")} catalogue size listed; custom dimensions are reviewed from the approved drawing or sample.`
+        : "Custom size from the approved drawing or sample; confirm all mating dimensions before quotation.";
 
   return [
-    ["Material", "Brass; confirm the required grade and any market or compliance requirement before quotation."],
-    ["Thread / size", threadAndSize],
-    ["Surface finish", isNickelPlated ? "Nickel-plated finish listed for this model; confirm finish specification." : "Natural brass; confirm any alternate finish requirement by specification."],
-    ["Inspection", "Dimensions, thread fit, sealing-related requirements and surface appearance checked against the approved specification."],
-    ["Buyer input", "Provide the drawing or sample, mating component, target market, quantity, inspection points and packaging requirements."],
+    ["Material", "Brass / customer-specified brass grade. Confirm any market or compliance requirement."],
+    ["Thread", "GHT / BSP / NPT / custom thread. Confirm form, nominal size, pitch, tolerance, sealing method and mating component."],
+    ["Size", sizeOptions],
+    ["Finish", isNickelPlated ? "Nickel-plated finish listed for this model / custom finish by approved specification." : "Natural brass / nickel plated / custom finish by approved specification."],
+    ["Seal", "NBR / EPDM / custom compound. Confirm fluid, temperature, pressure and market requirements before selection."],
+    ["Working pressure", "According to the approved product specification and application conditions."],
+    ["Logo", "Laser marking / stamping. Confirm artwork, position, size and durability requirement."],
+    ["Packaging", "Bulk / retail / OEM packaging. Confirm quantity, artwork, labeling and export-packing requirements."],
   ];
 };
 
@@ -100,7 +105,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 </figure>
               ))}
             </div><div className="product-detail-copy"><span className="product-code">{product.code}</span><h2>Product overview</h2><p>{product.summary} Share the intended application, mating components, target market, packaging format and required quantity so our team can review the correct configuration before quotation.</p><div className="product-detail-columns"><div><h3>Key features</h3><ul>{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul></div><div><h3>Typical applications</h3><ul>{product.applications.map((application) => <li key={application}>{application}</li>)}</ul></div></div><a className="button" href={`/contact?product=${encodeURIComponent(`${product.code} ${product.name}`)}`}>Request specifications</a></div></div></section>
-      {engineeringSpecs.length > 0 ? <section className="section product-engineering"><div className="container"><div className="section-heading split-heading"><div><span className="eyebrow">Engineering parameters</span><h2>Confirm the part specification before quotation.</h2></div><p>Listed catalogue sizes are a starting point. Production follows the approved drawing, sample and technical file.</p></div><dl className="engineering-spec-grid">{engineeringSpecs.map(([term, value]) => <div key={term}><dt>{term}</dt><dd>{value}</dd></div>)}</dl></div></section> : null}
+      {engineeringSpecs.length > 0 ? <section className="section product-engineering"><div className="container"><div className="section-heading split-heading"><div><span className="eyebrow">Specification options</span><h2>Configure the part for quotation.</h2></div><p>These are project options, not automatic fixed specifications for every model. Final production follows the approved drawing, sample and technical file.</p></div><div className="engineering-spec-table-wrap"><table className="engineering-spec-table"><thead><tr><th scope="col">Specification</th><th scope="col">Options / requirements</th></tr></thead><tbody>{engineeringSpecs.map(([term, value]) => <tr key={term}><th scope="row">{term}</th><td>{value}</td></tr>)}</tbody></table></div><p className="engineering-spec-note">Send the mating-part details and intended operating conditions with your enquiry so the configuration can be checked before quotation.</p></div></section> : null}
       {product.buyerGuide && <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer compatibility checklist</span><h2>{product.buyerGuide.heading}</h2><p>{product.buyerGuide.introduction}</p><ul>{product.buyerGuide.checklist.map((item) => <li key={item}>{item}</li>)}</ul><a className="button button-secondary" href={product.buyerGuide.guideHref}>{product.buyerGuide.guideLabel} →</a></div></section>}
       <section className="section section-soft"><div className="container"><div className="section-heading"><span className="eyebrow">Related products</span><h2>Build a coordinated range.</h2></div><div className="related-products">{related.map((item) => <a href={`/products/${item.slug}`} key={item.slug}><Image src={item.image} alt={item.name} width={620} height={420} sizes="(max-width: 820px) 100vw, 33vw" /><span>{item.code}</span><h3>{item.name}</h3></a>)}</div></div></section>
       <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer FAQ</span><h2>Questions before you request a quote.</h2>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
