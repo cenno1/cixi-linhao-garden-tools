@@ -11,6 +11,7 @@ const latestDate = (itemDate: string | undefined, templateDate: string) =>
 const corePages = [
   { path: "", lastModified: "2026-08-30", changeFrequency: "weekly" as const, priority: 1 },
   { path: "/products", lastModified: "2026-08-30", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "/capabilities", lastModified: "2026-08-30", changeFrequency: "monthly" as const, priority: 0.9 },
   { path: "/about", lastModified: "2026-08-30", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/resources", lastModified: "2026-08-11", changeFrequency: "weekly" as const, priority: 0.8 },
   { path: "/contact", lastModified: "2026-08-11", changeFrequency: "monthly" as const, priority: 0.8 },

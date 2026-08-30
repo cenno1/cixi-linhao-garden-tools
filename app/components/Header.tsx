@@ -4,7 +4,7 @@ import Link from "next/link";
 const navItems = [
   ["Products", "/products"],
   ["Custom Manufacturing", "/about#oem"],
-  ["Capabilities", "/about#capabilities"],
+  ["Capabilities", "/capabilities"],
   ["Quality", "/about#quality"],
   ["Applications", "/products#applications"],
   ["About", "/about"],
