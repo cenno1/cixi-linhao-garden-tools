@@ -91,6 +91,49 @@ const customDevelopmentSteps = [
   },
 ];
 
+const homepageProofPoints = [
+  {
+    value: String(brassProducts.length),
+    title: "Catalogued Brass Product References",
+    text: "Current brass catalogue entries available for buyer review.",
+  },
+  {
+    value: "5",
+    title: "Thread Routes Reviewed",
+    text: "GHT / NH, the BSP family, NPT, metric and custom thread requirements.",
+  },
+  {
+    value: "6",
+    title: "Development Stages",
+    text: "From drawing or sample review through inspection, packaging and shipment preparation.",
+  },
+  {
+    value: "24h",
+    title: "Initial Business Response",
+    text: "Target response window for complete business enquiries on working days.",
+  },
+  {
+    value: "CNC",
+    title: "Production-Floor Evidence",
+    text: "Real CNC turning, machining and automated loading photos are available for review.",
+  },
+  {
+    value: "CAD",
+    title: "Drawing / Sample Review",
+    text: "CAD files, PDF drawings, reference images and physical samples can start the review.",
+  },
+  {
+    value: "OEM",
+    title: "Packaging Options",
+    text: "Bulk, retail and buyer-specified packaging is reviewed for each approved order.",
+  },
+  {
+    value: "SPEC",
+    title: "Built to Approved Input",
+    text: "Dimensions, threads, material, seal, finish and inspection follow approved technical input.",
+  },
+];
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -161,6 +204,31 @@ export default function Home() {
                   <p>{step.text}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section home-proof-section" id="why-linhao">
+          <div className="container">
+            <div className="section-heading split-heading home-proof-heading">
+              <div>
+                <span className="eyebrow eyebrow-light">Why CIXI LINHAO</span>
+                <h2>Manufacturing evidence buyers can verify.</h2>
+              </div>
+              <p>Concrete catalogue scope, documented engineering routes and real production-floor evidence—without unsupported claims.</p>
+            </div>
+            <div className="home-proof-grid">
+              {homepageProofPoints.map((point) => (
+                <article className="home-proof-card" key={point.title}>
+                  <strong className="home-proof-value">{point.value}</strong>
+                  <h3>{point.title}</h3>
+                  <p>{point.text}</p>
+                </article>
+              ))}
+            </div>
+            <div className="home-proof-actions">
+              <a className="button button-gold" href="/capabilities">Review Manufacturing Capabilities</a>
+              <a className="button home-proof-secondary" href="/contact#quote-form">Send Drawing for Review</a>
             </div>
           </div>
         </section>

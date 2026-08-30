@@ -699,3 +699,28 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   .customization-upload-button { align-items: flex-start; flex-direction: column; }
   .customization-upload-button small { text-align: left; }
 }
+
+
+/* Verifiable homepage capability proof */
+.home-proof-section { background: var(--green-950); color: white; }
+.home-proof-heading h2 { color: white; }
+.home-proof-heading > p { color: #c9d7ce; }
+.home-proof-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.18); border-left: 1px solid rgba(255,255,255,.18); }
+.home-proof-card { min-height: 252px; padding: 32px 30px; border-right: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.025); }
+.home-proof-value { display: block; margin-bottom: 28px; color: var(--gold-light); font-size: clamp(2.5rem, 4.8vw, 4.35rem); font-weight: 950; line-height: .9; letter-spacing: -.05em; }
+.home-proof-card h3 { margin: 0 0 12px; color: white; font-size: 1.06rem; line-height: 1.28; }
+.home-proof-card p { margin: 0; color: #bacbc0; font-size: .87rem; line-height: 1.65; }
+.home-proof-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.home-proof-secondary { border-color: rgba(255,255,255,.55); background: transparent; }
+.home-proof-secondary:hover { border-color: white; background: white; color: var(--green-950); }
+
+@media (max-width: 900px) {
+  .home-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .home-proof-grid { grid-template-columns: 1fr; }
+  .home-proof-card { min-height: auto; padding: 28px 24px; }
+  .home-proof-value { margin-bottom: 20px; }
+  .home-proof-actions .button { width: 100%; }
+}
