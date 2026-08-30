@@ -32,6 +32,49 @@ const getEngineeringSpecs = (product: Product) => {
   ];
 };
 
+const DimensionSketch = ({ variant }: { variant: "elbow" | "straight" }) => (
+  <svg className="dimension-sketch" viewBox="0 0 760 440" role="img" aria-labelledby="dimension-sketch-title dimension-sketch-description">
+    <title id="dimension-sketch-title">Product dimensional drawing framework</title>
+    <desc id="dimension-sketch-description">Reference line drawing showing A overall dimension, B body dimension and the threaded interface. Values must be confirmed from the approved drawing or sample.</desc>
+    <defs>
+      <marker id="dimension-arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+        <path d="M0 0 L8 4 L0 8 Z" />
+      </marker>
+    </defs>
+    <g className="dimension-part">
+      {variant === "elbow" ? (
+        <>
+          <path d="M155 155 H390 Q505 155 505 270 V305" />
+          <path d="M155 245 H370 Q415 245 415 290 V305" />
+          <path d="M155 130 V270 M185 130 V270 M215 142 V258" />
+          <path d="M388 305 H532 V350 H388 Z" />
+          <path d="M398 314 H522 M398 326 H522 M398 338 H522" />
+          <path d="M225 165 L355 165 L390 200 L355 235 L225 235 Z" />
+        </>
+      ) : (
+        <>
+          <rect x="235" y="150" width="290" height="140" rx="18" />
+          <path d="M125 170 H235 V270 H125 Z M525 170 H635 V270 H525 Z" />
+          <path d="M135 180 H225 M135 195 H225 M135 210 H225 M135 225 H225 M135 240 H225 M135 255 H225" />
+          <path d="M535 180 H625 M535 195 H625 M535 210 H625 M535 225 H625 M535 240 H625 M535 255 H625" />
+          <path d="M270 170 H490 M270 270 H490" />
+        </>
+      )}
+    </g>
+    <g className="dimension-lines">
+      <path d="M125 85 H635" markerStart="url(#dimension-arrow)" markerEnd="url(#dimension-arrow)" />
+      <path d="M125 105 V145 M635 105 V145" />
+      <text x="380" y="70" textAnchor="middle">A</text>
+      <path d="M680 150 V350" markerStart="url(#dimension-arrow)" markerEnd="url(#dimension-arrow)" />
+      <path d="M545 150 H700 M545 350 H700" />
+      <text x="705" y="255">B</text>
+      <path d="M145 350 L210 282" markerEnd="url(#dimension-arrow)" />
+      <text x="72" y="375">THREAD</text>
+    </g>
+    <text className="dimension-not-scale" x="380" y="415" textAnchor="middle">REFERENCE FRAMEWORK · NOT TO SCALE</text>
+  </svg>
+);
+
 export async function generateStaticParams() {
   return products.map(({ slug }) => ({ slug }));
 }
@@ -106,6 +149,7 @@ export default async function ProductDetailPage({ params }: Props) {
               ))}
             </div><div className="product-detail-copy"><span className="product-code">{product.code}</span><h2>Product overview</h2><p>{product.summary} Share the intended application, mating components, target market, packaging format and required quantity so our team can review the correct configuration before quotation.</p><div className="product-detail-columns"><div><h3>Key features</h3><ul>{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul></div><div><h3>Typical applications</h3><ul>{product.applications.map((application) => <li key={application}>{application}</li>)}</ul></div></div><a className="button" href={`/contact?product=${encodeURIComponent(`${product.code} ${product.name}`)}`}>Request specifications</a></div></div></section>
       {engineeringSpecs.length > 0 ? <section className="section product-engineering"><div className="container"><div className="section-heading split-heading"><div><span className="eyebrow">Specification options</span><h2>Configure the part for quotation.</h2></div><p>These are project options, not automatic fixed specifications for every model. Final production follows the approved drawing, sample and technical file.</p></div><div className="engineering-spec-table-wrap"><table className="engineering-spec-table"><thead><tr><th scope="col">Specification</th><th scope="col">Options / requirements</th></tr></thead><tbody>{engineeringSpecs.map(([term, value]) => <tr key={term}><th scope="row">{term}</th><td>{value}</td></tr>)}</tbody></table></div><p className="engineering-spec-note">Send the mating-part details and intended operating conditions with your enquiry so the configuration can be checked before quotation.</p></div></section> : null}
+      {engineeringSpecs.length > 0 ? <section className="section product-dimensions"><div className="container"><div className="section-heading split-heading"><div><span className="eyebrow">Dimensional drawing</span><h2>Define every critical interface.</h2></div><p>This reference framework is not a production drawing. Replace the pending values with an approved technical drawing or measured sample before tooling and production.</p></div><div className="product-dimension-grid"><div className="dimension-sketch-card"><DimensionSketch variant={product.brassCategory === "Brass Elbow Fittings" || product.brassCategory === "Brass Swivel Fittings" || product.brassCategory === "Hose Reel Brass Fittings" ? "elbow" : "straight"} /></div><div className="dimension-values"><div><span>A</span><p><strong>Overall length / envelope</strong>Confirm from approved drawing or sample.</p></div><div><span>B</span><p><strong>Body height / centreline</strong>Confirm from approved drawing or sample.</p></div><div><span>T</span><p><strong>Thread interface</strong>Define system, nominal size, pitch, tolerance, sealing method and mating component.</p></div><aside><strong>Custom dimensions available.</strong><p>Send CAD, PDF, a dimensioned image or a physical sample for engineering review.</p><a href={`/contact?product=${encodeURIComponent(`${product.code} dimensional drawing`)}`}>Send dimensional requirements →</a></aside></div></div></div></section> : null}
       {product.buyerGuide && <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer compatibility checklist</span><h2>{product.buyerGuide.heading}</h2><p>{product.buyerGuide.introduction}</p><ul>{product.buyerGuide.checklist.map((item) => <li key={item}>{item}</li>)}</ul><a className="button button-secondary" href={product.buyerGuide.guideHref}>{product.buyerGuide.guideLabel} →</a></div></section>}
       <section className="section section-soft"><div className="container"><div className="section-heading"><span className="eyebrow">Related products</span><h2>Build a coordinated range.</h2></div><div className="related-products">{related.map((item) => <a href={`/products/${item.slug}`} key={item.slug}><Image src={item.image} alt={item.name} width={620} height={420} sizes="(max-width: 820px) 100vw, 33vw" /><span>{item.code}</span><h3>{item.name}</h3></a>)}</div></div></section>
       <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer FAQ</span><h2>Questions before you request a quote.</h2>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>

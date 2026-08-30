@@ -642,3 +642,32 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   .product-view-card--primary { grid-column: auto; }
   .product-detail-image, .product-view-card--primary .product-detail-image, .product-view-placeholder { min-height: 310px; }
 }
+
+
+/* Product dimensional drawing */
+.product-dimensions { background: #fff; }
+.product-dimension-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 42px; align-items: stretch; }
+.dimension-sketch-card { display: grid; min-height: 520px; place-items: center; padding: 28px; border: 1px solid var(--line); background: #f7f8f6; }
+.dimension-sketch { width: 100%; height: auto; }
+.dimension-part { fill: none; stroke: var(--green-950); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.dimension-lines { fill: var(--green-800); stroke: var(--gold); stroke-width: 2; font-size: 22px; font-weight: 900; letter-spacing: .08em; }
+.dimension-lines text { stroke: none; }
+.dimension-lines marker path { fill: var(--gold); stroke: none; }
+.dimension-not-scale { fill: var(--muted); font-size: 13px; font-weight: 800; letter-spacing: .12em; }
+.dimension-values { display: grid; border-top: 1px solid var(--line); }
+.dimension-values > div { display: grid; grid-template-columns: 54px 1fr; gap: 18px; align-items: start; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.dimension-values > div > span { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--gold); color: var(--green-950); font-weight: 950; }
+.dimension-values p { margin: 0; color: var(--muted); font-size: .88rem; }
+.dimension-values p strong { display: block; margin-bottom: 6px; color: var(--green-950); font-size: 1rem; }
+.dimension-values aside { align-self: end; padding: 28px; background: var(--green-950); color: #fff; }
+.dimension-values aside strong { display: block; color: var(--gold-light); font-size: 1.22rem; }
+.dimension-values aside p { margin: 10px 0 16px; color: #c4d1c9; }
+.dimension-values aside a { color: #fff; font-size: .82rem; font-weight: 900; }
+@media (max-width: 820px) {
+  .product-dimension-grid { grid-template-columns: 1fr; }
+  .dimension-sketch-card { min-height: 420px; }
+}
+@media (max-width: 540px) {
+  .dimension-sketch-card { min-height: 310px; padding: 12px; }
+  .dimension-values aside { padding: 24px; }
+}
