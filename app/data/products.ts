@@ -252,17 +252,17 @@ export const products: Product[] = [
       ? {
           ...product,
           updatedAt: "2026-08-30",
-          features: ["Solid brass construction", "2-way splitter configuration", "1/2 in and 3/4 in GHT thread options", "OEM packaging"],
+          features: ["Solid brass construction", "2-way splitter configuration", "1/2 in and 3/4 in GHT thread options", "MOQ: 500 pcs", "Samples available"],
           applications: ["Two-line garden watering", "Garden tap distribution", "Sprinkler and nozzle setups", "Retail and private-label assortments"],
           buyerGuide: {
             heading: "Confirm the splitter configuration before sampling.",
             introduction:
-              "LH-3672A is a catalogue-listed brass 2-way splitter available with 1/2 in and 3/4 in GHT thread options for running two watering lines from one tap. Confirm the required inlet and outlet configuration before ordering.",
+              "LH-3672A is a catalogue-listed brass 2-way splitter available with 1/2 in and 3/4 in GHT thread options for running two watering lines from one tap. The minimum order quantity is 500 pcs, and samples are available. Confirm the required inlet and outlet configuration before ordering.",
             checklist: [
               "Confirm which GHT size applies to the tap-side inlet and each outlet for the required configuration.",
               "Confirm the required connection for each outlet and mating hose fitting.",
               "Check available installation clearance around the tap and both hose lines.",
-              "Agree the seal, leak-test and packaging requirements before quotation.",
+              "Confirm sample requirements, lead time, seal, leak-test and packaging details before quotation.",
             ],
             guideHref: "/resources/choosing-a-garden-hose-splitter",
             guideLabel: "Read the 2-way vs 4-way hose splitter buyer guide",
