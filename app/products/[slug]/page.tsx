@@ -5,6 +5,7 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { WhatsAppFloat } from "../../components/WhatsAppFloat";
 import { products, type Product } from "../../data/products";
+import { getBrassSeoCategoryByName } from "../../data/brass-seo-categories";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://linhaogarden.com";
 const customizationOptions = ["Thread", "Dimensions", "Material", "Surface finish", "Seal", "Logo", "Packaging"];
@@ -84,10 +85,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
   if (!product) return {};
-  const description = `CIXI LINHAO ${product.summary} B2B supplier with OEM packaging support for global garden product buyers.`;
+  const description = product.brassCategory
+    ? `${product.name} (${product.code}) for B2B and OEM sourcing. ${product.summary} Review thread, size, finish, seal and packaging requirements before quotation.`
+    : `CIXI LINHAO ${product.summary} Review specifications, packaging and target quantity before quotation.`;
   const socialTitle = `${product.name} | ${product.code}`;
   return {
-    title: `${product.name} | ${product.code} | OEM Supplier`,
+    title: product.brassCategory ? `${product.name} Manufacturer | ${product.code}` : `${product.name} | ${product.code}`,
     description,
     alternates: { canonical: `/products/${product.slug}` },
     openGraph: { title: socialTitle, description, url: `/products/${product.slug}`, images: [{ url: product.image, alt: product.name }] },
@@ -110,9 +113,20 @@ export default async function ProductDetailPage({ params }: Props) {
         label: index === 0 ? "Product view" : `Product view ${String(index + 1).padStart(2, "0")}`,
         fit: "contain" as const,
       }));
-  const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
+  const categoryPage = product.brassCategory ? getBrassSeoCategoryByName(product.brassCategory) : undefined;
+  const related = products
+    .filter((item) => item.slug !== product.slug && (product.brassCategory ? item.brassCategory === product.brassCategory : item.category === product.category))
+    .slice(0, 3);
   const engineeringSpecs = product.brassCategory ? getEngineeringSpecs(product) : [];
-  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products` }, { "@type": "ListItem", position: 3, name: product.name, item: productUrl }] };
+  const breadcrumbItems = [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Brass Garden Hose Fittings", item: `${siteUrl}/products` },
+    ...(categoryPage
+      ? [{ "@type": "ListItem", position: 3, name: categoryPage.label, item: `${siteUrl}/products/categories/${categoryPage.slug}` }]
+      : []),
+    { "@type": "ListItem", position: categoryPage ? 4 : 3, name: product.name, item: productUrl },
+  ];
+  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: breadcrumbItems };
   const faqs = [
     { question: `Can I request OEM packaging for ${product.name}?`, answer: "Yes. Share your target market, packaging preference, artwork and expected quantity so we can review the appropriate product and packing configuration." },
     { question: `What should I confirm before ordering ${product.code}?`, answer: "Confirm the intended application, connection or size requirement, product features, packaging format and target quantity. Our team can review the specification before quotation." },
@@ -123,7 +137,7 @@ export default async function ProductDetailPage({ params }: Props) {
   return <>
     <Header />
     <main>
-      <section className="product-detail-hero"><div className="container"><a className="breadcrumb" href="/products">Products</a><span className="eyebrow eyebrow-light">{product.category}</span><h1>{product.name}</h1><p>{product.summary}</p></div></section>
+      <section className="product-detail-hero"><div className="container"><div className="breadcrumb-trail"><a className="breadcrumb" href="/products">Brass Garden Hose Fittings</a>{categoryPage ? <a className="breadcrumb" href={`/products/categories/${categoryPage.slug}`}>{categoryPage.label}</a> : null}</div><span className="eyebrow eyebrow-light">{product.brassCategory || product.category}</span><h1>{product.name}</h1><p>{product.summary}</p></div></section>
       <section className="section"><div className="container product-detail-grid"><div className="product-detail-gallery" aria-label={`${product.name} product views`}>
               {productViews.map((view, index) => (
                 <figure className={`product-view-card${index === 0 ? " product-view-card--primary" : ""}`} key={`${view.label}-${index}`}>

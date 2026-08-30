@@ -724,3 +724,25 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   .home-proof-value { margin-bottom: 20px; }
   .home-proof-actions .button { width: 100%; }
 }
+
+
+/* Search-intent product category pages */
+.category-seo-links a { border: 1px solid var(--line); background: white; color: var(--ink); padding: 11px 16px; font-size: .78rem; font-weight: 800; }
+.category-seo-links a:hover, .category-seo-links a.active { border-color: var(--green-800); background: var(--green-800); color: white; }
+.category-buyer-panel { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 70px; margin-bottom: 80px; padding: 48px; background: var(--green-50); border: 1px solid var(--line); }
+.category-buyer-panel h2 { margin: 12px 0 0; color: var(--green-950); font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.08; letter-spacing: -.035em; }
+.category-buyer-panel ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.category-buyer-panel li { position: relative; padding: 14px 18px 14px 46px; background: white; border: 1px solid var(--line); color: #405047; font-size: .9rem; }
+.category-buyer-panel li::before { content: "✓"; position: absolute; left: 18px; color: var(--green-700); font-weight: 900; }
+.category-related-links { margin-top: 68px; padding-top: 34px; border-top: 1px solid var(--line); }
+.category-related-links > strong { display: block; margin-bottom: 16px; color: var(--green-950); }
+.category-related-links > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.category-related-links a { padding: 9px 13px; border: 1px solid var(--line); color: var(--green-800); font-size: .78rem; font-weight: 800; }
+.category-related-links a:hover { border-color: var(--green-700); background: var(--green-50); }
+.breadcrumb-trail { display: flex; flex-wrap: wrap; gap: 10px; }
+.breadcrumb-trail .breadcrumb + .breadcrumb::before { content: "› "; margin-right: 10px; color: rgba(255,255,255,.5); }
+.breadcrumb-trail .breadcrumb:first-child::before { content: "← "; }
+
+@media (max-width: 760px) {
+  .category-buyer-panel { grid-template-columns: 1fr; gap: 30px; padding: 30px 24px; }
+}

@@ -5,9 +5,9 @@ import { Header } from "../components/Header";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "Manufacturing Capabilities | Custom Brass Hose Fittings",
+  title: "OEM & Custom Brass Fittings Manufacturing Capabilities",
   description:
-    "Review custom brass fitting capabilities for materials, dimensions, GHT, BSP and NPT threads, finishes, tooling, inspection, OEM packaging and development from drawings or samples.",
+    "Review OEM and custom brass fitting capabilities for GHT, BSP, NPT and metric threads, dimensions, materials, finishes, tooling, inspection and packaging.",
   alternates: { canonical: "/capabilities" },
 };
 
@@ -56,7 +56,7 @@ export default function CapabilitiesPage() {
           <div className="container capabilities-hero-grid">
             <div>
               <span className="eyebrow eyebrow-light">Custom brass component development</span>
-              <h1>Manufacturing Capabilities for Custom Brass Fittings</h1>
+              <h1>OEM & Custom Brass Fittings Manufacturing Capabilities</h1>
               <p>Can your part be made? Send a drawing, sample or specification so dimensions, threads, material, sealing requirements, finish and packaging can be reviewed before quotation.</p>
               <a className="button button-gold" href="/contact?product=Custom%20Brass%20Fitting%20Drawing">Send Drawing for Review</a>
             </div>

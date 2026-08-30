@@ -7,9 +7,21 @@ import { WhatsAppFloat } from "./components/WhatsAppFloat";
 import { brassProducts } from "./data/products";
 
 export const metadata: Metadata = {
-  title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
-  description: "Custom brass garden hose fittings from drawing or sample to production, with custom dimensions, GHT, BSP and NPT threads, finish options and OEM packaging.",
+  title: { absolute: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO" },
+  description: "Custom brass garden hose fittings manufactured from drawings or samples, including GHT, BSP and NPT connectors, adapters, couplings, swivels and OEM packaging.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
+    description: "Custom brass hose fittings developed from drawings, samples and approved specifications for global B2B and OEM projects.",
+    url: "/",
+    images: [{ url: "/images/custom-brass-fittings-cnc-hero.png", alt: "Custom brass garden hose fittings and CNC machining details" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
+    description: "Custom brass hose fittings developed from drawings, samples and approved specifications.",
+    images: ["/images/custom-brass-fittings-cnc-hero.png"],
+  },
 };
 
 const highlights = [
@@ -24,13 +36,13 @@ const homepageProductCategories = [
     name: "Quick Connectors",
     description: "Fast hose and accessory connection options.",
     image: "/images/products/brass-connectors.webp",
-    href: "/products/brass-quick-connectors",
+    href: "/products/categories/brass-quick-connectors",
   },
   {
     name: "Threaded Adapters",
     description: "Male, female and reducing thread combinations.",
     image: "/images/products/catalogue/lh-3617.jpg",
-    href: "/products/brass-female-nipple-adapter-3617",
+    href: "/products/categories/brass-hose-adapters",
   },
   {
     name: "Swivel Fittings",
@@ -42,19 +54,19 @@ const homepageProductCategories = [
     name: "Hose Splitters & Valves",
     description: "Multi-outlet water distribution and flow control.",
     image: "/images/products/hose-splitters.webp",
-    href: "/products/multi-way-hose-splitters",
+    href: "/products/categories/brass-hose-splitters",
   },
   {
     name: "Hose Reel Fittings",
     description: "Swivel elbows and inlet fittings for reel assemblies.",
     image: "/images/products/hose-reel-brass-swivel.png",
-    href: "/products/hose-reel-brass-swivel",
+    href: "/products/categories/hose-reel-brass-fittings",
   },
   {
     name: "Custom Brass Parts",
     description: "Components developed from drawings, samples and specifications.",
     image: "/images/products/catalogue/lh-3601.jpg",
-    href: "/contact?product=Custom%20Brass%20Parts",
+    href: "/capabilities",
   },
 ];
 
