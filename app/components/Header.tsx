@@ -3,9 +3,10 @@ import Link from "next/link";
 
 const navItems = [
   ["Products", "/products"],
-  ["OEM / ODM", "/about#oem"],
+  ["Custom Manufacturing", "/about#oem"],
+  ["Capabilities", "/about#capabilities"],
   ["Quality", "/about#quality"],
-  ["Resources", "/resources"],
+  ["Applications", "/products#applications"],
   ["About", "/about"],
 ] as const;
 
@@ -14,7 +15,7 @@ export function Header() {
     <header className="site-header">
       <div className="top-note">
         <div className="container top-note-inner">
-          <span>Garden tools & watering solutions for global buyers</span>
+          <span>Custom brass garden hose fittings for global B2B buyers</span>
           <a href="/contact">Response within 24 business hours</a>
         </div>
       </div>

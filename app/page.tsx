@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { InquiryForm } from "./components/InquiryForm";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
-import { categories, products } from "./data/products";
+import { brassProducts, categories } from "./data/products";
 
 export const metadata: Metadata = {
   title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
@@ -16,7 +16,7 @@ const highlights = [
   ["Flexible", "OEM / ODM programs"],
   ["Responsive", "Quote support in 24h"],
   ["Export-ready", "Packaging & documentation"],
-  ["One partner", "Tools + watering range"],
+  ["Focused range", "Brass hose fittings"],
 ];
 
 const organizationSchema = {
@@ -49,11 +49,11 @@ export default function Home() {
             </div>
             <div className="hero-visual" aria-label="CIXI LINHAO garden product range">
               <div className="hero-green-panel">
-                <span>Built for everyday garden work</span>
-                <strong>TOOLS + WATERING</strong>
+                <span>Made for specified hose connections</span>
+                <strong>CUSTOM BRASS</strong>
               </div>
               <div className="hero-product hero-product-main">
-                <img src="/images/products/garden-tool-kits.webp" alt="Garden tool kit" />
+                <img src="/images/products/brass-connectors.webp" alt="Custom brass garden hose fittings" />
               </div>
               <div className="hero-product hero-product-small">
                 <img src="/images/products/brass-connectors.webp" alt="Brass hose connectors" />
@@ -72,8 +72,8 @@ export default function Home() {
         <section className="section product-system">
           <div className="container">
             <div className="section-heading split-heading">
-              <div><span className="eyebrow">One coordinated product range</span><h2>Four ways to grow your garden category</h2></div>
-              <p>Start with a proven item or combine categories into a retailer-ready program with coordinated colors, packaging and positioning.</p>
+              <div><span className="eyebrow">Focused brass fitting range</span><h2>Ten categories for hose fitting sourcing</h2></div>
+              <p>Start with a listed brass fitting or send a drawing, sample or specification for a custom component review.</p>
             </div>
             <div className="category-grid">
               {categories.map((category, index) => (
@@ -117,7 +117,7 @@ export default function Home() {
           <div className="container">
             <div className="section-heading split-heading"><div><span className="eyebrow">Buyer starting points</span><h2>Popular product programs</h2></div><a className="text-link" href="/products">View all products <span>→</span></a></div>
             <div className="mini-product-grid">
-              {products.slice(0, 4).map((product) => (
+              {brassProducts.slice(0, 4).map((product) => (
                 <article key={product.slug}>
                   <div><img src={product.image} alt={product.name} /></div>
                   <span>{product.code}</span><h3>{product.name}</h3><p>{product.summary}</p>

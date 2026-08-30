@@ -8,11 +8,24 @@ export type ProductCategory =
   | "Garden Hand Tools"
   | "Tool Kits & Accessories";
 
+export type BrassProductCategory =
+  | "Brass Quick Connectors"
+  | "Brass Threaded Adapters"
+  | "Brass Hose Couplings"
+  | "Brass Swivel Fittings"
+  | "Brass Elbow Fittings"
+  | "Brass Hose Splitters"
+  | "Brass Shut-Off Valves"
+  | "Brass Nozzles"
+  | "Hose Reel Brass Fittings"
+  | "Custom Brass Components";
+
 export type Product = {
   slug: string;
   name: string;
   code: string;
   category: ProductCategory;
+  brassCategory?: BrassProductCategory;
   image: string;
   images?: { src: string; alt: string }[];
   updatedAt?: string;
@@ -28,28 +41,28 @@ export type Product = {
   };
 };
 
-export const categories = [
-  {
-    name: "Watering & Irrigation" as const,
-    description: "Sprinklers, nozzles and watering solutions for efficient outdoor care.",
-    image: `${assetBase}/sprinklers.webp`,
-  },
-  {
-    name: "Brass Fittings & Valves" as const,
-    description: "Durable hose connectors, splitters, shut-off valves and repair fittings.",
-    image: `${assetBase}/brass-connectors.webp`,
-  },
-  {
-    name: "Garden Hand Tools" as const,
-    description: "Stainless steel and aluminum tools designed for dependable daily use.",
-    image: `${assetBase}/garden-hand-tools.webp`,
-  },
-  {
-    name: "Tool Kits & Accessories" as const,
-    description: "Retail-ready sets, tool bags, pruning kits and customized assortments.",
-    image: `${assetBase}/garden-tool-kits.webp`,
-  },
+export const categories: { name: BrassProductCategory; description: string; image: string }[] = [
+  { name: "Brass Quick Connectors", description: "Quick-connect fittings for repeat hose and accessory changes.", image: `${assetBase}/brass-connectors.webp` },
+  { name: "Brass Threaded Adapters", description: "Male, female and reducing adapters for specified thread combinations.", image: `${assetBase}/catalogue/lh-3617.jpg` },
+  { name: "Brass Hose Couplings", description: "Couplings and connector sets for compatible garden hose assemblies.", image: `${assetBase}/catalogue/lh-3601.jpg` },
+  { name: "Brass Swivel Fittings", description: "Rotating brass connections for applications requiring movement or alignment.", image: `${assetBase}/hose-reel-brass-swivel-360-rotation.png` },
+  { name: "Brass Elbow Fittings", description: "Right-angle brass fittings for compact hose routing and connection changes.", image: `${assetBase}/catalogue/lh-3638.jpg` },
+  { name: "Brass Hose Splitters", description: "Two-way and multi-way brass water distribution configurations.", image: `${assetBase}/hose-splitters.webp` },
+  { name: "Brass Shut-Off Valves", description: "Hand-operated brass fittings for convenient hose-end flow control.", image: `${assetBase}/watering-nozzles.webp` },
+  { name: "Brass Nozzles", description: "Brass spray and twist-nozzle components for watering and cleaning.", image: `${assetBase}/watering-nozzles.webp` },
+  { name: "Hose Reel Brass Fittings", description: "Brass swivel elbows and inlet fittings for hose reel assemblies.", image: `${assetBase}/hose-reel-brass-swivel.png` },
+  { name: "Custom Brass Components", description: "Non-standard brass components developed from drawings, samples and specifications.", image: `${assetBase}/brass-connectors.webp` },
 ];
+
+const inferBrassCategory = (name: string): BrassProductCategory => {
+  if (/quick connector|water-stop/i.test(name)) return "Brass Quick Connectors";
+  if (/elbow/i.test(name)) return "Brass Elbow Fittings";
+  if (/splitter/i.test(name)) return "Brass Hose Splitters";
+  if (/shut-off valve/i.test(name)) return "Brass Shut-Off Valves";
+  if (/nozzle/i.test(name)) return "Brass Nozzles";
+  if (/adapter|double male|hose cap/i.test(name)) return "Brass Threaded Adapters";
+  return "Brass Hose Couplings";
+};
 
 const brassConnector = (
   code: string,
@@ -62,6 +75,7 @@ const brassConnector = (
   name,
   code,
   category: "Brass Fittings & Valves",
+  brassCategory: inferBrassCategory(name),
   image: `${assetBase}/catalogue/${code.toLowerCase()}.jpg`,
   summary,
   features,
@@ -106,6 +120,7 @@ export const products: Product[] = [
     name: "Hose Reel Brass Swivel",
     code: "LH-HRS Series",
     category: "Brass Fittings & Valves",
+    brassCategory: "Hose Reel Brass Fittings",
     image: `${assetBase}/hose-reel-brass-swivel.png`,
     updatedAt: "2026-08-22",
     images: [
@@ -132,6 +147,7 @@ export const products: Product[] = [
     name: "Brass Quick Connectors",
     code: "LH-BHC Series",
     category: "Brass Fittings & Valves",
+    brassCategory: "Brass Quick Connectors",
     image: `${assetBase}/brass-connectors.webp`,
     summary: "Quick-connect and water-stop configurations for common garden hose systems.",
     features: ["Brass body", "EU / US thread options", "Water-stop option", "OEM packaging"],
@@ -142,6 +158,7 @@ export const products: Product[] = [
     name: "Multi-Way Hose Splitters",
     code: "LH-BSP Series",
     category: "Brass Fittings & Valves",
+    brassCategory: "Brass Hose Splitters",
     image: `${assetBase}/hose-splitters.webp`,
     summary: "Two-way and four-way brass manifolds with independent flow control.",
     features: ["2-way / 4-way options", "Independent shut-off", "Heavy-duty brass", "Custom handle colors"],
@@ -162,6 +179,7 @@ export const products: Product[] = [
     name: "Watering Nozzles & Shut-Off Valves",
     code: "LH-NOZ Series",
     category: "Watering & Irrigation",
+    brassCategory: "Brass Nozzles",
     image: `${assetBase}/watering-nozzles.webp`,
     summary: "Brass twist nozzles, spray nozzles and in-line flow-control solutions.",
     features: ["Adjustable flow", "Brass options", "Ergonomic control", "Standard hose compatibility"],
@@ -222,6 +240,7 @@ export const products: Product[] = [
     name: "Brass 4-Way Hose Splitters",
     code: "LH-4WS Series",
     category: "Brass Fittings & Valves",
+    brassCategory: "Brass Hose Splitters",
     image: `${assetBase}/hose-splitters.webp`,
     summary: "Four-outlet brass manifolds for garden taps, greenhouse zones and irrigation layouts.",
     features: ["Four outlet configurations", "Independent flow control", "Brass body options", "OEM packaging"],
@@ -232,6 +251,7 @@ export const products: Product[] = [
     name: "Brass Shut-Off Valves",
     code: "LH-SOV Series",
     category: "Brass Fittings & Valves",
+    brassCategory: "Brass Shut-Off Valves",
     image: `${assetBase}/watering-nozzles.webp`,
     summary: "In-line brass valves for convenient water-flow control at the hose end.",
     features: ["Brass construction", "Hand-operated control", "Standard hose compatibility", "OEM packaging"],
@@ -242,6 +262,7 @@ export const products: Product[] = [
     name: "Brass Twist Hose Nozzles",
     code: "LH-TWN Series",
     category: "Watering & Irrigation",
+    brassCategory: "Brass Nozzles",
     image: `${assetBase}/watering-nozzles.webp`,
     summary: "Adjustable twist-pattern hose nozzles for watering, rinsing and garden care.",
     features: ["Adjustable spray pattern", "Brass nozzle options", "Hose-end use", "OEM packaging"],
@@ -271,3 +292,7 @@ export const products: Product[] = [
       : product,
   ),
 ];
+
+export const brassProducts = products.filter(
+  (product): product is Product & { brassCategory: BrassProductCategory } => Boolean(product.brassCategory),
+);

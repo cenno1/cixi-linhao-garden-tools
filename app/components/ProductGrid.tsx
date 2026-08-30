@@ -3,18 +3,23 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useMemo, useState } from "react";
-import { categories, products, ProductCategory } from "../data/products";
+import { brassProducts, categories, BrassProductCategory } from "../data/products";
 
 export function ProductGrid() {
-  const [active, setActive] = useState<ProductCategory | "All">("All");
-  const filtered = useMemo(() => active === "All" ? products : products.filter((product) => product.category === active), [active]);
+  const [active, setActive] = useState<BrassProductCategory | "All">("All");
+  const filtered = useMemo(
+    () => active === "All" ? brassProducts : brassProducts.filter((product) => product.brassCategory === active),
+    [active],
+  );
+  const activeCategory = active === "All" ? null : categories.find((category) => category.name === active);
 
   return <>
     <div className="filter-row" aria-label="Filter products">
       <button className={active === "All" ? "active" : ""} onClick={() => setActive("All")}>All products</button>
       {categories.map((category) => <button className={active === category.name ? "active" : ""} key={category.name} onClick={() => setActive(category.name)}>{category.name}</button>)}
     </div>
-    <div className="product-grid">
+    {activeCategory && <div className="catalog-category-intro"><strong>{activeCategory.name}</strong><span>{activeCategory.description}</span></div>}
+    {filtered.length ? <div className="product-grid">
       {filtered.map((product) => <article className="product-card" key={product.slug}>
         <a className="product-image" href={`/products/${product.slug}`}><img src={product.image} alt={product.name} /></a>
         <div className="product-card-body">
@@ -25,6 +30,6 @@ export function ProductGrid() {
           <a className="text-link" href={`/products/${product.slug}`}>View product details <span>→</span></a>
         </div>
       </article>)}
-    </div>
+    </div> : <div className="catalog-empty"><h2>{active}</h2><p>This category is available for specification-based sourcing. Send a drawing, sample or target specification for review.</p><a className="button" href={`/contact?product=${encodeURIComponent(active)}`}>Discuss this category</a></div>}
   </>;
 }
