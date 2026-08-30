@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { InquiryForm } from "./components/InquiryForm";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
-import { brassProducts, categories } from "./data/products";
+import { brassProducts } from "./data/products";
 
 export const metadata: Metadata = {
   title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
@@ -17,6 +17,45 @@ const highlights = [
   ["Responsive", "Quote support in 24h"],
   ["Export-ready", "Packaging & documentation"],
   ["Focused range", "Brass hose fittings"],
+];
+
+const homepageProductCategories = [
+  {
+    name: "Quick Connectors",
+    description: "Fast hose and accessory connection options.",
+    image: "/images/products/brass-connectors.webp",
+    href: "/products/brass-quick-connectors",
+  },
+  {
+    name: "Threaded Adapters",
+    description: "Male, female and reducing thread combinations.",
+    image: "/images/products/catalogue/lh-3617.jpg",
+    href: "/products/brass-female-nipple-adapter-3617",
+  },
+  {
+    name: "Swivel Fittings",
+    description: "Rotating fittings for movement and alignment.",
+    image: "/images/products/hose-reel-brass-swivel-360-rotation.png",
+    href: "/products/hose-reel-brass-swivel",
+  },
+  {
+    name: "Hose Splitters & Valves",
+    description: "Multi-outlet water distribution and flow control.",
+    image: "/images/products/hose-splitters.webp",
+    href: "/products/multi-way-hose-splitters",
+  },
+  {
+    name: "Hose Reel Fittings",
+    description: "Swivel elbows and inlet fittings for reel assemblies.",
+    image: "/images/products/hose-reel-brass-swivel.png",
+    href: "/products/hose-reel-brass-swivel",
+  },
+  {
+    name: "Custom Brass Parts",
+    description: "Components developed from drawings, samples and specifications.",
+    image: "/images/products/catalogue/lh-3601.jpg",
+    href: "/contact?product=Custom%20Brass%20Parts",
+  },
 ];
 
 const organizationSchema = {
@@ -57,26 +96,26 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="trust-strip">
-          <div className="container trust-grid">
-            {highlights.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
-          </div>
-        </section>
-
-        <section className="section product-system">
+        <section className="section home-product-categories">
           <div className="container">
-            <div className="section-heading split-heading">
-              <div><span className="eyebrow">Focused brass fitting range</span><h2>Ten categories for hose fitting sourcing</h2></div>
-              <p>Start with a listed brass fitting or send a drawing, sample or specification for a custom component review.</p>
+            <div className="section-heading centered-heading">
+              <span className="eyebrow">Brass product categories</span>
+              <h2>What we manufacture</h2>
             </div>
-            <div className="category-grid">
-              {categories.map((category, index) => (
-                <a className={`category-card category-${index + 1}`} href="/products" key={category.name}>
-                  <div className="category-image"><img src={category.image} alt={category.name} /></div>
-                  <div className="category-copy"><span>0{index + 1}</span><h3>{category.name}</h3><p>{category.description}</p><b>Discover the range →</b></div>
+            <div className="home-product-category-grid">
+              {homepageProductCategories.map((category) => (
+                <a className="home-product-category-card" href={category.href} key={category.name}>
+                  <div className="home-product-category-image"><img src={category.image} alt={category.name} /></div>
+                  <div className="home-product-category-copy"><h3>{category.name}</h3><p>{category.description}</p><span>View category →</span></div>
                 </a>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="trust-strip">
+          <div className="container trust-grid">
+            {highlights.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
           </div>
         </section>
 
