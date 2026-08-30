@@ -85,7 +85,7 @@ export default async function ProductDetailPage({ params }: Props) {
                         alt={view.alt}
                         fill
                         sizes={index === 0 ? "(max-width: 820px) 100vw, 45vw" : "(max-width: 540px) 100vw, (max-width: 820px) 50vw, 22vw"}
-                        style={{ objectFit: view.fit || "cover", objectPosition: view.objectPosition || "center" }}
+                        style={{ objectFit: view.fit || "cover", objectPosition: view.objectPosition || "center", transform: `scale(${view.zoom || 1})`, transformOrigin: view.objectPosition || "center" }}
                         priority={index === 0}
                       />
                     </div>

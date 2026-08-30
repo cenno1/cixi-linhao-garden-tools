@@ -34,6 +34,7 @@ export type Product = {
     alt: string;
     objectPosition?: string;
     fit?: "cover" | "contain";
+    zoom?: number;
     note?: string;
   }[];
   updatedAt?: string;
@@ -148,6 +149,7 @@ export const products: Product[] = [
         alt: "Front view of the brass hose reel swivel body and threaded connection",
         objectPosition: "24% 82%",
         fit: "cover",
+        zoom: 2,
       },
       {
         label: "Side view",
@@ -155,6 +157,7 @@ export const products: Product[] = [
         alt: "Side view of the 90 degree brass hose reel swivel",
         objectPosition: "78% 82%",
         fit: "cover",
+        zoom: 2,
       },
       {
         label: "Thread detail",
@@ -162,6 +165,7 @@ export const products: Product[] = [
         alt: "Close view of the male thread and swivel connection",
         objectPosition: "82% 76%",
         fit: "cover",
+        zoom: 2,
       },
       {
         label: "Internal structure",
@@ -174,6 +178,7 @@ export const products: Product[] = [
         alt: "Brass swivel installed at the water inlet of a hose reel",
         objectPosition: "24% 18%",
         fit: "cover",
+        zoom: 2,
       },
     ],
     summary: "360° rotating brass swivel elbow for hose reel water-inlet connections and OEM replacement assemblies.",
