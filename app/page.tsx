@@ -8,7 +8,7 @@ import { brassProducts, categories } from "./data/products";
 
 export const metadata: Metadata = {
   title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
-  description: "OEM & ODM brass hose connectors, adapters, swivels and valves manufactured to buyer drawings, samples and specifications.",
+  description: "Custom brass garden hose fittings from drawing or sample to production, with custom dimensions, GHT, BSP and NPT threads, finish options and OEM packaging.",
   alternates: { canonical: "/" },
 };
 
@@ -32,33 +32,27 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section className="hero">
+        <section className="hero hero-custom-projects">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow">Custom brass fittings · OEM / ODM · B2B</span>
-              <h1>Custom Brass Garden Hose Fittings Manufacturer</h1>
-              <p>OEM &amp; ODM brass hose connectors, adapters, swivels and valves manufactured to your drawings, samples and specifications.</p>
+              <span className="eyebrow">Precision brass manufacturing · OEM / ODM</span>
+              <h1>Custom Brass Garden Hose Fittings</h1>
+              <p className="hero-project-line">From drawing or sample to production.</p>
+              <ul className="hero-capabilities">
+                <li>Custom dimensions</li>
+                <li>GHT / BSP / NPT threads</li>
+                <li>Brass material options</li>
+                <li>Natural / nickel plated finishes</li>
+                <li>OEM packaging</li>
+                <li>Custom tooling</li>
+              </ul>
               <div className="hero-actions">
-                <a className="button" href="/contact?product=Custom%20Brass%20Garden%20Hose%20Fittings">Request a Custom Quote</a>
-                <a className="button button-ghost" href="/contact?product=Custom%20Brass%20Fitting%20Drawing">Send Your Drawing</a>
-              </div>
-              <div className="hero-proof">
-                <span><strong>EU / US</strong> connection options</span>
-                <span><strong>Private label</strong> packaging support</span>
+                <a className="button" href="/contact?product=Custom%20Brass%20Fitting%20Drawing">Send Drawing for Quote</a>
               </div>
             </div>
-            <div className="hero-visual" aria-label="CIXI LINHAO garden product range">
-              <div className="hero-green-panel">
-                <span>Made for specified hose connections</span>
-                <strong>CUSTOM BRASS</strong>
-              </div>
-              <div className="hero-product hero-product-main">
-                <img src="/images/products/brass-connectors.webp" alt="Custom brass garden hose fittings" />
-              </div>
-              <div className="hero-product hero-product-small">
-                <img src="/images/products/brass-connectors.webp" alt="Brass hose connectors" />
-              </div>
-              <div className="hero-badge"><strong>B2B</strong><span>Export supply</span></div>
+            <div className="hero-manufacturing-visual">
+              <img className="hero-manufacturing-image" src="/images/custom-brass-fittings-cnc-hero.png" alt="Precision-machined brass garden hose fittings with CNC and thread details" />
+              <div className="hero-manufacturing-note"><span>Precision-machined brass components</span><strong>DRAWING · SAMPLE · PRODUCTION</strong></div>
             </div>
           </div>
         </section>
