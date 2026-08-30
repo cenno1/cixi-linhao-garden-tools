@@ -6,13 +6,18 @@ import { trackEvent } from "../lib/analytics";
 
 type Status = { state: "idle" | "loading" | "success" | "error"; message?: string };
 
+const threadStandards = ["GHT", "BSP", "NPT", "Metric", "Other", "Not decided yet"];
+const materialOptions = ["Standard brass", "Lead-free brass", "Customer-specified material", "Not decided yet"];
+const quantityOptions = ["Sample / evaluation", "500–1,000 pcs", "1,000–5,000 pcs", "5,000–20,000 pcs", "20,000+ pcs", "Not decided yet"];
+const targetMarkets = ["USA", "EU", "UK", "Australia", "Other", "Not decided yet"];
+
 export function InquiryForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<Status>({ state: "idle" });
   const [file, setFile] = useState<File | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus({ state: "loading", message: "Sending your request…" });
+    setStatus({ state: "loading", message: "Preparing your engineering enquiry…" });
     const form = event.currentTarget;
     const data = new FormData(form);
 
@@ -45,8 +50,8 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
       if (!response.ok) throw new Error(result.error || "We could not send your request.");
       form.reset();
       setFile(null);
-      trackEvent("generate_lead", { form_location: compact ? "contact_page" : "homepage_quote_form", product_category: String(payload.productType || "unspecified") });
-      setStatus({ state: "success", message: "Thank you — your request has been received. We will reply within 24 business hours." });
+      trackEvent("generate_lead", { form_location: compact ? "contact_page" : "homepage_quote_form", product_category: String(payload.productType || "unspecified"), thread_standard: String(payload.threadStandard || "unspecified"), target_market: String(payload.targetMarket || "unspecified") });
+      setStatus({ state: "success", message: "Thank you — your engineering enquiry has been received. We will reply within 24 business hours." });
     } catch (error) {
       setStatus({ state: "error", message: error instanceof Error ? error.message : "Please try again or contact us on WhatsApp." });
     }
@@ -55,55 +60,71 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
   return (
     <form id="quote-form" className={`inquiry-form ${compact ? "inquiry-form-compact" : ""}`} onSubmit={handleSubmit}>
       <div className="form-intro">
-        <span className="eyebrow">Get a free quote</span>
-        <h2>Tell us what you need</h2>
-        <p>No commitment and no spam. Share the essentials and our export team will respond within 24 business hours.</p>
+        <span className="eyebrow">Engineering quote</span>
+        <h2>Send your part requirements</h2>
+        <p>Share the interface, material, quantity and target market. A drawing, photo or specification helps our team review feasibility and quotation details.</p>
       </div>
       <input className="honeypot" type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="form-grid">
         <label>
-          Your name <span>*</span>
+          Name <span>*</span>
           <input name="name" required placeholder="John Smith" autoComplete="name" />
         </label>
         <label>
-          Company name <span>*</span>
+          Company <span>*</span>
           <input name="company" required placeholder="Your company" autoComplete="organization" />
         </label>
         <label>
-          Email address <span>*</span>
+          Email <span>*</span>
           <input name="email" type="email" required placeholder="john@company.com" autoComplete="email" />
         </label>
         <label>
-          WhatsApp / phone <span>*</span>
-          <input name="phone" required placeholder="+1 234 567 8900" autoComplete="tel" />
+          WhatsApp
+          <input name="phone" placeholder="+1 234 567 8900" autoComplete="tel" />
         </label>
         <label>
-          Product type <span>*</span>
-          <select name="productType" required defaultValue="">
-            <option value="" disabled>Select a product category</option>
+          Product type
+          <select name="productType" defaultValue="">
+            <option value="" disabled>Select a brass fitting category</option>
             {categories.map((category) => <option key={category.name}>{category.name}</option>)}
-            <option>Custom / mixed product program</option>
+            <option>Custom brass component</option>
           </select>
         </label>
         <label>
-          Estimated quantity <span>*</span>
-          <select name="quantity" required defaultValue="">
+          Thread standard
+          <select name="threadStandard" defaultValue="">
+            <option value="" disabled>Select a thread standard</option>
+            {threadStandards.map((standard) => <option key={standard}>{standard}</option>)}
+          </select>
+        </label>
+        <label>
+          Size
+          <input name="size" placeholder={'e.g. 1/2", 3/4", 1" or drawing dimensions'} />
+        </label>
+        <label>
+          Material
+          <select name="material" defaultValue="">
+            <option value="" disabled>Select a material requirement</option>
+            {materialOptions.map((material) => <option key={material}>{material}</option>)}
+          </select>
+        </label>
+        <label>
+          Estimated quantity
+          <select name="quantity" defaultValue="">
             <option value="" disabled>Select estimated quantity</option>
-            <option>Sample / evaluation</option>
-            <option>500–1,000 pcs</option>
-            <option>1,000–5,000 pcs</option>
-            <option>5,000–20,000 pcs</option>
-            <option>20,000+ pcs</option>
-            <option>Not decided yet</option>
+            {quantityOptions.map((quantity) => <option key={quantity}>{quantity}</option>)}
+          </select>
+        </label>
+        <label>
+          Target market
+          <select name="targetMarket" defaultValue="">
+            <option value="" disabled>Select the target market</option>
+            {targetMarkets.map((market) => <option key={market}>{market}</option>)}
           </select>
         </label>
       </div>
-      <label>
-        Requirements
-        <textarea name="requirements" rows={5} placeholder="Product codes, target market, materials, colors, packaging, certifications or delivery timing…" />
-      </label>
       <label className="file-field">
-        Reference image / specification <small>Optional · PNG, JPG, WEBP or PDF · Max 10 MB</small>
+        Upload drawing / photo / specification <small>Optional · PNG, JPG, WEBP or PDF · Max 10 MB</small>
         <input
           type="file"
           accept="image/png,image/jpeg,image/webp,application/pdf"
@@ -111,8 +132,12 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
         />
         <span>{file ? file.name : "Choose a file or drag it here"}</span>
       </label>
+      <label>
+        Message
+        <textarea name="requirements" rows={5} placeholder="Describe the application, mating part, sealing requirement, finish, logo, packaging or inspection points…" />
+      </label>
       <button className="button form-submit" type="submit" disabled={status.state === "loading"}>
-        {status.state === "loading" ? "Sending…" : "Send My Request"}
+        {status.state === "loading" ? "Sending…" : "Get Engineering Quote"}
       </button>
       {status.message && <p className={`form-status ${status.state}`} role="status">{status.message}</p>}
       <p className="form-privacy">Your information is used only to respond to this business inquiry.</p>

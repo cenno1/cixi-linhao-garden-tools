@@ -1,4 +1,4 @@
-const requiredFields = ["name", "company", "email", "phone", "productType", "quantity"] as const;
+const requiredFields = ["name", "company", "email"] as const;
 
 export async function POST(request: Request) {
   try {
