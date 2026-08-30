@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
@@ -54,6 +54,13 @@ export default async function ProductDetailPage({ params }: Props) {
   const productImages = product.images?.length
     ? product.images
     : [{ src: product.image, alt: `${product.name} ${product.code}` }];
+  const productViews: NonNullable<Product["productViews"]> = product.productViews?.length
+    ? product.productViews
+    : productImages.map((image, index) => ({
+        ...image,
+        label: index === 0 ? "Product view" : `Product view ${String(index + 1).padStart(2, "0")}`,
+        fit: "contain" as const,
+      }));
   const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
   const engineeringSpecs = product.brassCategory ? getEngineeringSpecs(product) : [];
   const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/products` }, { "@type": "ListItem", position: 3, name: product.name, item: productUrl }] };
@@ -68,10 +75,34 @@ export default async function ProductDetailPage({ params }: Props) {
     <Header />
     <main>
       <section className="product-detail-hero"><div className="container"><a className="breadcrumb" href="/products">Products</a><span className="eyebrow eyebrow-light">{product.category}</span><h1>{product.name}</h1><p>{product.summary}</p></div></section>
-      <section className="section"><div className="container product-detail-grid"><div className="product-detail-gallery">{productImages.map((image, index) => <div className={`product-detail-image${index === 0 ? "" : " product-detail-image--secondary"}`} key={image.src}><img src={image.src} alt={image.alt} /></div>)}</div><div className="product-detail-copy"><span className="product-code">{product.code}</span><h2>Product overview</h2><p>{product.summary} Share the intended application, mating components, target market, packaging format and required quantity so our team can review the correct configuration before quotation.</p><div className="product-detail-columns"><div><h3>Key features</h3><ul>{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul></div><div><h3>Typical applications</h3><ul>{product.applications.map((application) => <li key={application}>{application}</li>)}</ul></div></div><a className="button" href={`/contact?product=${encodeURIComponent(`${product.code} ${product.name}`)}`}>Request specifications</a></div></div></section>
+      <section className="section"><div className="container product-detail-grid"><div className="product-detail-gallery" aria-label={`${product.name} product views`}>
+              {productViews.map((view, index) => (
+                <figure className={`product-view-card${index === 0 ? " product-view-card--primary" : ""}`} key={`${view.label}-${index}`}>
+                  {view.src ? (
+                    <div className="product-detail-image">
+                      <Image
+                        src={view.src}
+                        alt={view.alt}
+                        fill
+                        sizes={index === 0 ? "(max-width: 820px) 100vw, 45vw" : "(max-width: 540px) 100vw, (max-width: 820px) 50vw, 22vw"}
+                        style={{ objectFit: view.fit || "cover", objectPosition: view.objectPosition || "center" }}
+                        priority={index === 0}
+                      />
+                    </div>
+                  ) : (
+                    <div className="product-view-placeholder">
+                      <span>Technical evidence required</span>
+                      <strong>{view.label}</strong>
+                      <p>{view.note}</p>
+                    </div>
+                  )}
+                  <figcaption><span>{String(index + 1).padStart(2, "0")}</span><strong>{view.label}</strong>{view.note && view.src ? <p>{view.note}</p> : null}</figcaption>
+                </figure>
+              ))}
+            </div><div className="product-detail-copy"><span className="product-code">{product.code}</span><h2>Product overview</h2><p>{product.summary} Share the intended application, mating components, target market, packaging format and required quantity so our team can review the correct configuration before quotation.</p><div className="product-detail-columns"><div><h3>Key features</h3><ul>{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul></div><div><h3>Typical applications</h3><ul>{product.applications.map((application) => <li key={application}>{application}</li>)}</ul></div></div><a className="button" href={`/contact?product=${encodeURIComponent(`${product.code} ${product.name}`)}`}>Request specifications</a></div></div></section>
       {engineeringSpecs.length > 0 ? <section className="section product-engineering"><div className="container"><div className="section-heading split-heading"><div><span className="eyebrow">Engineering parameters</span><h2>Confirm the part specification before quotation.</h2></div><p>Listed catalogue sizes are a starting point. Production follows the approved drawing, sample and technical file.</p></div><dl className="engineering-spec-grid">{engineeringSpecs.map(([term, value]) => <div key={term}><dt>{term}</dt><dd>{value}</dd></div>)}</dl></div></section> : null}
       {product.buyerGuide && <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer compatibility checklist</span><h2>{product.buyerGuide.heading}</h2><p>{product.buyerGuide.introduction}</p><ul>{product.buyerGuide.checklist.map((item) => <li key={item}>{item}</li>)}</ul><a className="button button-secondary" href={product.buyerGuide.guideHref}>{product.buyerGuide.guideLabel} →</a></div></section>}
-      <section className="section section-soft"><div className="container"><div className="section-heading"><span className="eyebrow">Related products</span><h2>Build a coordinated range.</h2></div><div className="related-products">{related.map((item) => <a href={`/products/${item.slug}`} key={item.slug}><img src={item.image} alt={item.name} /><span>{item.code}</span><h3>{item.name}</h3></a>)}</div></div></section>
+      <section className="section section-soft"><div className="container"><div className="section-heading"><span className="eyebrow">Related products</span><h2>Build a coordinated range.</h2></div><div className="related-products">{related.map((item) => <a href={`/products/${item.slug}`} key={item.slug}><Image src={item.image} alt={item.name} width={620} height={420} sizes="(max-width: 820px) 100vw, 33vw" /><span>{item.code}</span><h3>{item.name}</h3></a>)}</div></div></section>
       <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer FAQ</span><h2>Questions before you request a quote.</h2>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
     </main>
     <Footer /><WhatsAppFloat />

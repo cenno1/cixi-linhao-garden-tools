@@ -28,6 +28,14 @@ export type Product = {
   brassCategory?: BrassProductCategory;
   image: string;
   images?: { src: string; alt: string }[];
+  productViews?: {
+    label: string;
+    src?: string;
+    alt: string;
+    objectPosition?: string;
+    fit?: "cover" | "contain";
+    note?: string;
+  }[];
   updatedAt?: string;
   summary: string;
   features: string[];
@@ -131,6 +139,41 @@ export const products: Product[] = [
       {
         src: `${assetBase}/hose-reel-brass-swivel-360-rotation.png`,
         alt: "Brass hose reel swivel showing the 360 degree rotating joint and installation position",
+      },
+    ],
+    productViews: [
+      {
+        label: "Front view",
+        src: `${assetBase}/hose-reel-brass-swivel.png`,
+        alt: "Front view of the brass hose reel swivel body and threaded connection",
+        objectPosition: "24% 82%",
+        fit: "cover",
+      },
+      {
+        label: "Side view",
+        src: `${assetBase}/hose-reel-brass-swivel.png`,
+        alt: "Side view of the 90 degree brass hose reel swivel",
+        objectPosition: "78% 82%",
+        fit: "cover",
+      },
+      {
+        label: "Thread detail",
+        src: `${assetBase}/hose-reel-brass-swivel-360-rotation.png`,
+        alt: "Close view of the male thread and swivel connection",
+        objectPosition: "82% 76%",
+        fit: "cover",
+      },
+      {
+        label: "Internal structure",
+        alt: "Internal structure documentation pending",
+        note: "An exploded view or section drawing has not yet been supplied. Add only after the sealing and rotating structure is verified.",
+      },
+      {
+        label: "Installation effect",
+        src: `${assetBase}/hose-reel-brass-swivel-360-rotation.png`,
+        alt: "Brass swivel installed at the water inlet of a hose reel",
+        objectPosition: "24% 18%",
+        fit: "cover",
       },
     ],
     summary: "360° rotating brass swivel elbow for hose reel water-inlet connections and OEM replacement assemblies.",
