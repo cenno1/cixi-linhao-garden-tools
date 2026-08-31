@@ -86,3 +86,13 @@ This log is updated by the daily SEO growth loop. Do not invent unavailable metr
 - Tomorrow:
 - Owner confirmation needed:
 
+## 2026-08-31 — Reddit topic research and buyer guide
+
+- Conclusion: Recent Reddit discussions repeatedly separate into two buyer problems: leaks at splitter bodies or seams, and confusion between thread fit and washer sealing. The existing site already covered general connector leaks and 2-way versus 4-way selection, so another generic article would have duplicated search intent.
+- Evidence: Recent discussions in r/gardening and r/Plumbing described splitter or Y-connector leaks at different locations; ASME B1.20.7 confirms hose-coupling screw threads are a defined application, Dixon technical guidance distinguishes washer-sealed from thread-sealed fittings, and Iowa State University Extension recommends disconnecting and draining irrigation components before winter.
+- Primary action: Published one distinct English buyer resource targeting "garden hose splitter leaking." The guide diagnoses inlet, body or branch, valve-stem and outlet leaks separately, links each failure location to catalogue references and sample-approval checks, and cites both discussion signals and authoritative technical sources.
+- Validation: The new article is generated from the existing Next.js resource data, receives canonical metadata, Article schema, Open Graph article metadata, related product links and automatic sitemap inclusion. Production deployment and live URL checks are recorded separately after Vercel completes.
+- KPI snapshot: Search Console impressions/clicks N/A; indexed commercial-page rate N/A; top-20 non-brand buyer-intent queries N/A; qualified organic inquiries N/A. This article creates one indexable long-tail troubleshooting asset; ranking or traffic outcomes are not guaranteed.
+- Tomorrow: Check the deployed URL and sitemap in the correct linhaogarden.com property, then use actual Search Console data rather than publishing another article automatically.
+- Owner confirmation needed: Provide project-specific splitter leak-test pressure, duration, seal material and inspection method only if LINHAO wants those facts published; none were invented in this guide.
+
