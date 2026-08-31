@@ -13,9 +13,127 @@ export type BlogPost = {
     confirm: string[];
   }>;
   commercialLink?: { href: string; label: string; description: string };
+  sources?: Array<{ label: string; href: string; note: string }>;
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "garden-hose-splitter-leaking-diagnostic-guide",
+    title: "Garden Hose Splitter Leaking? Diagnose the Inlet, Body, Valve or Outlet",
+    description: "A location-by-location troubleshooting and procurement guide for leaking garden hose splitters, covering washers, thread compatibility, body joints, valves and winter care.",
+    topic: "Hose splitter troubleshooting",
+    publishedAt: "2026-08-31",
+    decisionGroups: [
+      {
+        problem: "Leak at the tap-side inlet",
+        check: "Separate seal contact from thread compatibility before adding tape or applying more torque. A washer-sealed hose connection needs the mating faces and washer geometry to match; the same nominal size does not prove that two different thread systems are compatible.",
+        productSlugs: ["brass-two-way-splitter-3672a", "multi-way-hose-splitters"],
+        confirm: ["Tap and splitter thread systems", "Nominal size plus measured mating dimensions", "Washer location, condition and compression", "Hand-start engagement without cross-threading"],
+      },
+      {
+        problem: "Leak at the manifold body or branch joint",
+        check: "A body seam, pinhole or branch-joint leak is a different failure mode from an inlet-washer leak. Stop the water, isolate the exact point and replace a cracked sample rather than trying to cure the body with more inlet torque.",
+        productSlugs: ["brass-two-way-splitter-3672a", "brass-four-way-hose-splitters"],
+        confirm: ["Approved body and joint construction", "Test pressure and duration from the buyer specification", "All outlets open and closed during sample checks", "Visual inspection criteria after testing"],
+      },
+      {
+        problem: "Leak at an outlet or valve stem",
+        check: "Check whether water appears at the outlet washer interface, around the valve stem or from the downstream hose coupling. These locations require different corrective actions and should be recorded separately during sample approval.",
+        productSlugs: ["multi-way-hose-splitters", "brass-shut-off-valves"],
+        confirm: ["Outlet thread and mating hose end", "Valve handle and operating direction", "Seal material required by the approved application", "Valve cycling and leak-check method"],
+      },
+    ],
+    commercialLink: {
+      href: "/products/categories/brass-hose-splitters",
+      label: "Review Brass Hose Splitter Options",
+      description: "Compare two-way and multi-way catalogue references, then send the mating parts, thread requirement and leak-test specification for engineering review.",
+    },
+    sources: [
+      {
+        label: "Reddit: Hose splitter discussion (July 2026)",
+        href: "https://www.reddit.com/r/gardening/comments/1uy6c0m/hose_splitter/",
+        note: "Recent user discussion used only to identify recurring questions about seams, washers, pressure and seasonal damage.",
+      },
+      {
+        label: "Reddit: Y hose connector leaking (August 2026)",
+        href: "https://www.reddit.com/r/Plumbing/comments/1vg5i3g/y_hose_connector_leaking/",
+        note: "Recent user discussion used only as a problem signal for separating body leaks from connection leaks.",
+      },
+      {
+        label: "ASME B1.20.7 — Hose Coupling Screw Threads",
+        href: "https://www.asme.org/codes-standards/find-codes-standards/b1-20-7-hose-coupling-screw-threads",
+        note: "Official standards page confirming that hose-coupling screw threads are a defined thread application.",
+      },
+      {
+        label: "Dixon: Hose Coupling technical guide",
+        href: "https://europe.dixonvalve.com/sites/default/files/documents/Hose-Coupling.pdf",
+        note: "Technical reference distinguishing washer-sealed hose fittings from thread-sealed connections.",
+      },
+      {
+        label: "Iowa State University Extension: Using Drip Irrigation in the Garden",
+        href: "https://yardandgarden.extension.iastate.edu/how-to/using-drip-irrigation-garden",
+        note: "Extension guidance for disconnecting, draining and storing irrigation components before winter.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Start with the exact leak location",
+        paragraphs: [
+          "Recent Reddit discussions about leaking splitters and Y-connectors show the same troubleshooting mistake repeatedly: every leak is treated as if it came from the tap washer. A splitter can leak at the inlet, a body seam, a branch joint, a valve stem, an outlet or the hose coupling beyond the splitter. Each location points to a different inspection path.",
+          "Turn off the water, dry the assembly and reopen the supply slowly while watching one connection at a time. Do not begin by overtightening every joint. Record where the first drop appears and whether it only appears with a valve open, with a valve closed or when the downstream hose is moved.",
+        ],
+        bullets: [
+          "Tap-side inlet: inspect the washer contact, thread engagement and mating tap.",
+          "Body seam or branch: look for a pinhole, crack, deformation or joint leak.",
+          "Valve stem or handle: observe the stem area while cycling the valve.",
+          "Outlet: inspect its washer interface and thread engagement separately.",
+          "Downstream hose end: confirm the leak is not travelling back from the hose coupling.",
+        ],
+      },
+      {
+        heading: "Separate thread fit from seal contact",
+        paragraphs: [
+          "Hose coupling threads are standardized applications, but a familiar nominal size alone does not prove compatibility. Confirm the thread system on both mating parts—such as GHT or NH, BSP, NPT, metric or a custom form—together with the sealing method and measured interface.",
+          "In a washer-sealed hose connection, the threads mainly draw the faces together while the washer creates the seal. A missing, damaged, displaced or incorrectly sized washer can leak even when the threads appear to fit. A thread-sealed connection works differently. PTFE tape cannot correct incompatible geometry, inadequate washer contact or cross-threading.",
+        ],
+      },
+      {
+        heading: "Treat body and valve leaks as separate failure modes",
+        paragraphs: [
+          "If water comes from the splitter body, a branch joint or a valve stem, replacing the tap washer will not address the observed leak. Remove pressure before inspection. A cracked, visibly deformed or leaking body sample should be taken out of service and reviewed against the approved construction and test requirement.",
+          "For B2B sample approval, define the operating and leak-check conditions before testing. Record each inlet, outlet, body joint and valve position separately. LINHAO does not publish a universal pressure rating for every splitter; the required pressure, duration, medium and acceptance criterion should be confirmed for the specific project.",
+        ],
+      },
+      {
+        heading: "Reduce winter damage and installation strain",
+        paragraphs: [
+          "University extension guidance recommends disconnecting and draining irrigation equipment before winter so trapped water is not left to freeze. Follow the supplied product care instructions and store removable components indoors where appropriate.",
+          "Also check mechanical strain. A heavy hose hanging from one outlet can load the splitter and tap connection. Support the hose, avoid sharp bends and do not use the splitter as a structural hanger. Seasonal care and installation geometry should be part of the product instructions, not left to guesswork.",
+        ],
+      },
+      {
+        heading: "Use a procurement checklist that can be tested",
+        paragraphs: [
+          "A useful splitter request is more specific than two-way or four-way. Send the actual tap and hose interfaces, target market and the conditions that the approved sample must meet. Unknown engineering facts should stay open for confirmation rather than being copied from a generic listing.",
+        ],
+        bullets: [
+          "Inlet and outlet thread system, nominal size, mating parts and measured dimensions.",
+          "Washer or seal location, required material and replacement-parts plan.",
+          "Body and joint construction to be approved on the sample.",
+          "Project-specific leak-test pressure, duration, valve positions and acceptance criteria.",
+          "Expected valve cycling, installation clearance and hose loading.",
+          "Natural brass or plated finish, logo method, bulk or OEM packaging and care instructions.",
+        ],
+      },
+      {
+        heading: "Choose outlet count after the failure mode is understood",
+        paragraphs: [
+          "A two-way splitter is not automatically more reliable than a four-way manifold, and a four-way product is not automatically better for every layout. Outlet count, valve spacing and available source flow belong in the selection decision; leak location belongs in the diagnostic decision.",
+          "For assortment planning, use the separate 2-way versus 4-way buyer guide. For an existing leak, use the location-based checklist above before choosing a replacement or approving a production sample.",
+        ],
+      },
+    ],
+  },
   {
     slug: "why-garden-hose-connectors-leak",
     title: "Why Garden Hose Connectors Leak: A Buyer Checklist",
