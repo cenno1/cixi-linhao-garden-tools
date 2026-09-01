@@ -38,15 +38,20 @@ export type Product = {
     note?: string;
   }[];
   updatedAt?: string;
+  seoTitle?: string;
+  seoDescription?: string;
   summary: string;
+  procurementIntro?: string;
   features: string[];
   applications: string[];
+  faqs?: { question: string; answer: string }[];
   buyerGuide?: {
     heading: string;
     introduction: string;
     checklist: string[];
     guideHref: string;
     guideLabel: string;
+    relatedLinks?: { href: string; label: string }[];
   };
 };
 
@@ -320,9 +325,36 @@ export const products: Product[] = [
     product.code === "LH-3672A"
       ? {
           ...product,
-          updatedAt: "2026-08-30",
+          updatedAt: "2026-09-01",
+          seoTitle: "Brass 2-Way Hose Splitter Manufacturer | LH-3672A",
+          seoDescription:
+            "Source LH-3672A solid brass 2-way hose splitters with 1/2 in and 3/4 in GHT options. MOQ 500 pcs; samples available for B2B and OEM review.",
+          procurementIntro:
+            "LH-3672A is for importers, distributors and private-label buyers sourcing a solid brass 2-way hose splitter. It divides one compatible garden-tap connection into two watering lines. Specify the required 1/2 in or 3/4 in GHT configuration, mating components, order quantity and packaging requirements for quotation review.",
           features: ["Solid brass construction", "2-way splitter configuration", "1/2 in and 3/4 in GHT thread options", "MOQ: 500 pcs", "Samples available"],
-          applications: ["Two-line garden watering", "Garden tap distribution", "Sprinkler and nozzle setups", "Retail and private-label assortments"],
+          applications: ["Connect two watering lines to one compatible garden tap", "Run sprinkler and nozzle lines from a single inlet", "Two-zone garden watering and irrigation layouts", "Retail and private-label assortments"],
+          faqs: [
+            {
+              question: "Which GHT sizes are available for LH-3672A?",
+              answer:
+                "The confirmed options are 1/2 in and 3/4 in GHT. State which size applies to the tap-side inlet and each outlet so the exact configuration and mating parts can be checked before quotation.",
+            },
+            {
+              question: "Can LH-3672A supply two watering lines from one tap?",
+              answer:
+                "Yes. It is a 2-way splitter intended to divide one compatible garden-tap connection into two hose lines. Confirm available installation clearance and the connection required at each outlet before sampling.",
+            },
+            {
+              question: "What are the MOQ and sample terms for LH-3672A?",
+              answer:
+                "The minimum order quantity is 500 pcs, and samples are available. Share the required GHT configuration and packaging requirements so sample and quotation details can be reviewed.",
+            },
+            {
+              question: "What should buyers check if a hose splitter connection leaks?",
+              answer:
+                "Identify whether the leak is at the tap inlet, splitter body or seam, branch or valve area, or an outlet connection. Then verify the mating GHT connection, sealing requirements, installation and inspection criteria before approving a sample.",
+            },
+          ],
           buyerGuide: {
             heading: "Confirm the splitter configuration before sampling.",
             introduction:
@@ -335,6 +367,10 @@ export const products: Product[] = [
             ],
             guideHref: "/resources/choosing-a-garden-hose-splitter",
             guideLabel: "Read the 2-way vs 4-way hose splitter buyer guide",
+            relatedLinks: [
+              { href: "/products/categories/brass-hose-splitters", label: "Browse Brass Hose Splitters" },
+              { href: "/resources/garden-hose-splitter-leaking-diagnostic-guide", label: "Diagnose a leaking garden hose splitter" },
+            ],
           },
         }
       : product,
@@ -344,3 +380,4 @@ export const products: Product[] = [
 export const brassProducts = products.filter(
   (product): product is Product & { brassCategory: BrassProductCategory } => Boolean(product.brassCategory),
 );
+
