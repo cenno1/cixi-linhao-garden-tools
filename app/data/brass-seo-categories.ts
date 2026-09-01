@@ -9,6 +9,13 @@ export type BrassSeoCategory = {
   metaDescription: string;
   introduction: string;
   buyerQuestions: string[];
+  selectionGuide?: {
+    heading: string;
+    introduction: string;
+    options: { heading: string; description: string; href?: string; linkLabel?: string }[];
+  };
+  relatedResources?: { href: string; label: string; description: string }[];
+  faqs?: { question: string; answer: string }[];
 };
 
 export const brassSeoCategories: BrassSeoCategory[] = [
@@ -56,11 +63,65 @@ export const brassSeoCategories: BrassSeoCategory[] = [
     slug: "brass-hose-splitters",
     category: "Brass Hose Splitters",
     label: "Brass Hose Splitters",
-    h1: "Brass Hose Splitters for Multi-Line Watering",
-    metaTitle: "Brass Hose Splitters for Multi-Line Watering",
-    metaDescription: "Compare two-way and multi-way brass hose splitter configurations for garden taps. Confirm inlet, outlets, GHT size, valve controls and packaging.",
-    introduction: "Splitter projects should define the tap-side inlet, every outlet, control-valve layout and available clearance. Two-way and multi-way formats serve different watering layouts.",
-    buyerQuestions: ["How many independently controlled outlets are needed?", "What inlet and outlet sizes apply?", "Which GHT or other thread standard is required?", "What handle, seal and packaging options are required?"],
+    h1: "Brass Hose Splitter Manufacturer for 2-Way & Multi-Way Supply",
+    metaTitle: "Brass Hose Splitter Manufacturer | 2-Way & Multi-Way",
+    metaDescription: "Source 2-way and multi-way brass hose splitters for B2B and OEM programs. Compare outlet count, 1/2 in or 3/4 in GHT options, samples and packaging requirements.",
+    introduction: "Compare brass hose splitter configurations for import, distribution and private-label programs. Define the tap-side inlet, every outlet, required control layout, installation clearance and target packaging before sample approval.",
+    buyerQuestions: ["How many outlets does the watering layout require?", "What size and thread apply to the inlet and every outlet?", "Which outlets require individual flow control?", "What sample, inspection and packaging requirements must be approved?"],
+    selectionGuide: {
+      heading: "Choose outlet count before requesting a sample.",
+      introduction: "Outlet count is a layout decision, not a quality grade. Match the splitter to the number of simultaneous watering lines, available tap clearance and required controls, then confirm every mating connection.",
+      options: [
+        {
+          heading: "2-way brass hose splitter",
+          description: "Use when one compatible garden tap needs to feed two hose lines. LH-3672A is the verified catalogue reference with 1/2 in and 3/4 in GHT options, MOQ 500 pcs and samples available.",
+          href: "/products/brass-two-way-splitter-3672a",
+          linkLabel: "Review LH-3672A specifications",
+        },
+        {
+          heading: "Multi-way brass hose splitter",
+          description: "Use when the planned layout requires more than two outlets. Confirm outlet spacing, control requirements, source-flow conditions and installation clearance before choosing the configuration.",
+          href: "/products/multi-way-hose-splitters",
+          linkLabel: "Review multi-way splitter options",
+        },
+        {
+          heading: "4-way brass hose splitter",
+          description: "Use for four planned branches only after confirming that the tap location can accommodate the manifold and connected hoses. Final connections and controls follow the approved specification.",
+          href: "/products/brass-four-way-hose-splitters",
+          linkLabel: "Review 4-way splitter options",
+        },
+      ],
+    },
+    relatedResources: [
+      {
+        href: "/resources/choosing-a-garden-hose-splitter",
+        label: "2-Way vs 4-Way Hose Splitter Buyer Guide",
+        description: "Compare outlet count, source flow, valve spacing and installation requirements before selecting a sample.",
+      },
+      {
+        href: "/resources/garden-hose-splitter-leaking-diagnostic-guide",
+        label: "Garden Hose Splitter Leak Diagnostic Guide",
+        description: "Separate inlet, body, branch, valve and outlet leak locations before defining inspection requirements.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Should a buyer choose a 2-way or multi-way brass hose splitter?",
+        answer: "Choose the outlet count from the actual watering layout, available tap clearance and required controls. A 2-way splitter serves two planned hose lines; a multi-way configuration is considered when the layout requires more outlets.",
+      },
+      {
+        question: "Which GHT sizes are confirmed for the LH-3672A 2-way splitter?",
+        answer: "LH-3672A has confirmed 1/2 in and 3/4 in GHT options. The required size must be assigned to the tap-side inlet and each outlet so the mating parts can be reviewed before quotation.",
+      },
+      {
+        question: "What should an OEM hose splitter enquiry include?",
+        answer: "Send the outlet count, inlet and outlet connections, target market, mating parts, required controls, installation clearance, target quantity, packaging requirements and any sample-inspection criteria.",
+      },
+      {
+        question: "How should a leaking splitter be evaluated?",
+        answer: "First identify whether the leak is at the tap inlet, body or seam, branch or valve area, outlet, or downstream hose coupling. Each location requires a different compatibility and inspection check.",
+      },
+    ],
   },
   {
     slug: "brass-shut-off-valves",
@@ -99,3 +160,4 @@ export const getBrassSeoCategoryBySlug = (slug: string) =>
 
 export const getBrassSeoCategoryByName = (category: BrassProductCategory) =>
   brassSeoCategories.find((item) => item.category === category);
+

@@ -50,6 +50,17 @@ export default async function BrassCategoryPage({ params }: Props) {
       { "@type": "ListItem", position: 3, name: config.label, item: canonicalUrl },
     ],
   };
+  const faqSchema = config.faqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: config.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      }
+    : null;
 
   return (
     <>
@@ -105,6 +116,48 @@ export default async function BrassCategoryPage({ params }: Props) {
           </div>
         </section>
 
+        {config.selectionGuide ? (
+          <section className="section section-soft">
+            <div className="container product-faq">
+              <span className="eyebrow">Configuration guide</span>
+              <h2>{config.selectionGuide.heading}</h2>
+              <p>{config.selectionGuide.introduction}</p>
+              {config.selectionGuide.options.map((option) => (
+                <article key={option.heading}>
+                  <h3>{option.heading}</h3>
+                  <p>{option.description}</p>
+                  {option.href && option.linkLabel ? <a href={option.href}>{option.linkLabel} →</a> : null}
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {config.relatedResources ? (
+          <section className="section">
+            <div className="container product-faq">
+              <span className="eyebrow">Buyer resources</span>
+              <h2>Specify and inspect the splitter with less guesswork.</h2>
+              {config.relatedResources.map((resource) => (
+                <article key={resource.href}>
+                  <h3><a href={resource.href}>{resource.label}</a></h3>
+                  <p>{resource.description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {config.faqs ? (
+          <section className="section section-soft">
+            <div className="container product-faq">
+              <span className="eyebrow">Brass hose splitter FAQ</span>
+              <h2>Questions before sample approval.</h2>
+              {config.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
+            </div>
+          </section>
+        ) : null}
+
         <section className="catalog-cta">
           <div className="container">
             <div>
@@ -119,6 +172,8 @@ export default async function BrassCategoryPage({ params }: Props) {
       <Footer />
       <WhatsAppFloat />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
     </>
   );
 }
+
