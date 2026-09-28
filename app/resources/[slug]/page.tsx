@@ -10,9 +10,9 @@ type Props = { params: Promise<{ slug: string }> };
 const siteUrl = "https://linhaogarden.com";
 const relatedProductSlugs: Record<string, string[]> = {
   "why-garden-hose-connectors-leak": ["brass-connector-set-3601", "brass-water-stop-connector-3604z", "brass-double-male-connector-3641"],
-  "how-to-specify-a-durable-hose-nozzle-range": ["brass-twist-hose-nozzles", "watering-nozzles-valves", "brass-shut-off-valves"],
-  "choosing-a-garden-hose-splitter": ["brass-two-way-splitter-3672a", "brass-four-way-hose-splitters", "multi-way-hose-splitters"],
-  "garden-hose-splitter-leaking-diagnostic-guide": ["brass-two-way-splitter-3672a", "brass-four-way-hose-splitters", "multi-way-hose-splitters"],
+  "how-to-specify-a-durable-hose-nozzle-range": ["brass-two-way-splitter-3672a", "brass-hose-shut-off-valve-3001"],
+  "choosing-a-garden-hose-splitter": ["brass-two-way-splitter-3672a", "brass-4-way-hose-splitter-3201", "brass-4-way-hose-splitter-3211"],
+  "garden-hose-splitter-leaking-diagnostic-guide": ["brass-two-way-splitter-3672a", "brass-4-way-hose-splitter-3201", "brass-4-way-hose-splitter-3211"],
 };
 
 export async function generateStaticParams() {
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | Garden Product Buyer Guide`,
     description: post.description,
     alternates: { canonical: `/resources/${post.slug}` },
+    robots: post.slug === "how-to-specify-a-durable-hose-nozzle-range" ? { index: false, follow: true } : undefined,
     openGraph: {
       title: post.title,
       description: post.description,

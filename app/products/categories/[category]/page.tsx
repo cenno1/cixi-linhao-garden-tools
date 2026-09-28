@@ -11,7 +11,7 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://linhaogarden.com")
 type Props = { params: Promise<{ category: string }> };
 
 export function generateStaticParams() {
-  return brassSeoCategories.map(({ slug }) => ({ category: slug }));
+  return brassSeoCategories.filter((item) => brassProducts.some((product) => product.brassCategory === item.category)).map(({ slug }) => ({ category: slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -108,7 +108,7 @@ export default async function BrassCategoryPage({ params }: Props) {
             <nav className="category-related-links" aria-label="Related brass product categories">
               <strong>Related brass fitting categories</strong>
               <div>
-                {brassSeoCategories.filter((item) => item.slug !== config.slug).map((item) => (
+                {brassSeoCategories.filter((item) => item.slug !== config.slug && brassProducts.some((product) => product.brassCategory === item.category)).map((item) => (
                   <a href={`/products/categories/${item.slug}`} key={item.slug}>{item.label}</a>
                 ))}
               </div>

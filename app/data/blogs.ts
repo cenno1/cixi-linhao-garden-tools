@@ -27,19 +27,19 @@ export const blogPosts: BlogPost[] = [
       {
         problem: "Leak at the tap-side inlet",
         check: "Separate seal contact from thread compatibility before adding tape or applying more torque. A washer-sealed hose connection needs the mating faces and washer geometry to match; the same nominal size does not prove that two different thread systems are compatible.",
-        productSlugs: ["brass-two-way-splitter-3672a", "multi-way-hose-splitters"],
+        productSlugs: ["brass-two-way-splitter-3672a", "brass-4-way-hose-splitter-3201"],
         confirm: ["Tap and splitter thread systems", "Nominal size plus measured mating dimensions", "Washer location, condition and compression", "Hand-start engagement without cross-threading"],
       },
       {
         problem: "Leak at the manifold body or branch joint",
         check: "A body seam, pinhole or branch-joint leak is a different failure mode from an inlet-washer leak. Stop the water, isolate the exact point and replace a cracked sample rather than trying to cure the body with more inlet torque.",
-        productSlugs: ["brass-two-way-splitter-3672a", "brass-four-way-hose-splitters"],
+        productSlugs: ["brass-two-way-splitter-3672a", "brass-4-way-hose-splitter-3201"],
         confirm: ["Approved body and joint construction", "Test pressure and duration from the buyer specification", "All outlets open and closed during sample checks", "Visual inspection criteria after testing"],
       },
       {
         problem: "Leak at an outlet or valve stem",
         check: "Check whether water appears at the outlet washer interface, around the valve stem or from the downstream hose coupling. These locations require different corrective actions and should be recorded separately during sample approval.",
-        productSlugs: ["multi-way-hose-splitters", "brass-shut-off-valves"],
+        productSlugs: ["brass-4-way-hose-splitter-3201", "brass-hose-shut-off-valve-3001"],
         confirm: ["Outlet thread and mating hose end", "Valve handle and operating direction", "Seal material required by the approved application", "Valve cycling and leak-check method"],
       },
     ],

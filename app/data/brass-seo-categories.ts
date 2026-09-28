@@ -81,13 +81,13 @@ export const brassSeoCategories: BrassSeoCategory[] = [
         {
           heading: "Multi-way brass hose splitter",
           description: "Use when the planned layout requires more than two outlets. Confirm outlet spacing, control requirements, source-flow conditions and installation clearance before choosing the configuration.",
-          href: "/products/multi-way-hose-splitters",
+          href: "/products#four-way-splitters",
           linkLabel: "Review multi-way splitter options",
         },
         {
           heading: "4-way brass hose splitter",
           description: "Use for four planned branches only after confirming that the tap location can accommodate the manifold and connected hoses. Final connections and controls follow the approved specification.",
-          href: "/products/brass-four-way-hose-splitters",
+          href: "/products#four-way-splitters",
           linkLabel: "Review 4-way splitter options",
         },
       ],

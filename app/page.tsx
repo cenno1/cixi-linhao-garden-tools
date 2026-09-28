@@ -4,31 +4,31 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { InquiryForm } from "./components/InquiryForm";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
-import { brassProducts } from "./data/products";
+import { products } from "./data/products";
 
 export const metadata: Metadata = {
-  title: { absolute: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO" },
-  description: "Custom brass garden hose fittings manufactured from drawings or samples, including GHT, BSP and NPT connectors, adapters, couplings, swivels and OEM packaging.",
+  title: { absolute: "Custom Brass & Aluminum Hose Fittings | Cixi Linhao" },
+  description: "Cixi Linhao Metal Product Co., Ltd. supplies brass and aluminum hose fittings, valves, splitters and threaded adapters. Send a drawing or sample for custom quotation.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
-    description: "Custom brass hose fittings developed from drawings, samples and approved specifications for global B2B and OEM projects.",
+    title: "Custom Brass & Aluminum Hose Fittings | Cixi Linhao",
+    description: "Brass and aluminum valves and hose fittings developed from drawings, samples and approved specifications.",
     url: "/",
     images: [{ url: "/images/custom-brass-fittings-cnc-hero.png", alt: "Custom brass garden hose fittings and CNC machining details" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO",
-    description: "Custom brass hose fittings developed from drawings, samples and approved specifications.",
+    title: "Custom Brass & Aluminum Hose Fittings | Cixi Linhao",
+    description: "Custom brass and aluminum hose fittings developed from drawings and samples.",
     images: ["/images/custom-brass-fittings-cnc-hero.png"],
   },
 };
 
 const highlights = [
   ["Flexible", "OEM / ODM programs"],
-  ["Responsive", "Quote support in 24h"],
+  ["Drawing-led", "Engineering quote review"],
   ["Export-ready", "Packaging & documentation"],
-  ["Focused range", "Brass hose fittings"],
+  ["Focused range", "Brass & aluminum fittings"],
 ];
 
 const homepageProductCategories = [
@@ -68,6 +68,12 @@ const homepageProductCategories = [
     image: "/images/products/catalogue/lh-3601.jpg",
     href: "/capabilities",
   },
+  {
+    name: "Aluminum Hose Fittings",
+    description: "Aluminum adapters, quick connectors, repair fittings and valves.",
+    image: "/images/products/catalog-2026/lh-3902.webp",
+    href: "/products/materials/aluminum",
+  },
 ];
 
 const customDevelopmentSteps = [
@@ -79,7 +85,7 @@ const customDevelopmentSteps = [
   {
     number: "02",
     title: "Engineering Review",
-    text: "Confirm dimensions, thread standards, brass material and sealing structure.",
+    text: "Confirm dimensions, mating threads, material and sealing structure.",
   },
   {
     number: "03",
@@ -105,14 +111,14 @@ const customDevelopmentSteps = [
 
 const homepageProofPoints = [
   {
-    value: String(brassProducts.length),
-    title: "Catalogued Brass Product References",
-    text: "Current brass catalogue entries available for buyer review.",
+    value: String(products.length),
+    title: "Valve & Hose Fitting References",
+    text: "Brass and aluminum reference models for buyer review.",
   },
   {
-    value: "5",
-    title: "Thread Routes Reviewed",
-    text: "GHT / NH, the BSP family, NPT, metric and custom thread requirements.",
+    value: String(products.filter((product) => product.material === "Aluminum").length),
+    title: "Aluminum References",
+    text: "Connector, adapter, valve and hose-repair reference models.",
   },
   {
     value: "6",
@@ -120,14 +126,14 @@ const homepageProofPoints = [
     text: "From drawing or sample review through inspection, packaging and shipment preparation.",
   },
   {
-    value: "24h",
-    title: "Initial Business Response",
-    text: "Target response window for complete business enquiries on working days.",
+    value: "LH",
+    title: "Drawing-Led Quotation",
+    text: "Send the model, mating components, drawing or sample for review.",
   },
   {
-    value: "CNC",
-    title: "Production-Floor Evidence",
-    text: "Real CNC turning, machining and automated loading photos are available for review.",
+    value: "NH",
+    title: "Specified Adapter Threads",
+    text: "Selected catalogued aluminum adapters list NH to NPT or NPS combinations.",
   },
   {
     value: "CAD",
@@ -149,7 +155,7 @@ const homepageProofPoints = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": "https://linhaogarden.com/#organization", name: "CIXI LINHAO", url: "https://linhaogarden.com", logo: "https://linhaogarden.com/images/cixi-linhao-logo.png", email: "info@lh-industrial.com", telephone: "+86-150-8845-2259", address: { "@type": "PostalAddress", addressLocality: "Cixi", addressRegion: "Zhejiang", addressCountry: "CN" }, contactPoint: { "@type": "ContactPoint", contactType: "sales", telephone: "+86-150-8845-2259", email: "info@lh-industrial.com", availableLanguage: ["English", "Chinese"] } },
+    { "@type": "Organization", "@id": "https://linhaogarden.com/#organization", name: "Cixi Linhao Metal Product Co., Ltd.", url: "https://linhaogarden.com", logo: "https://linhaogarden.com/images/cixi-linhao-logo.png", email: "info@lh-industrial.com", telephone: "+86-150-8845-2259", address: { "@type": "PostalAddress", addressLocality: "Cixi", addressRegion: "Zhejiang", addressCountry: "CN" }, contactPoint: { "@type": "ContactPoint", contactType: "sales", telephone: "+86-150-8845-2259", email: "info@lh-industrial.com", availableLanguage: ["English", "Chinese"] } },
     { "@type": "WebSite", "@id": "https://linhaogarden.com/#website", url: "https://linhaogarden.com", name: "CIXI LINHAO" },
   ],
 };
@@ -162,13 +168,13 @@ export default function Home() {
         <section className="hero hero-custom-projects">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow">Precision brass manufacturing · OEM / ODM</span>
-              <h1>Custom Brass Garden Hose Fittings</h1>
+              <span className="eyebrow">Cixi Linhao Metal Product Co., Ltd. · OEM / ODM</span>
+              <h1>Custom Brass &amp; Aluminum Hose Fittings</h1>
               <p className="hero-project-line">From drawing or sample to production.</p>
               <ul className="hero-capabilities">
                 <li>Custom dimensions</li>
-                <li>GHT / BSP / NPT threads</li>
-                <li>Brass material options</li>
+                <li>Threads reviewed against your drawing</li>
+                <li>Brass and aluminum options</li>
                 <li>Natural / nickel plated finishes</li>
                 <li>OEM packaging</li>
                 <li>Custom tooling</li>
@@ -187,8 +193,8 @@ export default function Home() {
         <section className="section home-product-categories">
           <div className="container">
             <div className="section-heading centered-heading">
-              <span className="eyebrow">Brass product categories</span>
-              <h2>What we manufacture</h2>
+              <span className="eyebrow">Valves and hose fittings</span>
+              <h2>Browse by connection and material</h2>
             </div>
             <div className="home-product-category-grid">
               {homepageProductCategories.map((category) => (
@@ -227,7 +233,7 @@ export default function Home() {
                 <span className="eyebrow eyebrow-light">Why CIXI LINHAO</span>
                 <h2>Manufacturing evidence buyers can verify.</h2>
               </div>
-              <p>Concrete catalogue scope, documented engineering routes and real production-floor evidence—without unsupported claims.</p>
+              <p>Review catalogue reference models, material, nominal size and the information needed for a custom quotation.</p>
             </div>
             <div className="home-proof-grid">
               {homepageProofPoints.map((point) => (
@@ -270,7 +276,7 @@ export default function Home() {
           <div className="container">
             <div className="section-heading split-heading"><div><span className="eyebrow">Buyer starting points</span><h2>Popular product programs</h2></div><a className="text-link" href="/products">View all products <span>→</span></a></div>
             <div className="mini-product-grid">
-              {brassProducts.slice(0, 4).map((product) => (
+              {products.slice(0, 4).map((product) => (
                 <article key={product.slug}>
                   <div><img src={product.image} alt={product.name} /></div>
                   <span>{product.code}</span><h3>{product.name}</h3><p>{product.summary}</p>

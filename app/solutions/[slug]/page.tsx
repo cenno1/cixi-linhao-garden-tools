@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: page.title,
     description: page.description,
     alternates: { canonical: `/solutions/${page.slug}` },
+    robots: page.slug === "oem-garden-tools-supplier" ? { index: false, follow: true } : undefined,
     openGraph: { title: page.title, description: page.description, url: `/solutions/${page.slug}`, images: [{ url: page.image, alt: page.title }] },
   };
 }

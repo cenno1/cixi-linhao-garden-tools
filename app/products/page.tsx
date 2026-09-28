@@ -5,13 +5,13 @@ import { ProductGrid } from "../components/ProductGrid";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "Brass Garden Hose Fittings & Connectors Manufacturer",
+  title: "Brass & Aluminum Valves and Hose Fittings | LINHAO",
   description:
-    "Explore brass garden hose connectors, quick connectors, couplings, threaded adapters, elbows, splitters, valves, nozzles and hose reel fittings for OEM sourcing.",
+    "Browse brass and aluminum hose splitters, shut-off valves, pressure regulators, quick connectors, adapters, elbows and hose repair fittings. Send drawings for custom parts.",
   alternates: { canonical: "/products" },
   openGraph: {
-    title: "Brass Garden Hose Fittings & Connectors Manufacturer",
-    description: "Browse brass hose fitting categories and model-level product references for B2B and OEM sourcing.",
+    title: "Brass & Aluminum Valves and Hose Fittings | LINHAO",
+    description: "Browse catalogue reference models for valves and hose fittings in brass and aluminum.",
     url: "/products",
     images: [{ url: "/images/products/brass-connectors.webp", alt: "Brass garden hose fittings and connectors" }],
   },
@@ -24,9 +24,9 @@ export default function ProductsPage() {
       <main>
         <section className="page-hero page-hero-products">
           <div className="container">
-            <span className="eyebrow eyebrow-light">Brass garden hose fitting range</span>
-            <h1>Brass Garden Hose Fittings & Connectors</h1>
-            <p>Choose the relevant product category before comparing model-level references, thread requirements, dimensions, finishes and OEM packaging.</p>
+            <span className="eyebrow eyebrow-light">Cixi Linhao Metal Product Co., Ltd.</span>
+            <h1>Brass &amp; Aluminum Valves and Hose Fittings</h1>
+            <p>Explore model references by function and material. Share a drawing or sample for custom dimensions, thread interfaces, finishes and packaging. Catalogue nominal size alone does not confirm thread compatibility.</p>
           </div>
         </section>
         <section className="section" id="applications">
@@ -37,11 +37,11 @@ export default function ProductsPage() {
         <section className="catalog-cta">
           <div className="container">
             <div>
-              <span className="eyebrow eyebrow-light">OEM & custom brass fittings</span>
-              <h2>Need a non-standard brass component?</h2>
-              <p>Send a drawing, sample or specification for review of dimensions, thread requirements, material, finish, seal and packaging.</p>
+              <span className="eyebrow eyebrow-light">Custom brass and aluminum components</span>
+              <h2>Need a non-standard fitting or valve?</h2>
+              <p>Send a drawing, sample or specification for review of dimensions, connection, material, finish, seal and packaging.</p>
             </div>
-            <a className="button button-gold" href="/contact?product=Custom%20Brass%20Fitting">Send your drawing</a>
+            <a className="button button-gold" href="/contact?product=Custom%20Valve%20or%20Hose%20Fitting#quote-form">Send your drawing</a>
           </div>
         </section>
       </main>
