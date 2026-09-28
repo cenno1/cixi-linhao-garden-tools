@@ -5,16 +5,16 @@ import { Header } from "../components/Header";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "OEM & Custom Brass Fittings Manufacturing Capabilities",
+  title: "Custom Brass & Aluminum Fitting Capabilities",
   description:
-    "Review OEM and custom brass fitting capabilities for GHT, BSP, NPT and metric threads, dimensions, materials, finishes, tooling, inspection and packaging.",
+    "Review brass and aluminum valve and hose-fitting project options: dimensions, mating threads, material, finish, inspection and packaging.",
   alternates: { canonical: "/capabilities" },
 };
 
 const capabilityAreas = [
   ["Custom dimensions", "Dimensions are reviewed against the drawing, sample and mating components."],
   ["Thread systems", "GHT / NH, BSP / BSPP / BSPT, NPT, metric and custom thread requirements are reviewed before quotation."],
-  ["Brass options", "Material grades and market requirements are reviewed for each project."],
+  ["Brass and aluminum options", "Material grades and market requirements are reviewed for each project."],
   ["Surface finishes", "Natural brass and nickel-plated finish requirements can be specified."],
   ["Custom tooling", "Tooling requirements are reviewed for non-standard part geometry."],
   ["OEM packing", "Packaging and export-packing requirements are confirmed with the order specification."],
@@ -55,10 +55,10 @@ export default function CapabilitiesPage() {
         <section className="capabilities-hero">
           <div className="container capabilities-hero-grid">
             <div>
-              <span className="eyebrow eyebrow-light">Custom brass component development</span>
-              <h1>OEM & Custom Brass Fittings Manufacturing Capabilities</h1>
+              <span className="eyebrow eyebrow-light">Custom brass and aluminum component review</span>
+              <h1>Custom Valve &amp; Hose Fitting Capabilities</h1>
               <p>Can your part be made? Send a drawing, sample or specification so dimensions, threads, material, sealing requirements, finish and packaging can be reviewed before quotation.</p>
-              <a className="button button-gold" href="/contact?product=Custom%20Brass%20Fitting%20Drawing">Send Drawing for Review</a>
+              <a className="button button-gold" href="/contact?product=Custom%20Brass%20or%20Aluminum%20Fitting%20Drawing#quote-form">Send Drawing for Review</a>
             </div>
             <div className="capabilities-hero-image">
               <Image src="/images/products/hose-reel-brass-swivel-360-rotation.png" alt="Brass swivel fitting showing machined threads and rotating connection" width={900} height={700} sizes="(max-width: 820px) 100vw, 48vw" priority />

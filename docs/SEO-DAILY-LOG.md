@@ -96,3 +96,13 @@ This log is updated by the daily SEO growth loop. Do not invent unavailable metr
 - Tomorrow: Check the deployed URL and sitemap in the correct linhaogarden.com property, then use actual Search Console data rather than publishing another article automatically.
 - Owner confirmation needed: Provide project-specific splitter leak-test pressure, duration, seal material and inspection method only if LINHAO wants those facts published; none were invented in this guide.
 
+## 2026-09-28 — Catalogue product restructure
+
+- Conclusion: The owner-supplied scanned catalogue supports a broader valve and hose-fitting reference range in brass and aluminum, but most models lack enough independently verified engineering facts for individual search landing pages.
+- Evidence: PDF pages 7–21 list 110 coded in-scope models. Individual captions identify 84 as brass and 26 as aluminum. The prior LH-3642 product copy incorrectly described a double-female connector as double male. Model-specific NH/NPT/NPS descriptions are present only for selected aluminum adapters.
+- Primary action: Rebuilt the product collection around valve and hose-fitting families, material badges, LH reference codes, catalogue nominal sizes and drawing-led quotation. Updated model detail templates, added an aluminum collection, corrected LH-3642, and documented the source audit in `docs/CATALOG-2026-SOURCE-AUDIT.md`.
+- Validation: Local Next.js production build and TypeScript passed with the webpack flag used for the Windows dependency junction. Six catalogue/SEO checks passed. Local HTTP checks returned 200 for the home, product collection, aluminum collection, LH-3672A and representative aluminum and brass models; the old LH-3642 URL returned 308 to its corrected URL. A local crawl of 149 internal routes found no broken links. Production deployment status is recorded separately in the final task report.
+- KPI snapshot: Qualified organic inquiries N/A; commercial-page index coverage N/A; non-brand search visibility N/A; existing model URLs remain indexable, and newly supplied catalogue-only model pages are excluded from indexing pending unique confirmed specifications.
+- Tomorrow: Confirm the priority 5–10 models with drawings, mating threads, approved photography and supply feasibility, then improve one model at a time for indexing.
+- Owner confirmation needed: Confirm which third-party catalogue models LINHAO can make/supply and may show with approved images; provide model-level engineering specifications for high-priority models.
+

@@ -2,7 +2,7 @@ import { TrackedWhatsAppLink } from "./TrackedWhatsAppLink";
 
 export function WhatsAppFloat() {
   const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "8615088452259";
-  const text = encodeURIComponent("Hello CIXI LINHAO, I would like to discuss garden tools and watering products.");
+  const text = encodeURIComponent("Hello Cixi Linhao, I would like to discuss a brass or aluminum valve or hose fitting.");
   return (
     <TrackedWhatsAppLink
       className="whatsapp-float"

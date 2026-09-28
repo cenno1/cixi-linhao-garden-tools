@@ -1,0 +1,1652 @@
+[
+  {
+    "code": "LH-3101",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 7,
+    "rect": [
+      742.5,
+      145,
+      265,
+      180
+    ]
+  },
+  {
+    "code": "LH-3101AP",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "Nickel-plated",
+    "thread": "",
+    "page": 7,
+    "rect": [
+      1092.5,
+      145,
+      265,
+      180
+    ]
+  },
+  {
+    "code": "LH-3103B",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 7,
+    "rect": [
+      742.5,
+      405,
+      265,
+      180
+    ]
+  },
+  {
+    "code": "LH-3103NP",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "Nickel-plated",
+    "thread": "",
+    "page": 7,
+    "rect": [
+      1092.5,
+      405,
+      265,
+      180
+    ]
+  },
+  {
+    "code": "LH-3105",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 7,
+    "rect": [
+      742.5,
+      655,
+      265,
+      180
+    ]
+  },
+  {
+    "code": "LH-3130",
+    "material": "Aluminum",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 7,
+    "rect": [
+      1092.5,
+      655,
+      265,
+      180
+    ]
+  },
+  {
+    "code": "LH-3101KB",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      32.5,
+      355,
+      285,
+      205
+    ]
+  },
+  {
+    "code": "LH-3101KW",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      367.5,
+      355,
+      285,
+      205
+    ]
+  },
+  {
+    "code": "LH-3136",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      32.5,
+      620,
+      285,
+      205
+    ]
+  },
+  {
+    "code": "LH-3136A",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      367.5,
+      620,
+      285,
+      205
+    ]
+  },
+  {
+    "code": "LH-3137",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      737.5,
+      120,
+      275,
+      180
+    ]
+  },
+  {
+    "code": "LH-3137B",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      1087.5,
+      120,
+      275,
+      180
+    ]
+  },
+  {
+    "code": "LH-3135B",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      737.5,
+      365,
+      275,
+      180
+    ]
+  },
+  {
+    "code": "LH-3136AB",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      1087.5,
+      365,
+      275,
+      180
+    ]
+  },
+  {
+    "code": "LH-3103A",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      737.5,
+      655,
+      275,
+      180
+    ]
+  },
+  {
+    "code": "LH-3103C",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 8,
+    "rect": [
+      1087.5,
+      655,
+      275,
+      180
+    ]
+  },
+  {
+    "code": "LH-3103",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 9,
+    "rect": [
+      32.5,
+      355,
+      285,
+      215
+    ]
+  },
+  {
+    "code": "LH-3104",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 9,
+    "rect": [
+      367.5,
+      355,
+      285,
+      215
+    ]
+  },
+  {
+    "code": "LH-3125A",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 9,
+    "rect": [
+      32.5,
+      615,
+      285,
+      215
+    ]
+  },
+  {
+    "code": "LH-3110",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 9,
+    "rect": [
+      367.5,
+      615,
+      285,
+      215
+    ]
+  },
+  {
+    "code": "LH-3201",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      30,
+      420,
+      290,
+      165
+    ]
+  },
+  {
+    "code": "LH-3211",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      365,
+      420,
+      290,
+      165
+    ]
+  },
+  {
+    "code": "LH-3212",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      30,
+      650,
+      290,
+      165
+    ]
+  },
+  {
+    "code": "LH-3208",
+    "material": "Aluminum",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      365,
+      650,
+      290,
+      165
+    ]
+  },
+  {
+    "code": "LH-3219N",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      730,
+      120,
+      290,
+      175
+    ]
+  },
+  {
+    "code": "LH-3219NP",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "Nickel-plated",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      1080,
+      120,
+      290,
+      175
+    ]
+  },
+  {
+    "code": "LH-3219A",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      730,
+      360,
+      290,
+      175
+    ]
+  },
+  {
+    "code": "LH-3219",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      1080,
+      360,
+      290,
+      175
+    ]
+  },
+  {
+    "code": "LH-3203",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      730,
+      635,
+      290,
+      175
+    ]
+  },
+  {
+    "code": "LH-3204",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 10,
+    "rect": [
+      1080,
+      635,
+      290,
+      175
+    ]
+  },
+  {
+    "code": "LH-3210A",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 11,
+    "rect": [
+      320,
+      125,
+      360,
+      180
+    ]
+  },
+  {
+    "code": "LH-3210C",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 11,
+    "rect": [
+      320,
+      395,
+      360,
+      180
+    ]
+  },
+  {
+    "code": "LH-3213E",
+    "material": "Brass",
+    "family": "Four-Way Splitters",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 11,
+    "rect": [
+      320,
+      670,
+      360,
+      180
+    ]
+  },
+  {
+    "code": "LH-3001",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      52.5,
+      620,
+      275,
+      205
+    ]
+  },
+  {
+    "code": "LH-3001B",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      372.5,
+      620,
+      275,
+      205
+    ]
+  },
+  {
+    "code": "LH-3003A",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      745,
+      115,
+      260,
+      200
+    ]
+  },
+  {
+    "code": "LH-3003",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      1095,
+      115,
+      260,
+      200
+    ]
+  },
+  {
+    "code": "LH-3005",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      745,
+      350,
+      260,
+      200
+    ]
+  },
+  {
+    "code": "LH-3006",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      1095,
+      350,
+      260,
+      200
+    ]
+  },
+  {
+    "code": "LH-3010",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      745,
+      620,
+      260,
+      200
+    ]
+  },
+  {
+    "code": "LH-3029",
+    "material": "Aluminum",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 12,
+    "rect": [
+      1095,
+      620,
+      260,
+      200
+    ]
+  },
+  {
+    "code": "LH-3004",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      40,
+      110,
+      280,
+      205
+    ]
+  },
+  {
+    "code": "LH-3013",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      375,
+      110,
+      280,
+      205
+    ]
+  },
+  {
+    "code": "LH-3007",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      40,
+      350,
+      280,
+      205
+    ]
+  },
+  {
+    "code": "LH-3004NP",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      375,
+      350,
+      280,
+      205
+    ]
+  },
+  {
+    "code": "LH-3023",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      40,
+      620,
+      280,
+      205
+    ]
+  },
+  {
+    "code": "LH-3024",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      375,
+      620,
+      280,
+      205
+    ]
+  },
+  {
+    "code": "LH-3017",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      737.5,
+      345,
+      275,
+      190
+    ]
+  },
+  {
+    "code": "LH-3017NP",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      1087.5,
+      345,
+      275,
+      190
+    ]
+  },
+  {
+    "code": "LH-3012A",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      737.5,
+      650,
+      275,
+      190
+    ]
+  },
+  {
+    "code": "LH-3008",
+    "material": "Brass",
+    "family": "Shut-Off Valves",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 13,
+    "rect": [
+      1087.5,
+      650,
+      275,
+      190
+    ]
+  },
+  {
+    "code": "LH-6601",
+    "material": "Brass",
+    "family": "Pressure Regulators",
+    "size": "3/4\"",
+    "detail": "With pressure gauge",
+    "thread": "",
+    "page": 15,
+    "rect": [
+      925,
+      90,
+      425,
+      240
+    ]
+  },
+  {
+    "code": "LH-6601NP",
+    "material": "Brass",
+    "family": "Pressure Regulators",
+    "size": "3/4\"",
+    "detail": "Nickel-plated",
+    "thread": "",
+    "page": 16,
+    "rect": [
+      85,
+      90,
+      430,
+      235
+    ]
+  },
+  {
+    "code": "LH-3601",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      42.5,
+      110,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3602A",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      382.5,
+      110,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3603",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      42.5,
+      340,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3604",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "1/2\"",
+    "detail": "",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      382.5,
+      340,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3604Z",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "1/2\"",
+    "detail": "Water-stop connector",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      42.5,
+      595,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3608",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      382.5,
+      595,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3617",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "1/2\"–3/4\"",
+    "detail": "Female nipple adapter",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      742.5,
+      110,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3619",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"–1\"",
+    "detail": "Female nipple adapter",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      1092.5,
+      110,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3624A",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Male nipple adapter",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      742.5,
+      340,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3624AP",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Nickel-plated male nipple adapter",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      1092.5,
+      340,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3636",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Female / male connector set",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      742.5,
+      595,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3637",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Female / male connector set",
+    "thread": "",
+    "page": 17,
+    "rect": [
+      1092.5,
+      595,
+      265,
+      205
+    ]
+  },
+  {
+    "code": "LH-3638",
+    "material": "Brass",
+    "family": "Elbow Fittings",
+    "size": "3/4\"",
+    "detail": "90-degree elbow",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      10,
+      115,
+      200,
+      205
+    ]
+  },
+  {
+    "code": "LH-3639",
+    "material": "Brass",
+    "family": "Elbow Fittings",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      245,
+      115,
+      200,
+      205
+    ]
+  },
+  {
+    "code": "LH-3639A",
+    "material": "Brass",
+    "family": "Elbow Fittings",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      475,
+      115,
+      200,
+      205
+    ]
+  },
+  {
+    "code": "LH-3641",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Double male connector",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      10,
+      385,
+      200,
+      185
+    ]
+  },
+  {
+    "code": "LH-3642",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Double female connector",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      245,
+      385,
+      200,
+      185
+    ]
+  },
+  {
+    "code": "LH-3656",
+    "material": "Brass",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Double female connector",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      475,
+      385,
+      200,
+      185
+    ]
+  },
+  {
+    "code": "LH-3652A",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "1/2\"–3/4\"",
+    "detail": "Male hose barb",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      10,
+      635,
+      200,
+      205
+    ]
+  },
+  {
+    "code": "LH-3681",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "5/8\"–3/4\"",
+    "detail": "Female hose barb",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      245,
+      635,
+      200,
+      205
+    ]
+  },
+  {
+    "code": "LH-3682",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "5/8\"–3/4\"",
+    "detail": "Female hose barb",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      475,
+      635,
+      200,
+      205
+    ]
+  },
+  {
+    "code": "LH-3610",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "1/2\"",
+    "detail": "Female / male connector set",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      745,
+      115,
+      260,
+      185
+    ]
+  },
+  {
+    "code": "LH-3616",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "Female connector set",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      1095,
+      115,
+      260,
+      185
+    ]
+  },
+  {
+    "code": "LH-3603PH",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      745,
+      385,
+      260,
+      185
+    ]
+  },
+  {
+    "code": "LH-3604ZPH",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "1/2\"",
+    "detail": "",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      1095,
+      385,
+      260,
+      185
+    ]
+  },
+  {
+    "code": "LH-3603ZPH",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      745,
+      655,
+      260,
+      185
+    ]
+  },
+  {
+    "code": "LH-3604PH",
+    "material": "Brass",
+    "family": "Quick Connectors",
+    "size": "1/2\"",
+    "detail": "",
+    "thread": "",
+    "page": 18,
+    "rect": [
+      1095,
+      655,
+      260,
+      185
+    ]
+  },
+  {
+    "code": "LH-3651",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "1/2\"–3/4\"",
+    "detail": "Female hose connector",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      7.5,
+      365,
+      205,
+      205
+    ]
+  },
+  {
+    "code": "LH-9812",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Hose cap",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      247.5,
+      365,
+      205,
+      205
+    ]
+  },
+  {
+    "code": "LH-9812AP",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Nickel-plated hose cap",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      472.5,
+      365,
+      205,
+      205
+    ]
+  },
+  {
+    "code": "LH-3672A",
+    "material": "Brass",
+    "family": "Two-Way Splitters",
+    "size": "3/4\"",
+    "detail": "Y splitter",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      7.5,
+      625,
+      205,
+      205
+    ]
+  },
+  {
+    "code": "LH-3630",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Hose protector with PVC hose",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      247.5,
+      625,
+      205,
+      205
+    ]
+  },
+  {
+    "code": "LH-3630A",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Hose protector with PVC hose",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      472.5,
+      625,
+      205,
+      205
+    ]
+  },
+  {
+    "code": "LH-3601L",
+    "material": "Aluminum",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "Female / male connector set",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      740,
+      130,
+      270,
+      220
+    ]
+  },
+  {
+    "code": "LH-3601LZ",
+    "material": "Aluminum",
+    "family": "Quick Connectors",
+    "size": "3/4\"",
+    "detail": "Water-stop female / male connector set",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      1090,
+      130,
+      270,
+      220
+    ]
+  },
+  {
+    "code": "LH-3652LW",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "1/2\"",
+    "detail": "Female / male connector set",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      712.5,
+      425,
+      195,
+      215
+    ]
+  },
+  {
+    "code": "LH-3631W",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "5/8\"",
+    "detail": "Female / male connector set",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      952.5,
+      425,
+      195,
+      215
+    ]
+  },
+  {
+    "code": "LH-3635",
+    "material": "Brass",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Female connector",
+    "thread": "",
+    "page": 19,
+    "rect": [
+      1172.5,
+      425,
+      195,
+      215
+    ]
+  },
+  {
+    "code": "LH-3673",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Male hose repair connector",
+    "thread": "",
+    "page": 20,
+    "rect": [
+      10,
+      285,
+      210,
+      205
+    ]
+  },
+  {
+    "code": "LH-3674",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Female hose repair connector",
+    "thread": "",
+    "page": 20,
+    "rect": [
+      240,
+      285,
+      210,
+      205
+    ]
+  },
+  {
+    "code": "LH-3550",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "1/2\"",
+    "detail": "Female / male hose repair set",
+    "thread": "",
+    "page": 20,
+    "rect": [
+      475,
+      285,
+      210,
+      205
+    ]
+  },
+  {
+    "code": "LH-3551",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "5/8\"",
+    "detail": "Female / male hose repair set",
+    "thread": "",
+    "page": 20,
+    "rect": [
+      10,
+      610,
+      210,
+      205
+    ]
+  },
+  {
+    "code": "LH-3552",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Female / male hose repair set",
+    "thread": "",
+    "page": 20,
+    "rect": [
+      240,
+      610,
+      210,
+      205
+    ]
+  },
+  {
+    "code": "LH-3913",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "3/4\"",
+    "detail": "Double female connector",
+    "thread": "",
+    "page": 20,
+    "rect": [
+      475,
+      610,
+      210,
+      205
+    ]
+  },
+  {
+    "code": "LH-3901",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\"",
+    "detail": "Double male connector",
+    "thread": "",
+    "page": 20,
+    "rect": [
+      722.5,
+      285,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3902",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 1/2\"",
+    "detail": "Male / male adapter",
+    "thread": "3/4\" NH male × 1/2\" NPT male",
+    "page": 20,
+    "rect": [
+      952.5,
+      285,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3903",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 3/4\"",
+    "detail": "Male / male adapter",
+    "thread": "3/4\" NH male × 3/4\" NPT male",
+    "page": 20,
+    "rect": [
+      1172.5,
+      285,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3904",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 1/2\"",
+    "detail": "Male / female adapter",
+    "thread": "3/4\" NH male × 1/2\" NPS female",
+    "page": 20,
+    "rect": [
+      722.5,
+      490,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3905",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 1/2\"",
+    "detail": "Male / female adapter",
+    "thread": "3/4\" NH male × 1/2\" NPT female",
+    "page": 20,
+    "rect": [
+      952.5,
+      490,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3906",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 3/4\"",
+    "detail": "Male / female adapter",
+    "thread": "3/4\" NH male × 3/4\" NPT female",
+    "page": 20,
+    "rect": [
+      1172.5,
+      490,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3907",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 1/2\"",
+    "detail": "Female / female adapter",
+    "thread": "3/4\" NH female × 1/2\" NPS female",
+    "page": 20,
+    "rect": [
+      722.5,
+      685,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3908",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 3/4\"",
+    "detail": "Female / female adapter",
+    "thread": "3/4\" NH female × 3/4\" NPS female",
+    "page": 20,
+    "rect": [
+      952.5,
+      685,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3909",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 3/4\"",
+    "detail": "Male / female adapter",
+    "thread": "3/4\" NH male × 3/4\" NPT female",
+    "page": 20,
+    "rect": [
+      1172.5,
+      685,
+      195,
+      170
+    ]
+  },
+  {
+    "code": "LH-3910",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 3/4\"",
+    "detail": "Female / female adapter",
+    "thread": "3/4\" NH female × 3/4\" NPS female",
+    "page": 21,
+    "rect": [
+      40,
+      340,
+      280,
+      190
+    ]
+  },
+  {
+    "code": "LH-3911",
+    "material": "Aluminum",
+    "family": "Threaded Adapters",
+    "size": "3/4\" × 3/4\"",
+    "detail": "Female / male adapter",
+    "thread": "3/4\" NH female × 3/4\" NPS male",
+    "page": 21,
+    "rect": [
+      360,
+      340,
+      280,
+      190
+    ]
+  },
+  {
+    "code": "LH-3915",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "5/8\"",
+    "detail": "Female / male hose repair set",
+    "thread": "",
+    "page": 21,
+    "rect": [
+      40,
+      640,
+      280,
+      200
+    ]
+  },
+  {
+    "code": "LH-3912",
+    "material": "Aluminum",
+    "family": "Hose Couplings & Repair",
+    "size": "1/2\"",
+    "detail": "Female / male hose repair set",
+    "thread": "",
+    "page": 21,
+    "rect": [
+      360,
+      640,
+      280,
+      200
+    ]
+  }
+]

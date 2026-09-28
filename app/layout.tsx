@@ -6,8 +6,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://linhaogarden.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Custom Brass Garden Hose Fittings Manufacturer | CIXI LINHAO", template: "%s | CIXI LINHAO" },
-  description: "Custom brass garden hose fittings, connectors, couplings, adapters and hose reel fittings developed for global B2B and OEM projects.",
+  title: { default: "Brass & Aluminum Hose Fittings | Cixi Linhao", template: "%s | Cixi Linhao" },
+  description: "Cixi Linhao Metal Product Co., Ltd. supplies custom brass and aluminum valves and hose fittings developed from drawings and samples.",
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   icons: { icon: "/images/cixi-linhao-mark.png", shortcut: "/images/cixi-linhao-mark.png" },
   openGraph: {

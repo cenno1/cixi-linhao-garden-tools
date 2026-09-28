@@ -7,11 +7,11 @@ import { trackEvent } from "../lib/analytics";
 type Status = { state: "idle" | "loading" | "success" | "error"; message?: string };
 
 const threadStandards = ["GHT", "BSP", "NPT", "Metric", "Other", "Not decided yet"];
-const materialOptions = ["Standard brass", "Lead-free brass", "Customer-specified material", "Not decided yet"];
+const materialOptions = ["Brass (grade to confirm)", "Aluminum (alloy to confirm)", "Customer-specified material", "Not decided yet"];
 const quantityOptions = ["Sample / evaluation", "500–1,000 pcs", "1,000–5,000 pcs", "5,000–20,000 pcs", "20,000+ pcs", "Not decided yet"];
 const targetMarkets = ["USA", "EU", "UK", "Australia", "Other", "Not decided yet"];
 
-export function InquiryForm({ compact = false }: { compact?: boolean }) {
+export function InquiryForm({ compact = false, initialProduct = "" }: { compact?: boolean; initialProduct?: string }) {
   const [status, setStatus] = useState<Status>({ state: "idle" });
   const [file, setFile] = useState<File | null>(null);
 
@@ -51,7 +51,7 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
       form.reset();
       setFile(null);
       trackEvent("generate_lead", { form_location: compact ? "contact_page" : "homepage_quote_form", product_category: String(payload.productType || "unspecified"), thread_standard: String(payload.threadStandard || "unspecified"), target_market: String(payload.targetMarket || "unspecified") });
-      setStatus({ state: "success", message: "Thank you — your engineering enquiry has been received. We will reply within 24 business hours." });
+      setStatus({ state: "success", message: "Thank you — your engineering enquiry has been received. Our team will review your requirements and reply." });
     } catch (error) {
       setStatus({ state: "error", message: error instanceof Error ? error.message : "Please try again or contact us on WhatsApp." });
     }
@@ -85,9 +85,10 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
         <label>
           Product type
           <select name="productType" defaultValue="">
-            <option value="" disabled>Select a brass fitting category</option>
+            <option value="" disabled>Select a valve or hose fitting category</option>
             {categories.map((category) => <option key={category.name}>{category.name}</option>)}
-            <option>Custom brass component</option>
+            <option>Aluminum hose fittings and valves</option>
+            <option>Custom brass or aluminum component</option>
           </select>
         </label>
         <label>
@@ -134,7 +135,7 @@ export function InquiryForm({ compact = false }: { compact?: boolean }) {
       </label>
       <label>
         Message
-        <textarea name="requirements" rows={5} placeholder="Describe the application, mating part, sealing requirement, finish, logo, packaging or inspection points…" />
+        <textarea name="requirements" rows={5} defaultValue={initialProduct ? `Reference: ${initialProduct}\n` : ""} placeholder="Describe the application, mating part, sealing requirement, finish, logo, packaging or inspection points…" />
       </label>
       <button className="button form-submit" type="submit" disabled={status.state === "loading"}>
         {status.state === "loading" ? "Sending…" : "Get Engineering Quote"}

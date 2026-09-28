@@ -2,33 +2,22 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-const productsSource = readFileSync(new URL("../app/data/products.ts", import.meta.url), "utf8");
-const productPageSource = readFileSync(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8");
-const sitemapSource = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf8");
+const source = (path) => readFileSync(new URL(path, import.meta.url), "utf8");
+const productPage = source("../app/products/[slug]/page.tsx");
+const products = source("../app/data/products.ts");
 
-test("product pages do not emit ineligible Product rich-result markup", () => {
-  assert.doesNotMatch(productPageSource, /const productSchema/);
-  assert.doesNotMatch(productPageSource, /JSON\.stringify\(productSchema\)/);
-  assert.match(productPageSource, /JSON\.stringify\(breadcrumbSchema\)/);
+test("catalogue-only detail pages are browsable but not submitted for indexing", () => {
+  assert.match(productPage, /robots: product\.indexable/);
+  assert.match(productPage, /index: false, follow: true/);
+  assert.match(productPage, /JSON\.stringify\(breadcrumbs\)/);
+  assert.doesNotMatch(productPage, /"@type": "Product"/);
 });
 
-test("global product copy stays application-neutral", () => {
-  assert.doesNotMatch(productPageSource, /Confirm the reel-side thread, hose-side thread/);
-  assert.match(productPageSource, /Share the intended application, mating components, target market/);
-});
-
-test("LH-3672A has catalogue-backed, buyer-specific content", () => {
-  assert.match(productsSource, /product\.code === "LH-3672A"/);
-  assert.match(productsSource, /updatedAt: "2026-08-30"/);
-  assert.match(productsSource, /2-way splitter configuration/);
-  assert.match(productsSource, /3\/4 in catalogue size/);
-  assert.match(productsSource, /nominal size does not by itself confirm compatibility/i);
-  assert.match(productsSource, /\/resources\/choosing-a-garden-hose-splitter/);
-  assert.match(productPageSource, /product\.buyerGuide/);
-});
-
-test("sitemap reports real content and template updates", () => {
-  assert.match(sitemapSource, /post\.updatedAt \|\| post\.publishedAt/);
-  assert.match(sitemapSource, /productTemplateUpdatedAt = "2026-08-30"/);
-  assert.match(sitemapSource, /latestDate\(product\.updatedAt, productTemplateUpdatedAt\)/);
+test("model copy separates catalogue facts from quote requirements", () => {
+  assert.match(products, /threadSpecification: row\.thread/);
+  assert.match(products, /Confirm the thread standard and mating components before ordering/);
+  assert.match(productPage, /no value stated in the catalogue/);
+  assert.match(productPage, /drawing and sample measurements/);
+  assert.match(products, /row\.code === "LH-3642"/);
+  assert.match(products, /Brass 2-Way Y Hose Splitter/);
 });

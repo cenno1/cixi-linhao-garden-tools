@@ -1,3 +1,5 @@
+import catalogRows from "./catalog-2026.json";
+
 const assetBase =
   process.env.NEXT_PUBLIC_R2_PUBLIC_BASE_URL?.replace(/\/$/, "") ||
   "/images/products";
@@ -5,6 +7,7 @@ const assetBase =
 export type ProductCategory =
   | "Watering & Irrigation"
   | "Brass Fittings & Valves"
+  | "Aluminum Fittings & Valves"
   | "Garden Hand Tools"
   | "Tool Kits & Accessories";
 
@@ -21,6 +24,13 @@ export type BrassProductCategory =
   | "Custom Brass Components";
 
 export type Product = {
+  indexable?: boolean;
+  material?: "Brass" | "Aluminum";
+  family?: string;
+  nominalSize?: string;
+  threadSpecification?: string;
+  catalogPage?: number;
+  catalogDetail?: string;
   slug: string;
   name: string;
   code: string;
@@ -63,7 +73,6 @@ export const categories: { name: BrassProductCategory; description: string; imag
   { name: "Brass Elbow Fittings", description: "Right-angle brass fittings for compact hose routing and connection changes.", image: `${assetBase}/catalogue/lh-3638.jpg` },
   { name: "Brass Hose Splitters", description: "Two-way and multi-way brass water distribution configurations.", image: `${assetBase}/hose-splitters.webp` },
   { name: "Brass Shut-Off Valves", description: "Hand-operated brass fittings for convenient hose-end flow control.", image: `${assetBase}/watering-nozzles.webp` },
-  { name: "Brass Nozzles", description: "Brass spray and twist-nozzle components for watering and cleaning.", image: `${assetBase}/watering-nozzles.webp` },
   { name: "Hose Reel Brass Fittings", description: "Brass swivel elbows and inlet fittings for hose reel assemblies.", image: `${assetBase}/hose-reel-brass-swivel.png` },
   { name: "Custom Brass Components", description: "Non-standard brass components developed from drawings, samples and specifications.", image: `${assetBase}/brass-connectors.webp` },
 ];
@@ -128,7 +137,7 @@ const brassConnectorModels: Product[] = [
   brassConnector("LH-3630A", "hose-protector-3630a", "Hose Protector with PVC Hose", "3/4 in hose protector variation with PVC hose section."),
 ];
 
-export const products: Product[] = [
+const legacyProducts: Product[] = [
   {
     slug: "hose-reel-brass-swivel",
     name: "Hose Reel Brass Swivel",
@@ -377,6 +386,67 @@ export const products: Product[] = [
   ),
 ];
 
+const familyCategories: Record<string, BrassProductCategory> = {
+  "Two-Way Splitters": "Brass Hose Splitters",
+  "Four-Way Splitters": "Brass Hose Splitters",
+  "Shut-Off Valves": "Brass Shut-Off Valves",
+  "Pressure Regulators": "Brass Shut-Off Valves",
+  "Quick Connectors": "Brass Quick Connectors",
+  "Threaded Adapters": "Brass Threaded Adapters",
+  "Elbow Fittings": "Brass Elbow Fittings",
+  "Hose Couplings & Repair": "Brass Hose Couplings",
+};
+const singularFamily: Record<string, string> = {
+  "Two-Way Splitters": "2-Way Hose Splitter",
+  "Four-Way Splitters": "4-Way Hose Splitter",
+  "Shut-Off Valves": "Hose Shut-Off Valve",
+  "Pressure Regulators": "Hose Pressure Regulator",
+  "Quick Connectors": "Hose Quick Connector",
+  "Threaded Adapters": "Hose Threaded Adapter",
+  "Elbow Fittings": "Hose Elbow Fitting",
+  "Hose Couplings & Repair": "Hose Coupling",
+};
+
+export const products: Product[] = [
+  ...catalogRows.map((row): Product => {
+    const previous = legacyProducts.find((product) => product.code === row.code);
+    const label = /^Nickel-plated/i.test(row.detail)
+      ? `Nickel-Plated ${singularFamily[row.family]}`
+      : /^With /i.test(row.detail)
+        ? `${singularFamily[row.family]} ${row.detail.toLowerCase()}`
+        : row.detail || singularFamily[row.family];
+    const name = row.code === "LH-3672A" ? "Brass 2-Way Y Hose Splitter" : `${row.material} ${label}`;
+    const slug = row.code === "LH-3642"
+      ? "brass-double-female-connector-3642"
+      : previous?.slug || `${row.material.toLowerCase()}-${singularFamily[row.family].toLowerCase().replaceAll(" ", "-")}-${row.code.slice(3).toLowerCase()}`;
+    return {
+      slug, name, code: row.code,
+      category: row.material === "Aluminum" ? "Aluminum Fittings & Valves" : "Brass Fittings & Valves",
+      brassCategory: row.material === "Brass" ? familyCategories[row.family] : undefined,
+      material: row.material as "Brass" | "Aluminum",
+      family: row.family, nominalSize: row.size, threadSpecification: row.thread,
+      catalogPage: row.page, catalogDetail: row.detail,
+      image: previous?.image || `/images/products/catalog-2026/${row.code.toLowerCase()}.webp`,
+      indexable: Boolean(previous),
+      updatedAt: "2026-09-28",
+      summary: `${row.code}: ${row.size} ${row.material.toLowerCase()} ${singularFamily[row.family].toLowerCase()}.${row.detail ? ` ${row.detail}.` : ""} ${row.thread ? `Listed connection: ${row.thread}.` : "Confirm the thread standard and mating components before ordering."}`,
+      features: [`Material: ${row.material}`, `Catalogue nominal size: ${row.size}`, ...(row.detail ? [row.detail] : [])],
+      applications: [row.family.includes("Splitter") ? "Garden hose water distribution" : "Garden hose connection and assembly", "B2B sourcing and specification-led projects"],
+      ...(row.code === "LH-3672A" && previous ? {
+        procurementIntro: previous.procurementIntro,
+        faqs: previous.faqs, buyerGuide: previous.buyerGuide,
+        seoTitle: previous.seoTitle, seoDescription: previous.seoDescription,
+        threadSpecification: "Owner-confirmed 1/2 in and 3/4 in GHT options; confirm each port.",
+      } : {}),
+    };
+  }),
+  ...legacyProducts.filter((product) => product.slug === "hose-reel-brass-swivel").map((product): Product => ({
+    ...product, material: "Brass", family: "Hose Reel Fittings", indexable: true,
+    productViews: product.productViews?.filter((view) => Boolean(view.src)),
+  })),
+];
+
+export const productFamilies = [...new Set(products.map((product) => product.family).filter((family): family is string => Boolean(family)))];
 export const brassProducts = products.filter(
   (product): product is Product & { brassCategory: BrassProductCategory } => Boolean(product.brassCategory),
 );

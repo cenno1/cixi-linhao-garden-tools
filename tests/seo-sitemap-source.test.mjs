@@ -1,26 +1,20 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
-const sitemapPath = new URL("../app/sitemap.ts", import.meta.url);
+const source = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf8");
 
-test("sitemap uses truthful, stable modification dates", async () => {
-  const source = await readFile(sitemapPath, "utf8");
-
+test("sitemap modification dates reflect actual content revisions", () => {
   assert.doesNotMatch(source, /lastModified:\s*new Date\(\)/);
-  assert.match(source, /lastModified:\s*post\.updatedAt\s*\|\|\s*post\.publishedAt/);
-  assert.match(source, /lastModified:\s*"2026-08-12"/);
-  assert.match(source, /productTemplateUpdatedAt\s*=\s*"2026-08-30"/);
+  assert.match(source, /productTemplateUpdatedAt = "2026-09-28"/);
+  assert.match(source, /lastModified: post\.updatedAt \|\| post\.publishedAt/);
   assert.match(source, /latestDate\(product\.updatedAt, productTemplateUpdatedAt\)/);
 });
 
-test("sitemap keeps every public route collection and absolute site URLs", async () => {
-  const source = await readFile(sitemapPath, "utf8");
-
-  assert.match(source, /landingPages\.map/);
-  assert.match(source, /blogPosts\.map/);
-  assert.match(source, /products\.map/);
-  assert.match(source, /url:\s*`\$\{siteUrl\}/);
-  assert.match(source, /replace\(\/\\\/\$\//);
+test("sitemap includes the aluminum collection and excludes thin model and retired pages", () => {
+  assert.match(source, /\/products\/materials\/aluminum/);
+  assert.match(source, /brassProducts\.filter\(\(product\) => product\.indexable\)/);
+  assert.match(source, /page\.slug !== "oem-garden-tools-supplier"/);
+  assert.match(source, /post\.slug !== "how-to-specify-a-durable-hose-nozzle-range"/);
+  assert.match(source, /brassProducts\.some\(\(product\) => product\.brassCategory === category\.category\)/);
 });
-

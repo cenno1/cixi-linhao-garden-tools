@@ -15,8 +15,8 @@ export function Header() {
     <header className="site-header">
       <div className="top-note">
         <div className="container top-note-inner">
-          <span>Custom brass garden hose fittings for global B2B buyers</span>
-          <a href="/contact">Response within 24 business hours</a>
+          <span>Cixi Linhao Metal Product Co., Ltd. · Custom brass and aluminum components</span>
+          <a href="/contact">Send a drawing or sample</a>
         </div>
       </div>
       <div className="container nav-shell">

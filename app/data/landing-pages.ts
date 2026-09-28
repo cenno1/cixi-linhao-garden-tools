@@ -26,7 +26,7 @@ export const landingPages: LandingPage[] = [
     description: "Compare brass quick connectors, adapters, elbows and water-stop fittings by connection job, catalogue size and OEM packaging requirement.",
     lead: "Use the catalogue-backed model guide below to narrow the connection job and nominal size before requesting a quote. Exact thread form, brass grade, seal material and packaging are confirmed for the selected model.",
     image: "/images/products/brass-connectors.webp",
-    productSlugs: ["brass-quick-connectors", "brass-quick-connector-3603", "brass-water-stop-connector-3604z", "brass-90-degree-elbow-3638", "brass-double-male-connector-3641", "hose-reel-brass-swivel"],
+    productSlugs: ["brass-connector-set-3601", "brass-quick-connector-3603", "brass-water-stop-connector-3604z", "brass-90-degree-elbow-3638", "brass-double-male-connector-3641", "hose-reel-brass-swivel"],
     benefits: [
       { title: "Range-ready selection", text: "Quick connectors, male and female adapters, elbows, repair parts and closing caps can be combined into one practical buying program." },
       { title: "Connection review", text: "Share the hose size, thread standard and end-use equipment so the right fitting configuration can be reviewed before sampling or quotation." },
@@ -72,7 +72,7 @@ export const landingPages: LandingPage[] = [
     description: "B2B sourcing page for brass garden hose quick connectors, water-stop fittings and compatible adapters with OEM packaging support.",
     lead: "For distributors and private-label buyers, a quick-connector range needs clear compatibility, durable materials and a simple selection story. Start with the connections your customers use most.",
     image: "/images/products/brass-connectors.webp",
-    productSlugs: ["brass-quick-connectors", "brass-quick-connector-3603", "brass-quick-connector-3604"],
+    productSlugs: ["brass-connector-set-3601", "brass-quick-connector-3603", "brass-quick-connector-3604"],
     benefits: [
       { title: "Fast-connect assortment", text: "Combine standard quick connectors with water-stop versions, tap adapters and hose-end fittings for an easy-to-understand range." },
       { title: "Buyer-focused specification", text: "Confirm connection size and intended watering equipment before selecting the product mix for your target market." },
@@ -92,7 +92,7 @@ export const landingPages: LandingPage[] = [
     description: "Source two-way and four-way brass hose splitters for garden taps, irrigation zones and greenhouse watering programs with B2B enquiry support.",
     lead: "Hose splitters make it easier to run multiple watering lines from one tap. For an effective product program, confirm the outlet count, flow-control layout and connection standard first.",
     image: "/images/products/hose-splitters.webp",
-    productSlugs: ["multi-way-hose-splitters", "brass-four-way-hose-splitters", "brass-two-way-splitter-3672a"],
+    productSlugs: ["brass-4-way-hose-splitter-3201", "brass-4-way-hose-splitter-3211", "brass-two-way-splitter-3672a"],
     benefits: [
       { title: "Choice by use case", text: "Select two-way or four-way configurations based on lawn zones, greenhouse lines, outdoor taps or other watering layouts." },
       { title: "Clear assortment planning", text: "Pair splitters with compatible connectors, shut-off valves and watering accessories to make cross-selling easier." },
