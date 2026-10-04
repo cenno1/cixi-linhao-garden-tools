@@ -279,7 +279,7 @@ export default function Home() {
               {products.filter((product) => ["LH-3672A", "LH-3603", "LH-3902"].includes(product.code) || product.slug === "hose-reel-brass-swivel").map((product) => (
                 <article key={product.slug}>
                   <div><img src={product.image} alt={product.name} /></div>
-                  <span>{product.code}</span><h3>{product.name}</h3><p>{product.summary}</p>
+                  <span>{product.code}</span><h3><a href={`/products/${product.slug}`}>{product.name}</a></h3><p>{product.summary}</p>
                   <a href={`/contact?product=${encodeURIComponent(product.name)}`}>Request details →</a>
                 </article>
               ))}

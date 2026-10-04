@@ -50,3 +50,10 @@ test("sitemap admits approved adapters but keeps thin catalogue references out",
   const collection = await load("/products/materials/aluminum");
   for (const [model] of cases) assert.ok(collection.includes(`href="/products/aluminum-hose-threaded-adapter-${model}"`));
 });
+
+test("homepage gives priority models crawlable detail links, not just enquiry links", async () => {
+  const html = await load("/");
+  for (const slug of ["aluminum-hose-threaded-adapter-3902", "brass-two-way-splitter-3672a", "brass-quick-connector-3603", "hose-reel-brass-swivel"]) {
+    assert.ok(html.includes(`href="/products/${slug}"`), slug);
+  }
+});
