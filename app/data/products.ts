@@ -1,4 +1,5 @@
 import catalogRows from "./catalog-2026.json";
+import { adapterProcurementCopy } from "./adapter-procurement";
 
 const assetBase =
   process.env.NEXT_PUBLIC_R2_PUBLIC_BASE_URL?.replace(/\/$/, "") ||
@@ -52,6 +53,8 @@ export type Product = {
   seoDescription?: string;
   summary: string;
   procurementIntro?: string;
+  connectionEnds?: { label: string; specification: string }[];
+  selectionNote?: string;
   features: string[];
   applications: string[];
   faqs?: { question: string; answer: string }[];
@@ -433,11 +436,15 @@ export const products: Product[] = [
       features: [`Material: ${row.material}`, `Catalogue nominal size: ${row.size}`, ...(row.detail ? [row.detail] : [])],
       applications: [row.family.includes("Splitter") ? "Garden hose water distribution" : "Garden hose connection and assembly", "B2B sourcing and specification-led projects"],
       ...(row.code === "LH-3672A" && previous ? {
+        updatedAt: "2026-10-04",
+        summary: "A plain brass Y fitting for splitting one compatible water inlet into two hose lines. 1/2 in and 3/4 in GHT options; MOQ 500 pcs; samples available. No individual outlet shut-off valves.",
+        selectionNote: "Choose LH-3672A when the assembly needs a plain two-branch connection. If either hose must be stopped independently, specify separate shut-off valves or request a valved splitter configuration. Two outlets do not guarantee equal flow: review the source supply, hose lengths and downstream equipment.",
         procurementIntro: previous.procurementIntro,
         faqs: previous.faqs, buyerGuide: previous.buyerGuide,
         seoTitle: previous.seoTitle, seoDescription: previous.seoDescription,
         threadSpecification: "Owner-confirmed 1/2 in and 3/4 in GHT options; confirm each port.",
       } : {}),
+      ...(adapterProcurementCopy[row.code] || {}),
     };
   }),
   ...legacyProducts.filter((product) => product.slug === "hose-reel-brass-swivel").map((product): Product => ({

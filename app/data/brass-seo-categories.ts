@@ -8,6 +8,7 @@ export type BrassSeoCategory = {
   metaTitle: string;
   metaDescription: string;
   introduction: string;
+  updatedAt?: string;
   buyerQuestions: string[];
   selectionGuide?: {
     heading: string;
@@ -61,6 +62,7 @@ export const brassSeoCategories: BrassSeoCategory[] = [
   },
   {
     slug: "brass-hose-splitters",
+    updatedAt: "2026-10-04",
     category: "Brass Hose Splitters",
     label: "Brass Hose Splitters",
     h1: "Brass Hose Splitter Manufacturer for 2-Way & Multi-Way Supply",
@@ -74,7 +76,7 @@ export const brassSeoCategories: BrassSeoCategory[] = [
       options: [
         {
           heading: "2-way brass hose splitter",
-          description: "Use when one compatible garden tap needs to feed two hose lines. LH-3672A is the verified catalogue reference with 1/2 in and 3/4 in GHT options, MOQ 500 pcs and samples available.",
+          description: "Use when one compatible garden tap needs to feed two hose lines. LH-3672A is a plain Y fitting, not an independently valved splitter. It has confirmed 1/2 in and 3/4 in GHT options, MOQ 500 pcs and samples available. If each branch must shut off separately, request a valved configuration or separate valves.",
           href: "/products/brass-two-way-splitter-3672a",
           linkLabel: "Review LH-3672A specifications",
         },
@@ -105,6 +107,10 @@ export const brassSeoCategories: BrassSeoCategory[] = [
       },
     ],
     faqs: [
+      {
+        question: "Does a brass 2-way Y splitter control each hose independently?",
+        answer: "A plain Y fitting such as LH-3672A divides the connection but has no individual outlet shut-off valves. Specify a valved splitter or separate shut-off valves when either hose needs independent control. Available flow also depends on the water supply and downstream hoses, not just the outlet count.",
+      },
       {
         question: "Should a buyer choose a 2-way or multi-way brass hose splitter?",
         answer: "Choose the outlet count from the actual watering layout, available tap clearance and required controls. A 2-way splitter serves two planned hose lines; a multi-way configuration is considered when the layout requires more outlets.",

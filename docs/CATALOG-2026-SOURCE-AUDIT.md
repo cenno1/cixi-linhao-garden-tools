@@ -19,6 +19,12 @@ All 110 reference pages are browsable for buyer selection. Existing model URLs, 
 
 ## Follow-up before expanding indexing
 
+### 2026-10-04 publication review
+
+The owner subsequently confirmed manufacture/supply feasibility for the reference range and permission to publish the catalogue product images. This does not establish ownership of the source factory photographs, certifications, production capacity or engineering test results.
+
+LH-3902–LH-3906 now have distinct procurement copy, explicit two-end connection tables, variant comparisons and model FAQs based on their catalogue NH/NPT/NPS descriptions. These five existing URLs are eligible for indexing and included in the sitemap. Remaining new reference-only models retain `noindex,follow`. Dimensioned drawings, alloy, thread pitch, pressure, seal, MOQ and lead time are still requested rather than invented. The printed NH designation is not automatically presented as GHT compatibility.
+
 1. Confirm which reference models Cixi Linhao can manufacture or supply and provide approved product photographs. Avoid representing the source publisher's factory images or company facts as LINHAO's.
 2. For priority SKUs, provide individual drawings or measured dimensions, both mating thread specifications, material grades, seal/pressure/inspection requirements and packaging.
 3. Replace reference-only copy with unique buyer-use details and tested product imagery, then remove `noindex` for each approved model and add it to the sitemap.

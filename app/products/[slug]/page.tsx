@@ -38,7 +38,11 @@ export default async function ProductDetailPage({ params }: Props) {
   const product = products.find((item) => item.slug === slug);
   if (!product) notFound();
   const category = product.brassCategory ? getBrassSeoCategoryByName(product.brassCategory) : undefined;
-  const related = products.filter((item) => item.code !== product.code && item.family === product.family).slice(0, 4);
+  const related = products.filter((item) => item.code !== product.code && item.family === product.family && item.material === product.material).sort((a, b) => Number(Boolean(b.indexable)) - Number(Boolean(a.indexable))).slice(0, 4);
+  const faqs = product.faqs || [
+    { question: "Which thread standard fits this model?", answer: product.threadSpecification || "The source catalogue gives a nominal size but does not identify the thread standard. Send a mating part or thread drawing so we can confirm it." },
+    { question: "Can I request different dimensions or material?", answer: "Send your drawing or sample and target requirements. Feasibility and quotation depend on technical review." },
+  ];
   const images = product.images?.length ? product.images : [{ src: product.image, alt: `${product.code} ${product.name} catalogue product view` }];
   const specs = [
     ["Reference model", product.code],
@@ -46,6 +50,7 @@ export default async function ProductDetailPage({ params }: Props) {
     ["Catalogue nominal size", product.nominalSize || "Confirm from drawing or sample"],
     ["Connection / thread", product.threadSpecification || "Not specified in the catalogue; confirm both mating interfaces"],
     ["Configuration", product.catalogDetail || product.family || "Confirm from drawing or sample"],
+    ...(product.connectionEnds || []).map((end) => [end.label, end.specification]),
     ["Finish", /nickel-plated/i.test(product.catalogDetail || "") ? "Nickel-plated (catalogue)" : "Confirm required finish"],
     ["Seal, pressure and certification", "Confirm for the intended application; no value stated in the catalogue"],
     ["MOQ and packaging", product.code === "LH-3672A" ? "MOQ 500 pcs; samples available. Confirm packaging." : "Confirm quantity and packaging for quotation"],
@@ -92,6 +97,7 @@ export default async function ProductDetailPage({ params }: Props) {
           {specs.map(([label, value]) => <tr key={label}><th scope="row">{label}</th><td>{value}</td></tr>)}
         </tbody></table></div>
         <p className="engineering-spec-note">The source catalogue does not supply a dimensioned technical drawing for this model. Request an approved drawing and sample measurements before tooling or production.</p>
+        {product.selectionNote && <div className="product-faq"><h2>When to choose this configuration</h2><p>{product.selectionNote}</p></div>}
       </div></section>
       <section className="section product-customization"><div className="container product-customization-grid">
         <div><span className="eyebrow eyebrow-light">Custom brass and aluminum parts</span><h2>Built to your drawing or sample</h2><p>Cixi Linhao Metal Product Co., Ltd. reviews the required part geometry, material and assembly fit before quoting. Send the current drawing, sample photos or technical requirements.</p></div>
@@ -99,7 +105,7 @@ export default async function ProductDetailPage({ params }: Props) {
       </div></section>
       {product.buyerGuide && <section className="section"><div className="container product-faq"><span className="eyebrow">Buyer compatibility checklist</span><h2>{product.buyerGuide.heading}</h2><p>{product.buyerGuide.introduction}</p><ul>{product.buyerGuide.checklist.map((item) => <li key={item}>{item}</li>)}</ul><a href={product.buyerGuide.guideHref}>{product.buyerGuide.guideLabel} →</a>{product.buyerGuide.relatedLinks?.map((link) => <p key={link.href}><a href={link.href}>{link.label} →</a></p>)}</div></section>}
       <section className="section section-soft"><div className="container"><div className="section-heading"><span className="eyebrow">Related reference models</span><h2>Compare the same product family</h2></div><div className="related-products">{related.map((item) => <a href={`/products/${item.slug}`} key={item.code}><Image src={item.image} alt={item.name} width={620} height={420} sizes="(max-width: 820px) 100vw, 25vw" /><span>{item.code} · {item.material}</span><h3>{item.name}</h3></a>)}</div></div></section>
-      <section className="section"><div className="container product-faq"><span className="eyebrow">Before quotation</span><h2>Information we need</h2><details><summary>Which thread standard fits this model?</summary><p>{product.threadSpecification || "The source catalogue gives a nominal size but does not identify the thread standard. Send a mating part or thread drawing so we can confirm it."}</p></details><details><summary>Can I request different dimensions or material?</summary><p>Send your drawing or sample and target requirements. Feasibility and quotation depend on technical review.</p></details></div></section>
+      <section className="section"><div className="container product-faq"><span className="eyebrow">Before quotation</span><h2>{product.code} procurement questions</h2>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
     </main>
     <Footer /><WhatsAppFloat />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
