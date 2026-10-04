@@ -276,7 +276,7 @@ export default function Home() {
           <div className="container">
             <div className="section-heading split-heading"><div><span className="eyebrow">Buyer starting points</span><h2>Popular product programs</h2></div><a className="text-link" href="/products">View all products <span>→</span></a></div>
             <div className="mini-product-grid">
-              {products.slice(0, 4).map((product) => (
+              {products.filter((product) => ["LH-3672A", "LH-3603", "LH-3902"].includes(product.code) || product.slug === "hose-reel-brass-swivel").map((product) => (
                 <article key={product.slug}>
                   <div><img src={product.image} alt={product.name} /></div>
                   <span>{product.code}</span><h3>{product.name}</h3><p>{product.summary}</p>
