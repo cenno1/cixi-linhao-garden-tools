@@ -1,4 +1,5 @@
 export type LandingPage = {
+  updatedAt?: string;
   slug: string;
   eyebrow: string;
   title: string;
@@ -21,16 +22,17 @@ export type LandingPage = {
 export const landingPages: LandingPage[] = [
   {
     slug: "brass-hose-connectors-manufacturer",
-    eyebrow: "Brass hose connector supplier",
-    title: "Brass Hose Connectors for B2B & OEM Programs",
-    description: "Compare brass quick connectors, adapters, elbows and water-stop fittings by connection job, catalogue size and OEM packaging requirement.",
-    lead: "Use the catalogue-backed model guide below to narrow the connection job and nominal size before requesting a quote. Exact thread form, brass grade, seal material and packaging are confirmed for the selected model.",
+    updatedAt: "2026-10-20",
+    eyebrow: "Garden hose connector factory sourcing",
+    title: "OEM Brass Garden Hose Connectors: Factory Sourcing Guide",
+    description: "Source OEM brass garden hose connectors from Cixi Linhao. Compare quick connectors, adapters and reel fittings; specify threads, brass grade and custom packaging.",
+    lead: "Build a garden hose connector range with Cixi Linhao Metal Product Co., Ltd. Use the model guide to choose the connection job, then send drawings or samples for custom brass fittings. Your manufacturing brief should define both mating interfaces, brass grade, seal, inspection criteria and OEM packaging.",
     image: "/images/products/brass-connectors.webp",
     productSlugs: ["brass-connector-set-3601", "brass-quick-connector-3603", "brass-water-stop-connector-3604z", "brass-90-degree-elbow-3638", "brass-double-male-connector-3641", "hose-reel-brass-swivel"],
     benefits: [
-      { title: "Range-ready selection", text: "Quick connectors, male and female adapters, elbows, repair parts and closing caps can be combined into one practical buying program." },
-      { title: "Connection review", text: "Share the hose size, thread standard and end-use equipment so the right fitting configuration can be reviewed before sampling or quotation." },
-      { title: "OEM packing support", text: "Discuss individual packs, sets, labels, barcodes and presentation requirements for your retail or distributor program." },
+      { title: "Define the garden hose assembly", text: "Choose connectors by their function in your equipment or assortment: accessory changes, thread adaptation, hose joining or reel inlet rotation. Identify the parts that must fit together." },
+      { title: "Review the custom fitting with the manufacturer", text: "Send drawings or mating samples. Confirm thread form and gender at each end, brass material, critical dimensions and sealing requirements before agreeing the sample specification." },
+      { title: "Approve the OEM supply specification", text: "Record the approved sample, inspection criteria, product marking and packaging artwork. The quotation should confirm tooling, model-specific MOQ, sample cost and delivery timing." },
     ],
     specificationPoints: ["Target market and connection standard", "Required nominal size, exact thread form and water-stop function", "Brass grade, finish and seal material to confirm", "Individual, set or retail-ready packaging", "Expected quantity and delivery timing"],
     selectionGroups: [
@@ -59,6 +61,7 @@ export const landingPages: LandingPage[] = [
       text: "Use the checklist to review thread matching, washers, assembly and leak-test expectations before approving a connector range.",
     },
     faqs: [
+      { question: "How do I order custom brass garden hose connectors from the factory?", answer: "Start with an LH model reference or your drawing and sample. Specify both mating interfaces, material grade, finish, quantity and target market. Cixi Linhao reviews feasibility and sample requirements; production follows the approved specification. See the manufacturing capabilities page for the complete custom fitting checklist." },
       { question: "Which brass hose connector types can I source?", answer: "The current range includes quick connectors, male and female adapters, water-stop connectors, elbows, double-ended connectors, hose caps and related hose-end components." },
       { question: "Which connector sizes are shown in the current catalogue?", answer: "Depending on the model, the current LH range lists 1/2 in, 5/8 in to 3/4 in, 3/4 in and 3/4 in to 1 in configurations. These are catalogue nominal sizes, not a universal compatibility claim; confirm the exact thread form, mating component and seal before ordering." },
       { question: "Can I request a mixed brass connector program?", answer: "Yes. Send a list of required types, reference photos or a target assortment. We can help organise the enquiry around compatible connection options and packaging." },

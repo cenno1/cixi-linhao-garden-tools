@@ -75,6 +75,8 @@ export default async function BrassCategoryPage({ params }: Props) {
           </div>
         </section>
 
+        {config.customBrief && <section className="section section-soft"><div className="container product-faq"><span className="eyebrow">Custom brass fitting manufacturing</span><h2>Specify your {config.label.toLowerCase()} project</h2><p>{config.customBrief}</p><p>Cixi Linhao Metal Product Co., Ltd. reviews OEM projects from drawings, samples and specifications. <a href="/capabilities#custom-options">See material, dimension, finish and packaging options</a>.</p><a className="button" href={`/contact?product=${encodeURIComponent(`Custom ${config.label}`)}#quote-form`}>Send Drawing for an OEM Quote</a></div></section>}
+
         <section className="section category-detail">
           <div className="container">
             <div className="category-buyer-panel">

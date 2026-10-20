@@ -1,0 +1,16 @@
+export const customFittingOptions = [
+  { field: "Connection and thread", input: "Specify both ends: male or female, nominal size, thread form, pitch and mating component.", review: "GHT, BSP, NPT or another drawing-specified interface; compatibility is confirmed for the selected part." },
+  { field: "Body dimensions", input: "Send a dimensioned drawing, reference sample or photos showing the installation space.", review: "Overall length, bore, hex dimensions, wall thickness and assembly clearance." },
+  { field: "Brass material", input: "State the required brass grade, target market and any material-document requirement.", review: "Material selection and compliance requirements are agreed before sample approval." },
+  { field: "Finish and marking", input: "Identify the required surface appearance, finish and logo artwork.", review: "Natural brass, nickel-plated finish or another requested treatment is reviewed for feasibility." },
+  { field: "Seal and inspection", input: "Provide the sealing arrangement, operating conditions and acceptance criteria.", review: "Seal selection, thread fit, critical dimensions and any agreed leak-test procedure." },
+  { field: "Quantity and packaging", input: "Include sample quantity, expected order volume and packaging artwork or pack format.", review: "Model-specific MOQ, sample cost, tooling, lead time and OEM packaging are confirmed in the quotation." },
+];
+
+export const customManufacturingFaqs = [
+  { question: "Can you manufacture custom brass fittings from a drawing or sample?", answer: "Cixi Linhao Metal Product Co., Ltd. accepts drawings, samples and specifications for custom brass fitting projects. Send the connection geometry, material requirement and quantity. Engineering review defines feasibility, sample requirements and the production specification before quotation approval." },
+  { question: "Which garden hose fittings can I include in an OEM enquiry?", answer: "The range includes brass quick connectors, threaded adapters, hose couplings, elbows, splitters, shut-off valves and hose-reel swivel fittings. Start with an LH reference model or send your own component drawing; aluminum fittings can also be specified." },
+  { question: "Can I request GHT, BSP or NPT connections?", answer: "Include the required standard, size and male/female connection at each end. Thread pitch, tolerances, mating parts and the sealing method need confirmation. A listed nominal hose size does not establish that two fittings are interchangeable." },
+  { question: "What is the minimum order quantity for custom brass fittings?", answer: "MOQ depends on the model, geometry, material and tooling requirements. LH-3672A has a confirmed MOQ of 500 pieces and samples are available. This does not set the MOQ for every custom fitting; include the expected quantity in your enquiry." },
+  { question: "What should I send to get an engineering quotation?", answer: "Send a drawing or sample photos, the required product type, both connection specifications, material, estimated quantity, target market and packaging needs. Add any critical dimensions and inspection requirements. The quotation will confirm missing details, sample terms and delivery timing." },
+];

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const navItems = [
   ["Products", "/products"],
-  ["Custom Manufacturing", "/about#oem"],
+  ["Custom Manufacturing", "/capabilities#custom-options"],
   ["Capabilities", "/capabilities"],
   ["Quality", "/about#quality"],
   ["Applications", "/products#applications"],

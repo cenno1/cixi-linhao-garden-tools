@@ -6,7 +6,7 @@ const source = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf8
 
 test("sitemap modification dates reflect actual content revisions", () => {
   assert.doesNotMatch(source, /lastModified:\s*new Date\(\)/);
-  assert.match(source, /productTemplateUpdatedAt = "2026-10-04"/);
+  assert.match(source, /productTemplateUpdatedAt = "2026-10-20"/);
   assert.match(source, /lastModified: post\.updatedAt \|\| post\.publishedAt/);
   assert.match(source, /latestDate\(product\.updatedAt, productTemplateUpdatedAt\)/);
 });

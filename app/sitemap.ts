@@ -5,18 +5,18 @@ import { brassProducts, products } from "./data/products";
 import { brassSeoCategories } from "./data/brass-seo-categories";
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://linhaogarden.com").replace(/\/$/, "");
-const productTemplateUpdatedAt = "2026-10-04";
+const productTemplateUpdatedAt = "2026-10-20";
 const latestDate = (itemDate: string | undefined, templateDate: string) =>
   itemDate && itemDate > templateDate ? itemDate : templateDate;
 
 const corePages = [
-  { path: "", lastModified: "2026-10-04", changeFrequency: "weekly" as const, priority: 1 },
-  { path: "/products", lastModified: "2026-09-28", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "", lastModified: "2026-10-20", changeFrequency: "weekly" as const, priority: 1 },
+  { path: "/products", lastModified: "2026-10-20", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "/products/materials/aluminum", lastModified: "2026-10-04", changeFrequency: "monthly" as const, priority: 0.85 },
-  { path: "/capabilities", lastModified: "2026-08-31", changeFrequency: "monthly" as const, priority: 0.9 },
+  { path: "/capabilities", lastModified: "2026-10-20", changeFrequency: "monthly" as const, priority: 0.9 },
   { path: "/about", lastModified: "2026-08-30", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/resources", lastModified: "2026-08-11", changeFrequency: "weekly" as const, priority: 0.8 },
-  { path: "/contact", lastModified: "2026-08-11", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/contact", lastModified: "2026-10-20", changeFrequency: "monthly" as const, priority: 0.8 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...corePages.map((page) => ({ ...page, url: `${siteUrl}${page.path}` })),
     ...landingPages.filter((page) => page.slug !== "oem-garden-tools-supplier").map((page) => ({
       url: `${siteUrl}/solutions/${page.slug}`,
-      lastModified: "2026-08-12",
+      lastModified: latestDate(page.updatedAt, "2026-10-20"),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
