@@ -5,13 +5,13 @@ import { ProductGrid } from "../components/ProductGrid";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "Brass & Aluminum Valves and Hose Fittings | LINHAO",
+  title: "Brass Garden Hose Fittings & OEM Connector Range",
   description:
-    "Browse brass and aluminum hose splitters, shut-off valves, pressure regulators, quick connectors, adapters, elbows and hose repair fittings. Send drawings for custom parts.",
+    "Browse brass garden hose fittings for OEM sourcing: quick connectors, threaded adapters, couplings, splitters, valves and reel fittings. Custom drawings welcome.",
   alternates: { canonical: "/products" },
   openGraph: {
-    title: "Brass & Aluminum Valves and Hose Fittings | LINHAO",
-    description: "Browse catalogue reference models for valves and hose fittings in brass and aluminum.",
+    title: "Brass Garden Hose Fittings & OEM Connector Range",
+    description: "Select a garden hose connector reference or request custom brass and aluminum fittings made to your approved specification.",
     url: "/products",
     images: [{ url: "/images/products/brass-connectors.webp", alt: "Brass garden hose fittings and connectors" }],
   },
@@ -25,8 +25,9 @@ export default function ProductsPage() {
         <section className="page-hero page-hero-products">
           <div className="container">
             <span className="eyebrow eyebrow-light">Cixi Linhao Metal Product Co., Ltd.</span>
-            <h1>Brass &amp; Aluminum Valves and Hose Fittings</h1>
-            <p>Explore model references by function and material. Share a drawing or sample for custom dimensions, thread interfaces, finishes and packaging. Catalogue nominal size alone does not confirm thread compatibility.</p>
+            <h1>Brass Garden Hose Fittings &amp; Connectors</h1>
+            <p>Choose quick connectors, hose adapters, couplings, splitters and valves for your watering equipment or OEM range. Cixi Linhao develops custom brass fittings from drawings and samples; aluminum models are also available below. Confirm the exact thread and mating part for each reference.</p>
+            <p><a className="button button-gold" href="/capabilities#custom-options">Explore Custom Brass Fitting Options</a></p>
           </div>
         </section>
         <section className="section" id="applications">

@@ -5,21 +5,22 @@ import { Footer } from "./components/Footer";
 import { InquiryForm } from "./components/InquiryForm";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
 import { products } from "./data/products";
+import { customManufacturingFaqs } from "./data/custom-manufacturing";
 
 export const metadata: Metadata = {
-  title: { absolute: "Custom Brass & Aluminum Hose Fittings | Cixi Linhao" },
-  description: "Cixi Linhao Metal Product Co., Ltd. supplies brass and aluminum hose fittings, valves, splitters and threaded adapters. Send a drawing or sample for custom quotation.",
+  title: { absolute: "Custom Brass Garden Hose Fittings Manufacturer | LINHAO" },
+  description: "Custom brass fittings manufacturer for garden hose connectors, adapters, couplings and valves. Send drawings or samples to Cixi Linhao for an OEM quote.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Custom Brass & Aluminum Hose Fittings | Cixi Linhao",
-    description: "Brass and aluminum valves and hose fittings developed from drawings, samples and approved specifications.",
+    title: "Custom Brass Garden Hose Fittings Manufacturer | LINHAO",
+    description: "OEM brass hose connectors, adapters, couplings and valves developed from your drawings, samples and specifications. Aluminum fitting enquiries also welcome.",
     url: "/",
     images: [{ url: "/images/custom-brass-fittings-cnc-hero.png", alt: "Custom brass garden hose fittings and CNC machining details" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Brass & Aluminum Hose Fittings | Cixi Linhao",
-    description: "Custom brass and aluminum hose fittings developed from drawings and samples.",
+    title: "Custom Brass Garden Hose Fittings Manufacturer | LINHAO",
+    description: "Send your drawing or sample for custom brass hose fitting manufacturing and OEM quotation.",
     images: ["/images/custom-brass-fittings-cnc-hero.png"],
   },
 };
@@ -169,8 +170,9 @@ export default function Home() {
           <div className="container hero-grid">
             <div className="hero-copy">
               <span className="eyebrow">Cixi Linhao Metal Product Co., Ltd. · OEM / ODM</span>
-              <h1>Custom Brass &amp; Aluminum Hose Fittings</h1>
+              <h1>Custom Brass Garden Hose Fittings Manufacturer</h1>
               <p className="hero-project-line">From drawing or sample to production.</p>
+              <p>OEM &amp; ODM brass hose connectors, adapters, couplings, swivels and valves made to your approved specifications. Work with Cixi Linhao Metal Product Co., Ltd. on custom brass components and aluminum fitting projects.</p>
               <ul className="hero-capabilities">
                 <li>Custom dimensions</li>
                 <li>Threads reviewed against your drawing</li>
@@ -181,6 +183,7 @@ export default function Home() {
               </ul>
               <div className="hero-actions">
                 <a className="button" href="/contact?product=Custom%20Brass%20Fitting%20Drawing">Send Drawing for Quote</a>
+                <a className="button button-light" href="/capabilities">Explore Custom Manufacturing</a>
               </div>
             </div>
             <div className="hero-manufacturing-visual">
@@ -194,7 +197,7 @@ export default function Home() {
           <div className="container">
             <div className="section-heading centered-heading">
               <span className="eyebrow">Valves and hose fittings</span>
-              <h2>Browse by connection and material</h2>
+              <h2>Garden hose fittings for your OEM project</h2>
             </div>
             <div className="home-product-category-grid">
               {homepageProductCategories.map((category) => (
@@ -262,10 +265,10 @@ export default function Home() {
             <div className="feature-image"><img src="/images/products/brass-connectors.webp" alt="Brass quick-connect hose fittings" /></div>
             <div className="feature-copy">
               <span className="eyebrow eyebrow-light">Metal where reliability matters</span>
-              <h2>Brass watering components built for repeat connection.</h2>
-              <p>Offer buyers a durable alternative across quick connectors, water-stop fittings, splitters, shut-off valves and spray nozzles.</p>
-              <ul className="feature-list"><li>Common EU and US thread configurations</li><li>Natural brass, plated and customized finishes</li><li>Individual, set and retail-ready packaging</li></ul>
-              <a className="button button-gold" href="/contact?product=Brass%20Watering%20Components">Discuss your range</a>
+              <h2>Source garden hose connectors from a custom brass fittings manufacturer.</h2>
+              <p>Plan a distributor range or develop a fitting for your own watering equipment. Start with the connection job: quick accessory changes, thread adaptation, hose repair, two-line watering or a hose-reel inlet.</p>
+              <ul className="feature-list"><li>Review both mating connections and the sealing arrangement</li><li>Define brass grade, dimensions and required finish</li><li>Approve sample, inspection and OEM packaging requirements</li></ul>
+              <a className="button button-gold" href="/solutions/brass-hose-connectors-manufacturer">View the Garden Hose Connector Sourcing Guide</a>
             </div>
           </div>
         </section>
@@ -274,7 +277,7 @@ export default function Home() {
 
         <section className="section bestseller-section">
           <div className="container">
-            <div className="section-heading split-heading"><div><span className="eyebrow">Buyer starting points</span><h2>Popular product programs</h2></div><a className="text-link" href="/products">View all products <span>→</span></a></div>
+            <div className="section-heading split-heading"><div><span className="eyebrow">Buyer starting points</span><h2>Fitting references for custom enquiries</h2></div><a className="text-link" href="/products">View all products <span>→</span></a></div>
             <div className="mini-product-grid">
               {products.filter((product) => ["LH-3672A", "LH-3603", "LH-3902"].includes(product.code) || product.slug === "hose-reel-brass-swivel").map((product) => (
                 <article key={product.slug}>
@@ -294,6 +297,8 @@ export default function Home() {
             <a className="button button-light" href="/about#quality">See our approach</a>
           </div>
         </section>
+
+        <section className="section section-soft"><div className="container product-faq"><span className="eyebrow">Custom fitting procurement</span><h2>Before you choose a brass fittings manufacturer</h2>{customManufacturingFaqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}<p><a href="/capabilities#custom-options">Review the custom manufacturing specification checklist →</a></p></div></section>
 
         <section className="section inquiry-section" id="quote">
           <div className="container inquiry-layout">

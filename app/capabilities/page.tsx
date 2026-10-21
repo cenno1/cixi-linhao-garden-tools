@@ -3,12 +3,14 @@ import Image from "next/image";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
+import { CustomFittingOptions } from "../components/CustomFittingOptions";
 
 export const metadata: Metadata = {
-  title: "Custom Brass & Aluminum Fitting Capabilities",
+  title: "Custom Brass Fittings Manufacturing & OEM Capabilities",
   description:
-    "Review brass and aluminum valve and hose-fitting project options: dimensions, mating threads, material, finish, inspection and packaging.",
+    "Develop custom brass fittings from drawings or samples. Review garden hose connection geometry, material, CNC machining, threads, inspection and OEM packaging.",
   alternates: { canonical: "/capabilities" },
+  openGraph: { title: "Custom Brass Fittings Manufacturing & OEM Capabilities", description: "Drawing-led development for brass garden hose connectors, adapters, valves and custom components.", url: "/capabilities", images: [{ url: "/images/products/hose-reel-brass-swivel-360-rotation.png", alt: "Brass swivel fitting with machined thread interfaces" }] },
 };
 
 const capabilityAreas = [
@@ -21,7 +23,7 @@ const capabilityAreas = [
 ];
 
 const threadOptions = [
-  ["GHT / NH", "Garden hose thread requirements; confirm nominal size, mating component and gauge requirement."],
+  ["GHT / specified NH", "Identify the exact hose-coupling thread requirement. NH wording alone does not establish GHT compatibility; confirm pitch, mating component and gauge requirement."],
   ["BSP / BSPP / BSPT", "Confirm parallel or tapered form, nominal size, pitch, tolerance and sealing method."],
   ["NPT", "Confirm nominal size, taper requirement, pitch and the mating threaded component."],
   ["Metric Threads", "Specify major diameter, pitch, tolerance class, engagement length and mating component."],
@@ -55,9 +57,9 @@ export default function CapabilitiesPage() {
         <section className="capabilities-hero">
           <div className="container capabilities-hero-grid">
             <div>
-              <span className="eyebrow eyebrow-light">Custom brass and aluminum component review</span>
-              <h1>Custom Valve &amp; Hose Fitting Capabilities</h1>
-              <p>Can your part be made? Send a drawing, sample or specification so dimensions, threads, material, sealing requirements, finish and packaging can be reviewed before quotation.</p>
+              <span className="eyebrow eyebrow-light">Custom brass fittings · OEM / ODM</span>
+              <h1>Custom Brass Fittings Manufacturing</h1>
+              <p>Develop a garden hose connector, threaded adapter, swivel or valve around your assembly. Cixi Linhao Metal Product Co., Ltd. reviews drawings and samples for custom brass and aluminum parts, from connection geometry and material selection to inspection and OEM packaging.</p>
               <a className="button button-gold" href="/contact?product=Custom%20Brass%20or%20Aluminum%20Fitting%20Drawing#quote-form">Send Drawing for Review</a>
             </div>
             <div className="capabilities-hero-image">
@@ -123,6 +125,7 @@ export default function CapabilitiesPage() {
           </div>
         </section>
 
+        <CustomFittingOptions />
         <section className="section capability-materials" id="materials">
           <div className="container capability-split">
             <div>

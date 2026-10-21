@@ -5,7 +5,7 @@ import { InquiryForm } from "../components/InquiryForm";
 import { TrackedWhatsAppLink } from "../components/TrackedWhatsAppLink";
 import { WhatsAppFloat } from "../components/WhatsAppFloat";
 
-export const metadata: Metadata = { title: "Request an Engineering Quote", description: "Send Cixi Linhao Metal Product Co., Ltd. your valve or hose-fitting drawing, material, thread and quantity requirements.", alternates: { canonical: "/contact" } };
+export const metadata: Metadata = { title: "Request a Custom Brass Fittings Quote", description: "Send your brass garden hose fitting drawing or sample to Cixi Linhao. Specify thread, material, dimensions and quantity for an OEM manufacturing quote.", alternates: { canonical: "/contact" }, openGraph: { title: "Request a Custom Brass Fittings Quote", description: "Start your OEM garden hose connector project with a drawing, sample and connection requirements.", url: "/contact" } };
 
 export default async function ContactPage({ searchParams }: { searchParams: Promise<{ product?: string }> }) {
   const { product } = await searchParams;
