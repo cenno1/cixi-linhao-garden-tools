@@ -74,6 +74,15 @@ This log is updated by the daily SEO growth loop. Do not invent unavailable metr
 - Tomorrow: Improve one existing procurement resource with a catalogue-backed compatibility or inspection table and internal links; do not publish unconfirmed pressure, brass-grade, thread or seal claims.
 - Owner confirmation needed: Confirm the exact thread standards for the listed LH connector models; confirm brass grade and washer/O-ring material; provide MOQ, sample availability and typical lead-time ranges if these may be published.
 
+## 2026-10-26 — GHT-to-NPT adapter buyer guide
+
+- Request: Research Reddit questions and publish a focused brass adapter guide for 3/4-inch and 1-inch requirements.
+- Evidence: Read three Reddit discussions (1tzsgmc, 1g316h7, 1d9k6wt). They support recurring identification/mismatch questions, not a verified popularity ranking or search volume. Dixon Threads 101, Hose Coupling reference and adapter specification support the technical distinctions. Source links are included in the article.
+- Changes: Added one original selection guide, with separate end/gender examples, hose-ID versus thread-size explanation, sealing guidance, FAQs and a drawing-led quotation checklist. Linked the existing brass adapter category and inquiry page. Resources index and sitemap discover the article automatically; updated only the resources index revision date.
+- Verification: Production webpack build and TypeScript passed; six existing catalogue/SEO checks passed. Generated HTML confirms canonical URL, Article schema, category/inquiry links and resources-index discovery. No ranking, Google indexing or AI recommendation outcome is claimed.
+- Publication: Latest remote main d92638d was fetched over HTTPS and has the same tree as the starting local revision. SSH authentication failed and GitHub CLI has no login; publication status must be confirmed separately after a push and deployment.
+- KPI: Current impressions, clicks, qualified inquiries and AI citations N/A. Do not present discussion samples as traffic forecasts.
+
 ## Entry template
 
 ### YYYY-MM-DD
