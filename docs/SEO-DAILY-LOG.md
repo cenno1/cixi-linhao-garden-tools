@@ -2,7 +2,17 @@
 
 This log is updated by the daily SEO growth loop. Do not invent unavailable metrics; use `N/A` and state the missing source.
 
-## Baseline — 2026-08-20
+## 2026-11-09 — Custom manufacturing procurement page
+
+- Request: Implement priority one only: strengthen the existing /capabilities page for custom brass fitting procurement, without creating a competing URL.
+- Evidence: Semrush US desktop report dated 2026-11-08 showed linhaogarden.com with one ranking keyword and estimated organic traffic zero. Its brass quick link row was position 34, volume 90 and last updated September 26; intent relevance is unproven. D&R showed 542 keywords and estimated organic traffic 132; much of the visible traffic related to PEX rather than the owner's range. These estimates are not qualified-inquiry or conversion evidence.
+- Changes: Improved capabilities title/description and matching Open Graph metadata; added a six-stage drawing-to-production approval process, six relevant product-family links, an aluminum-range link and five procurement FAQs. Kept the existing material/thread/inspection evidence and customization table. Final CTA targets the existing quote-form anchor with a prefilled custom-project name. Updated only the capabilities sitemap date to 2026-11-09.
+- Verification: Next.js production webpack build and TypeScript passed. Eight tests passed, including two built-HTML procurement-page checks. Six local HTTP requests returned 200 (capabilities, adapter category, prefilled contact page, two capability images and sitemap); contact form anchor confirmed. No test inquiry was sent. No visual browser pass or completed form delivery is claimed.
+- Preservation: Existing deletion of public/images/custom-brass-fittings-cnc-hero.png was not restored or staged; it affects the homepage and is outside this edit. Earlier unpublished blog commit remains separate.
+- Publication: Latest remote main fetched as d92638d. A dry-run HTTPS push failed because Git credentials could not be persisted/accessed. Saved locally; no production publication claimed. Preview at http://localhost:3092/capabilities.
+- Measurement: Current GSC/GA4 inquiries and AI referrals N/A. Compare capabilities impressions, relevant queries and qualified enquiries after deployment and recrawl; no ranking or AI-recommendation guarantee.
+
+## Baseline — 2026-08-20 (historical record)
 
 - Website: https://linhaogarden.com
 - Search Console property: `linhaogarden.com`
@@ -73,6 +83,15 @@ This log is updated by the daily SEO growth loop. Do not invent unavailable metr
 - KPI snapshot: qualified organic inquiries N/A; high-quality commercial-page index coverage N/A; overall known-page index coverage 38.9% (21/54) from the latest available Search Console report; Search Console 28-day impressions 8; clicks 0; visible top-20 buyer-intent opportunities none evidenced; AI mentions N/A.
 - Tomorrow: Improve one existing procurement resource with a catalogue-backed compatibility or inspection table and internal links; do not publish unconfirmed pressure, brass-grade, thread or seal claims.
 - Owner confirmation needed: Confirm the exact thread standards for the listed LH connector models; confirm brass grade and washer/O-ring material; provide MOQ, sample availability and typical lead-time ranges if these may be published.
+
+## 2026-10-26 — GHT-to-NPT adapter buyer guide
+
+- Request: Research Reddit questions and publish a focused brass adapter guide for 3/4-inch and 1-inch requirements.
+- Evidence: Read three Reddit discussions (1tzsgmc, 1g316h7, 1d9k6wt). They support recurring identification/mismatch questions, not a verified popularity ranking or search volume. Dixon Threads 101, Hose Coupling reference and adapter specification support the technical distinctions. Source links are included in the article.
+- Changes: Added one original selection guide, with separate end/gender examples, hose-ID versus thread-size explanation, sealing guidance, FAQs and a drawing-led quotation checklist. Linked the existing brass adapter category and inquiry page. Resources index and sitemap discover the article automatically; updated only the resources index revision date.
+- Verification: Production webpack build and TypeScript passed; six existing catalogue/SEO checks passed. Generated HTML confirms canonical URL, Article schema, category/inquiry links and resources-index discovery. No ranking, Google indexing or AI recommendation outcome is claimed.
+- Publication: Latest remote main d92638d was fetched over HTTPS and has the same tree as the starting local revision. SSH authentication failed and GitHub CLI has no login; publication status must be confirmed separately after a push and deployment.
+- KPI: Current impressions, clicks, qualified inquiries and AI citations N/A. Do not present discussion samples as traffic forecasts.
 
 ## Entry template
 

@@ -18,6 +18,64 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ght-to-npt-brass-adapter-3-4-1-inch-guide",
+    title: 'GHT to NPT Brass Adapters: 3/4-Inch and 1-Inch Selection Guide',
+    description: 'Choose a brass adapter for 3/4-inch GHT and 3/4-inch or 1-inch NPT. Compare thread pitch, male/female ends, washer sealing and custom-order requirements.',
+    topic: "Brass adapter selection",
+    publishedAt: "2026-10-26",
+    commercialLink: {
+      href: "/products/categories/brass-hose-adapters",
+      label: "Discuss a Custom Brass Hose Adapter",
+      description: "Review the adapter family, then send both mating-end specifications to Cixi Linhao Metal Product Co., Ltd. A catalogue nominal size is not confirmation of a particular GHT-to-NPT configuration; feasibility, material and sample requirements need project review.",
+    },
+    sections: [
+      {
+        heading: "Quick answer: specify both ends, not just the size",
+        paragraphs: ['A 3/4-inch GHT connection does not directly mate with 3/4-inch NPT. A purpose-made adapter provides a separate, correctly specified thread on each end. For a 1-inch pipe port, specify the pipe end as 1-inch NPT and the garden-hose end separately as 3/4-inch GHT. Also state whether each adapter end must be male or female.', 'This guide covers water-side garden hose connections. It does not establish suitability for a pressure washer high-pressure outlet, gas service or drinking water. Application ratings and compliance must be confirmed for the actual assembly.'],
+      },
+      {
+        heading: "What garden-hose buyers are asking on Reddit",
+        paragraphs: ['Three discussions illustrate distinct selection problems: a community gardener trying to connect a ground hydrant described as a 1-inch outlet; a pressure-washing user connecting a 1-inch hose through a leaking NPT/GHT mismatch; and a homeowner searching for an adapter for an older spigot described as 1-inch garden-hose thread. These are useful problem signals, not verified thread identifications or evidence of search volume.', 'The practical lesson is to record the two existing connections before shopping. A photograph can show the general arrangement but cannot reliably establish thread pitch, taper or a proprietary outlet. Do not copy a suggested adapter from a discussion unless your own interfaces have been identified.'],
+      },
+      {
+        heading: "3/4-inch GHT versus 3/4-inch NPT versus 1-inch NPT",
+        paragraphs: ['Dixon technical references list 3/4-inch GHT at 11.5 threads per inch, 3/4-inch NPT at 14 TPI and 1-inch NPT at 11.5 TPI. NPT is tapered. Matching pitch alone is not matching geometry: 1-inch NPT and 3/4-inch GHT remain different connections even though both use 11.5 TPI.', 'Use these figures for identification, not as a production drawing or tolerance specification. Check the applicable standard and approved gauges before manufacture.'],
+        bullets: ['3/4-inch GHT: straight garden-hose thread; the usual hose coupling seals at a washer and mating face.', '3/4-inch NPT: tapered pipe thread, 14 TPI; do not force it into a hose swivel nut.', '1-inch NPT: tapered pipe thread, 11.5 TPI; a separate GHT interface is required for a standard garden-hose connection.', 'NH, NPS, BSP and NPT markings are not interchangeable labels. Obtain the full designation for an uncertain part.'],
+      },
+      {
+        heading: 'Does "1-inch garden hose adapter" mean 1-inch NPT?',
+        paragraphs: ['Not necessarily. The number may describe the hose inside diameter, a hose-barb size, a nominal pipe thread or an incompletely identified faucet outlet. A 1-inch hose barb and a 1-inch NPT thread are different interface types. Neither proves that the other end is GHT.', 'For an existing hydrant or older faucet, obtain its manufacturer and model, thread designation and dimensions. Do not remove or bypass a vacuum breaker or backflow device to make an adapter fit; use an approved connection for that equipment.'],
+        bullets: ['If 1 inch describes the hose bore, specify a hose-barb connection and clamp requirements separately from the threaded end.', 'If the port is verified 1-inch NPT, request 1-inch NPT on that adapter end and identify the opposite GHT end.', 'If the outlet is only described as 1-inch hose thread, stop and identify it rather than ordering by the number alone.'],
+      },
+      {
+        heading: "Select the male and female ends",
+        paragraphs: ['The configurations below describe adapter ends, not the existing equipment ends. They are quotation examples, not claims of stock availability. Use the opposite gender to each verified mating connection.'],
+        bullets: ['Existing female GHT hose coupling + female 3/4-inch NPT port: request male 3/4-inch GHT × male 3/4-inch NPT.', 'Existing female GHT hose coupling + male 3/4-inch NPT pipe end: request male 3/4-inch GHT × female 3/4-inch NPT.', 'Existing female GHT hose coupling + female 1-inch NPT port: request male 3/4-inch GHT × male 1-inch NPT.', 'Existing male GHT outlet + male 1-inch NPT pipe end: request female 3/4-inch GHT × female 1-inch NPT; confirm washer seat and assembly access.'],
+      },
+      {
+        heading: "Washer or thread sealant: check each side separately",
+        paragraphs: ['On a conventional washer-sealed GHT joint, inspect the washer, sealing face and seating depth. Thread tape is not a replacement for the washer and cannot fix incompatible threads. On the NPT side, follow the component manufacturer instructions for compatible sealant and tightening; do not apply a universal tape-wrap or torque rule to every material.', 'Shut off and depressurize the system before changing fittings. Stop if a connection binds, cross-threads or requires force to start. After installation, check each joint under the approved operating conditions. A larger nominal adapter does not guarantee higher flow; the minimum bore and the complete hose system also matter.'],
+      },
+      {
+        heading: "Custom brass adapter enquiry checklist",
+        paragraphs: ['A useful engineering enquiry separates confirmed facts from requested options. Send a dimensioned drawing or mating samples rather than only asking for a brass 1-inch adapter. LINHAO can review custom brass-component requirements; a specific alloy, finish, pressure rating or certification is not implied by the word brass.'],
+        bullets: ['End A and end B: standard, nominal size, pitch, male/female and sealing method.', 'Geometry: overall length, minimum bore, hex clearance, washer-seat detail and swivel requirement.', 'Material and finish: required brass grade, surface finish and any application-specific compliance.', 'Service: fluid, temperature, working pressure, target market and agreed inspection criteria.', 'Order: estimated quantity, sample approval requirements, markings and packaging.'],
+      },
+      {
+        heading: "Frequently asked questions",
+        paragraphs: ['Can 3/4-inch NPT screw directly into 3/4-inch GHT? No. Specify a correctly made adapter; similar nominal labels do not establish compatibility.', 'Can I connect a 1-inch NPT port to a standard garden hose? A suitably specified adapter can bridge the two interfaces. Confirm gender, clearance, sealing faces and operating limits before ordering.', 'Is every brass hose adapter suitable for drinking water? No such assumption should be made. Ask for the exact material and applicable compliance documentation for the intended market.', 'Should I order by a photograph? Use photographs as supporting evidence, together with measurements, equipment identification and an approved drawing or sample.'],
+      },
+    ],
+    sources: [
+      { label: "Reddit: Help with hose adapter", href: "https://www.reddit.com/r/askplumbing/comments/1tzsgmc/help_with_hose_adapter/", note: "Community-garden hydrant question; discussion signal only, not confirmation of the pictured thread." },
+      { label: "Reddit: Fittings", href: "https://www.reddit.com/r/pressurewashing/comments/1g316h7/fittings/", note: "A 1-inch hose and NPT/GHT mismatch discussion. Not a pressure-rating reference." },
+      { label: "Reddit: How to connect to a 1-inch garden hose thread spigot?", href: "https://www.reddit.com/r/askaplumber/comments/1d9k6wt/how_to_connect_to_a_1_garden_hose_thread_spigot/", note: "Illustrates ambiguous outlet identification; commenters' proposed adapters are not endorsed here." },
+      { label: "Dixon: Threads 101", href: "https://dixonvalve.com/en/news-and-events/news/threads-101", note: "Primary technical explanation of thread identification, taper and compatibility." },
+      { label: "Dixon: Hose Coupling technical reference", href: "https://europe.dixonvalve.com/sites/default/files/documents/Hose-Coupling.pdf", note: "Thread-dimension table and sealing reference; supports GHT and NPT pitch distinctions." },
+      { label: "Dixon: Male GHT × Male NPT adapter", href: "https://dixonvalve.com/en/products/508-series-garden-hose-adapter/5141212ss", note: "Manufacturer example specifies 3/4-11.5 GHT and 3/4-14 NPT separately. Its material and product ratings are not LINHAO specifications." },
+    ],
+  },
+  {
     slug: "garden-hose-splitter-leaking-diagnostic-guide",
     title: "Garden Hose Splitter Leaking? Diagnose the Inlet, Body, Valve or Outlet",
     description: "A location-by-location troubleshooting and procurement guide for leaking garden hose splitters, covering washers, thread compatibility, body joints, valves and winter care.",
