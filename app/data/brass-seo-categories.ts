@@ -17,21 +17,48 @@ export type BrassSeoCategory = {
     options: { heading: string; description: string; href?: string; linkLabel?: string }[];
   };
   relatedResources?: { href: string; label: string; description: string }[];
+  modelComparison?: { code: string; size: string; role: string; confirm: string; href: string }[];
   faqs?: { question: string; answer: string }[];
 };
 
 export const brassSeoCategories: BrassSeoCategory[] = [
   {
     slug: "brass-quick-connectors",
-    updatedAt: "2026-10-20",
+    updatedAt: "2026-11-09",
     customBrief: "For a custom brass quick connector, send the mating nipple or accessory and the hose-side connection. Identify the locking arrangement, water-stop requirement, seal location and space available for the grip. Approve the complete mating pair as part of sample review.",
     category: "Brass Quick Connectors",
     label: "Brass Quick Connectors",
-    h1: "Custom Brass Quick Connectors for Garden Hoses",
-    metaTitle: "Custom Brass Quick Connectors | OEM Hose Fittings",
-    metaDescription: "Compare brass quick connectors and water-stop connector options for garden hoses. Review mating parts, thread sizes, finishes and OEM packaging before quotation.",
-    introduction: "Use this category when buyers need repeat hose or accessory changes. The mating nipple, hose-side connection, water-stop requirement and target market must be confirmed before sampling.",
-    buyerQuestions: ["Which mating nipple or accessory must connect?", "Is a water-stop function required?", "What hose size and target-market standard apply?", "What finish, logo and packaging format are required?"],
+    h1: "Brass Garden Hose Quick Connectors for OEM Projects",
+    metaTitle: "Brass Garden Hose Quick Connectors | Custom OEM Supply",
+    metaDescription: "Compare brass garden hose quick connectors and water-stop models. Review 1/2-inch and 3/4-inch catalogue references, mating pairs and custom OEM requirements.",
+    introduction: "Source brass quick-connect fittings for garden hose, nozzle and sprinkler assemblies. Compare LH catalogue references, decide whether a water-stop function is needed and send the complete mating pair for review. These are watering-system components, not chain quick links or a claim of universal quick-coupler compatibility.",
+    buyerQuestions: ["What are the mating socket and nipple profiles, insertion depth and locking arrangement?", "Does the hose-side interface require hose ID/OD dimensions or a specified thread?", "Is water-stop operation required, and with which mating accessory?", "Where does the connection seal, and what seal material and operating conditions are required?", "What sample checks, quantity, finish, marking and packaging must be agreed?"],
+    modelComparison: [
+      { code: "LH-3603", size: '3/4 in', role: "Garden hose quick connector reference", confirm: "Confirm what the nominal size describes, the hose-side attachment and mating nipple profile.", href: "/products/brass-quick-connector-3603" },
+      { code: "LH-3604", size: '1/2 in', role: "Garden hose quick connector reference", confirm: "Check actual hose dimensions, seal location, grip clearance and the full mating assembly.", href: "/products/brass-quick-connector-3604" },
+      { code: "LH-3604Z", size: '1/2 in', role: "Water-stop quick connector reference", confirm: "Review water-stop actuation and seal behaviour with the intended accessory; do not assume a pressure or flow rating.", href: "/products/brass-water-stop-connector-3604z" },
+    ],
+    selectionGuide: {
+      heading: "Choose the connection job before choosing the connector.",
+      introduction: "Separate the quick-release interface from the hose or threaded attachment behind it. Nominal size, a brass body or similar appearance cannot establish that two quick-connect systems mate correctly.",
+      options: [
+        { heading: "Routine hose and accessory changes", description: "Start with LH-3603 or LH-3604 as catalogue references. Send the mating nipple or watering accessory so the locking and sealing interfaces can be reviewed together. Define hose-side dimensions separately.", href: "/products/brass-quick-connector-3603", linkLabel: "Review LH-3603" },
+        { heading: "Water-stop configuration", description: "LH-3604Z is identified as a water-stop connector. Agree how the intended accessory opens the mechanism, how disconnect behaviour is checked and the permitted operating conditions during sample approval. It is not a substitute for an independently specified shut-off valve.", href: "/products/brass-water-stop-connector-3604z", linkLabel: "Review LH-3604Z" },
+        { heading: "Custom or replacement mating pair", description: "For an OEM assembly or replacement part, provide both mating components or dimensioned drawings. Specify locking geometry, seal arrangement, clearance and the attachment at the opposite end. A brand name alone is not a compatibility specification.", href: "/capabilities#custom-options", linkLabel: "Prepare a custom connector specification" },
+      ],
+    },
+    relatedResources: [
+      { href: "/resources/why-garden-hose-connectors-leak", label: "Garden Hose Connector Leak Checks", description: "Separate thread fit, seal contact and hose-end issues when reviewing an assembly." },
+      { href: "/products/categories/brass-hose-adapters", label: "Need a Threaded Adapter Instead?", description: "If the job is to change thread standard, size or gender, specify the two threaded ends rather than selecting by quick-release appearance." },
+      { href: "/capabilities#project-process", label: "Drawing-to-Sample Approval Process", description: "Agree the technical file, sample checks and production acceptance criteria for your custom brass connector." },
+    ],
+    faqs: [
+      { question: "Are all brass garden hose quick connectors interchangeable?", answer: "No universal compatibility is claimed. Match the socket and nipple profile, locking geometry, insertion depth and seal location. Submit the actual mating components or drawings for review, then approve the complete assembly rather than an isolated connector." },
+      { question: "Does a 3/4-inch catalogue size mean 3/4-inch GHT?", answer: "Not by itself. The catalogue lists nominal sizes for these references but does not confirm a thread standard. State whether the number describes a hose or threaded interface; identify any thread by standard, size, pitch, gender and sealing method. Do not assume GHT, BSP or NPT from the nominal size." },
+      { question: "How do LH-3604 and LH-3604Z differ?", answer: "Both have a 1/2-inch catalogue nominal size, while LH-3604Z is specifically identified as a water-stop connector. Detailed geometry, actuation, seals and operating limits require confirmation for the selected assembly. The shared nominal size is not proof that their mating interfaces are identical." },
+      { question: "What should a buyer check during sample approval?", answer: "Agree dimensions, locking engagement, seal location, connection and disconnection checks, water-stop behaviour where applicable, and any required leak or retention checks. Define the test conditions and acceptance criteria for the intended application before testing; no universal pressure, flow or cycle-life rating is implied." },
+      { question: "Can I request OEM brass quick connectors from a sample?", answer: "Cixi Linhao Metal Product Co., Ltd. reviews drawings, samples and specifications for custom projects. Include the mating pair, hose attachment, material, finish, expected quantity, target market and packaging requirements. Feasibility, sample terms, MOQ and delivery timing are confirmed for the specific quotation." },
+    ],
   },
   {
     slug: "brass-hose-adapters",

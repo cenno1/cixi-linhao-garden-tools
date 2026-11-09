@@ -2,7 +2,16 @@
 
 This log is updated by the daily SEO growth loop. Do not invent unavailable metrics; use `N/A` and state the missing source.
 
-## 2026-11-09 — Custom manufacturing procurement page
+## 2026-11-10 — Garden hose quick connector category completion
+
+- Scope: Upgrade the existing /products/categories/brass-quick-connectors URL, not a new keyword-variant landing page. Content was edited November 9; its category revision date reflects that date.
+- Evidence: Catalogue page 17 identifies LH-3603 as 3/4 inch nominal, LH-3604 as 1/2 inch nominal and LH-3604Z as a 1/2 inch water-stop connector. It does not confirm thread standards, dimensions, pressure, seals or cross-brand interchangeability. Semrush's brass quick link ranking is not proof of relevant watering-system demand; no traffic forecasts or high-conversion claims are made.
+- Changes: Garden-hose-specific title, description, H1 and procurement introduction; three-model comparison; ordinary, water-stop and custom mating-pair selection guidance; five buyer FAQs; links to leak checks, threaded adapters and the manufacturing approval process. Generalized the shared FAQ label and added a connector-specific resources heading so this page no longer carries splitter-only wording. Sitemap reads the category's actual updatedAt automatically.
+- Verification: Next.js production webpack build and TypeScript passed. Ten tests passed, including built-HTML tests for canonical, one H1, model destinations, enquiry link, visible FAQs matching FAQPage data, and retention of thin-model noindex/sitemap rules. No visual browser pass or live publication is claimed.
+- Repository: Fetched remote main 02dad9a and fast-forwarded before editing. Preserved and did not stage the existing homepage-image deletion. HTTPS push dry-run failed with a connection reset; publication requires a successful push and main merge before production verification.
+- Measurement: Compare relevant category queries, impressions and qualified enquiries after deployment; actual current GSC/GA4 results N/A. Neither rankings nor AI citations are guaranteed.
+
+## 2026-11-09 — Custom manufacturing procurement page (prior entry)
 
 - Request: Implement priority one only: strengthen the existing /capabilities page for custom brass fitting procurement, without creating a competing URL.
 - Evidence: Semrush US desktop report dated 2026-11-08 showed linhaogarden.com with one ranking keyword and estimated organic traffic zero. Its brass quick link row was position 34, volume 90 and last updated September 26; intent relevance is unproven. D&R showed 542 keywords and estimated organic traffic 132; much of the visible traffic related to PEX rather than the owner's range. These estimates are not qualified-inquiry or conversion evidence.

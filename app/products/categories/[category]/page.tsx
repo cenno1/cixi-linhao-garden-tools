@@ -87,6 +87,7 @@ export default async function BrassCategoryPage({ params }: Props) {
               <ul>{config.buyerQuestions.map((question) => <li key={question}>{question}</li>)}</ul>
             </div>
 
+            {config.modelComparison && <section aria-labelledby="connector-model-comparison"><div className="section-heading"><span className="eyebrow">Catalogue comparison</span><h2 id="connector-model-comparison">Shortlist a garden hose quick connector.</h2><p>These nominal sizes and the water-stop label come from the catalogue. They do not establish thread form, dimensions, pressure rating or cross-brand fit.</p></div><div className="engineering-spec-table-wrap"><table className="engineering-spec-table"><thead><tr><th scope="col">LH reference</th><th scope="col">Catalogue nominal size</th><th scope="col">Selection role</th><th scope="col">Confirm before approval</th></tr></thead><tbody>{config.modelComparison.map((model) => <tr key={model.code}><th scope="row"><a href={model.href}>{model.code}</a></th><td>{model.size}</td><td>{model.role}</td><td>{model.confirm}</td></tr>)}</tbody></table></div></section>}
             <div className="section-heading split-heading">
               <div><span className="eyebrow">Product references</span><h2>{config.label}</h2></div>
               <p>{categoryProducts.length} current catalogue {categoryProducts.length === 1 ? "reference" : "references"} in this category. Final specifications follow approved technical input.</p>
@@ -139,7 +140,7 @@ export default async function BrassCategoryPage({ params }: Props) {
           <section className="section">
             <div className="container product-faq">
               <span className="eyebrow">Buyer resources</span>
-              <h2>Specify and inspect the splitter with less guesswork.</h2>
+              <h2>{config.slug === "brass-quick-connectors" ? "Review connector fit and sample requirements." : "Specify and inspect the splitter with less guesswork."}</h2>
               {config.relatedResources.map((resource) => (
                 <article key={resource.href}>
                   <h3><a href={resource.href}>{resource.label}</a></h3>
@@ -153,7 +154,7 @@ export default async function BrassCategoryPage({ params }: Props) {
         {config.faqs ? (
           <section className="section section-soft">
             <div className="container product-faq">
-              <span className="eyebrow">Brass hose splitter FAQ</span>
+              <span className="eyebrow">{config.label} FAQ</span>
               <h2>Questions before sample approval.</h2>
               {config.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
             </div>
