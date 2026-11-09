@@ -2,7 +2,17 @@
 
 This log is updated by the daily SEO growth loop. Do not invent unavailable metrics; use `N/A` and state the missing source.
 
-## Baseline — 2026-08-20
+## 2026-11-09 — Custom manufacturing procurement page
+
+- Request: Implement priority one only: strengthen the existing /capabilities page for custom brass fitting procurement, without creating a competing URL.
+- Evidence: Semrush US desktop report dated 2026-11-08 showed linhaogarden.com with one ranking keyword and estimated organic traffic zero. Its brass quick link row was position 34, volume 90 and last updated September 26; intent relevance is unproven. D&R showed 542 keywords and estimated organic traffic 132; much of the visible traffic related to PEX rather than the owner's range. These estimates are not qualified-inquiry or conversion evidence.
+- Changes: Improved capabilities title/description and matching Open Graph metadata; added a six-stage drawing-to-production approval process, six relevant product-family links, an aluminum-range link and five procurement FAQs. Kept the existing material/thread/inspection evidence and customization table. Final CTA targets the existing quote-form anchor with a prefilled custom-project name. Updated only the capabilities sitemap date to 2026-11-09.
+- Verification: Next.js production webpack build and TypeScript passed. Eight tests passed, including two built-HTML procurement-page checks. Six local HTTP requests returned 200 (capabilities, adapter category, prefilled contact page, two capability images and sitemap); contact form anchor confirmed. No test inquiry was sent. No visual browser pass or completed form delivery is claimed.
+- Preservation: Existing deletion of public/images/custom-brass-fittings-cnc-hero.png was not restored or staged; it affects the homepage and is outside this edit. Earlier unpublished blog commit remains separate.
+- Publication: Latest remote main fetched as d92638d. A dry-run HTTPS push failed because Git credentials could not be persisted/accessed. Saved locally; no production publication claimed. Preview at http://localhost:3092/capabilities.
+- Measurement: Current GSC/GA4 inquiries and AI referrals N/A. Compare capabilities impressions, relevant queries and qualified enquiries after deployment and recrawl; no ranking or AI-recommendation guarantee.
+
+## Baseline — 2026-08-20 (historical record)
 
 - Website: https://linhaogarden.com
 - Search Console property: `linhaogarden.com`

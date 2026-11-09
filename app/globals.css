@@ -554,6 +554,10 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .capabilities-hero-image { overflow: hidden; border: 1px solid rgba(255,255,255,.16); background: #fff; box-shadow: 0 24px 70px rgba(0,0,0,.28); }
 .capabilities-hero-image img { width: 100%; height: auto; }
 .capability-overview { background: #fff; }
+.capability-project-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; padding: 0; list-style: none; }
+.capability-project-steps li { padding: 28px; border: 1px solid var(--line); background: var(--soft); }
+.capability-project-steps h3 { color: var(--green-950); margin: 14px 0; }
+.capability-project-steps p { color: var(--muted); line-height: 1.7; }
 .capability-overview-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
 .capability-overview-grid article { min-height: 210px; padding: 32px; border: 1px solid var(--line); background: var(--soft); }
 .capability-overview-grid h3 { margin: 0 0 14px; color: var(--green-950); font-size: 1.25rem; }

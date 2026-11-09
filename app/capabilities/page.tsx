@@ -6,12 +6,38 @@ import { WhatsAppFloat } from "../components/WhatsAppFloat";
 import { CustomFittingOptions } from "../components/CustomFittingOptions";
 
 export const metadata: Metadata = {
-  title: "Custom Brass Fittings Manufacturing & OEM Capabilities",
+  title: "Custom Brass Fittings Manufacturer | Drawing & Sample Review",
   description:
-    "Develop custom brass fittings from drawings or samples. Review garden hose connection geometry, material, CNC machining, threads, inspection and OEM packaging.",
+    "Source custom brass fittings from Cixi Linhao. Send drawings or samples for review of threads, materials, dimensions, sample approval, inspection and OEM packaging.",
   alternates: { canonical: "/capabilities" },
-  openGraph: { title: "Custom Brass Fittings Manufacturing & OEM Capabilities", description: "Drawing-led development for brass garden hose connectors, adapters, valves and custom components.", url: "/capabilities", images: [{ url: "/images/products/hose-reel-brass-swivel-360-rotation.png", alt: "Brass swivel fitting with machined thread interfaces" }] },
+  openGraph: { title: "Custom Brass Fittings Manufacturer | Drawing & Sample Review", description: "Specify your connection, review a sample and agree inspection requirements before custom brass fitting production.", url: "/capabilities", images: [{ url: "/images/products/hose-reel-brass-swivel-360-rotation.png", alt: "Brass swivel fitting with machined thread interfaces" }] },
 };
+
+const projectSteps = [
+  ["Drawing or sample", "Send a dimensioned PDF or CAD drawing, reference photos or a physical sample. Identify the mating components and intended application; mark unknown requirements for review."],
+  ["Engineering review", "Review both connection ends, dimensions, material, finish and sealing arrangement. Resolve critical tolerances, assembly clearance and inspection requirements before approving the technical file."],
+  ["Quotation and sample plan", "Agree the proposed specification, sample scope, tooling needs, model-specific MOQ and quotation terms. Sample cost and delivery timing require project confirmation."],
+  ["Sample approval", "Evaluate the sample against the agreed drawing and mating assembly. Record dimensional, thread, appearance and any agreed sealing checks; approve revisions before production release."],
+  ["Production and inspection", "Use the approved technical file as the production reference. Agree inspection methods, gauges, sampling and acceptance criteria for the specific order rather than assuming a universal test standard."],
+  ["OEM packing and shipment", "Confirm part markings, pack quantity, label artwork and export-packing requirements. Include any agreed inspection or material documents in the order requirements."],
+];
+
+const partFamilies = [
+  ["Garden hose quick connectors", "/products/categories/brass-quick-connectors", "Review the mating pair, hose-side connection and any water-stop function."],
+  ["Threaded hose adapters", "/products/categories/brass-hose-adapters", "Specify end A and end B independently: thread, size, gender and sealing face."],
+  ["Hose couplings", "/products/categories/brass-hose-couplings", "Confirm hose dimensions, retention method and assembly requirements."],
+  ["Elbows and direction changes", "/products/categories/brass-elbow-fittings", "Provide angle, centreline dimensions and installation clearance."],
+  ["Splitters and shut-off valves", "/products/categories/brass-hose-splitters", "Define outlet layout, required controls and operating conditions."],
+  ["Hose reel fittings", "/products/categories/hose-reel-brass-fittings", "Send reel interfaces, rotation requirements, seal arrangement and space constraints."],
+];
+
+const procurementFaqs = [
+  ["Can you review a custom brass fitting without a finished drawing?", "Yes. A reference sample or clear photos can start a discussion with Cixi Linhao Metal Product Co., Ltd. Include the mating parts, application and quantity. Dimensions, tolerances and other missing requirements must still be agreed in the technical file before production approval."],
+  ["Can one adapter combine GHT and NPT connections?", "A custom adapter request can specify different thread systems at its two ends. State the size, pitch, male or female form and sealing method for each end, then confirm feasibility through engineering review. GHT and NPT are not directly interchangeable; a nominal size alone does not establish fit."],
+  ["How are brass grade and lead-free requirements confirmed?", "Provide the exact grade, target market, intended use and required documentation. Material feasibility and any compliance evidence must be confirmed for the selected part. A generic brass description or a photograph does not establish drinking-water suitability or certification."],
+  ["What are the MOQ, sample cost and lead time?", "They depend on geometry, material, tooling and order quantity. Include your sample needs and expected volume in the enquiry. The quotation must confirm these terms for your part; there is no blanket MOQ or delivery promise for all custom fittings."],
+  ["What should be agreed before a sample is approved?", "Confirm the drawing revision, both mating connections, material, finish, critical dimensions and acceptance criteria. Where sealing tests are required, agree the medium, pressure, duration and method for the actual application. Sample approval should reference these agreed requirements."],
+];
 
 const capabilityAreas = [
   ["Custom dimensions", "Dimensions are reviewed against the drawing, sample and mating components."],
@@ -61,6 +87,7 @@ export default function CapabilitiesPage() {
               <h1>Custom Brass Fittings Manufacturing</h1>
               <p>Develop a garden hose connector, threaded adapter, swivel or valve around your assembly. Cixi Linhao Metal Product Co., Ltd. reviews drawings and samples for custom brass and aluminum parts, from connection geometry and material selection to inspection and OEM packaging.</p>
               <a className="button button-gold" href="/contact?product=Custom%20Brass%20or%20Aluminum%20Fitting%20Drawing#quote-form">Send Drawing for Review</a>
+              <p><a href="#project-process">See the drawing-to-production review process ↓</a></p>
             </div>
             <div className="capabilities-hero-image">
               <Image src="/images/products/hose-reel-brass-swivel-360-rotation.png" alt="Brass swivel fitting showing machined threads and rotating connection" width={900} height={700} sizes="(max-width: 820px) 100vw, 48vw" priority />
@@ -125,7 +152,20 @@ export default function CapabilitiesPage() {
           </div>
         </section>
 
+        <section className="section" id="project-process">
+          <div className="container">
+            <div className="section-heading split-heading"><div><span className="eyebrow">Drawing to production</span><h2>A clear approval path for your custom brass fitting.</h2></div><p>Use the drawing, mating assembly and agreed acceptance criteria to make each project decision explicit. Final scope follows the confirmed order specification.</p></div>
+            <ol className="capability-project-steps">{projectSteps.map(([title, text], index) => <li key={title}><span className="eyebrow">{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
+          </div>
+        </section>
         <CustomFittingOptions />
+        <section className="section">
+          <div className="container">
+            <div className="section-heading split-heading"><div><span className="eyebrow">Start with the connection job</span><h2>Custom brass components for garden hose assemblies.</h2></div><p>Use an existing LH reference to explain your requirement, or submit a non-standard part for review. Catalogue dimensions do not establish universal compatibility.</p></div>
+            <div className="capability-overview-grid">{partFamilies.map(([title, href, text]) => <article key={href}><h3><a href={href}>{title}</a></h3><p>{text}</p></article>)}</div>
+            <p><a className="text-link" href="/products/materials/aluminum">Need an aluminum component? Review the separate aluminum fitting range →</a></p>
+          </div>
+        </section>
         <section className="section capability-materials" id="materials">
           <div className="container capability-split">
             <div>
@@ -184,10 +224,11 @@ export default function CapabilitiesPage() {
           </div>
         </section>
 
+        <section className="section"><div className="container product-faq"><span className="eyebrow">Custom manufacturing questions</span><h2>Before you request a brass fitting quotation.</h2>{procurementFaqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>
         <section className="capability-cta">
           <div className="container">
             <div><span className="eyebrow eyebrow-light">Start with technical input</span><h2>Send the drawing, sample or specification.</h2><p>Include dimensions, thread requirements, material or grade, quantity, finish, inspection requirements and packaging needs.</p></div>
-            <a className="button button-gold" href="/contact?product=Custom%20Brass%20Fitting%20Drawing">Request an Engineering Review</a>
+            <a className="button button-gold" href="/contact?product=Custom%20Brass%20Fitting%20Drawing#quote-form">Request an Engineering Review</a>
           </div>
         </section>
       </main>
