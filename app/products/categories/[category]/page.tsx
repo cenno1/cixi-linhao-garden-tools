@@ -4,11 +4,61 @@ import { notFound } from "next/navigation";
 import { Footer } from "../../../components/Footer";
 import { Header } from "../../../components/Header";
 import { WhatsAppFloat } from "../../../components/WhatsAppFloat";
-import { brassProducts } from "../../../data/products";
+import { brassProducts, products, type Product } from "../../../data/products";
 import { brassSeoCategories, getBrassSeoCategoryBySlug } from "../../../data/brass-seo-categories";
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://linhaogarden.com").replace(/\/$/, "");
 type Props = { params: Promise<{ category: string }> };
+
+function adapterEnds(product: Product) {
+  const pair = product.threadSpecification?.split(" × ");
+  if (pair?.length === 2) return pair;
+  switch (product.catalogDetail) {
+    case "Double male connector": return ["Male", "Male"];
+    case "Double female connector": return ["Female", "Female"];
+    case "Female nipple adapter": return ["Female", "Not listed"];
+    case "Male nipple adapter":
+    case "Nickel-plated male nipple adapter": return ["Male", "Not listed"];
+    default: return ["Not assigned", "Not assigned"];
+  }
+}
+
+function AdapterSelection() {
+  const quote = (ref: string) => `/contact?product=${encodeURIComponent(ref)}#quote-form`;
+  return (
+    <section aria-labelledby="adapter-selection">
+      <div className="section-heading">
+        <span className="eyebrow">Catalogue selection table</span>
+        <h2 id="adapter-selection">Match the two ends of your adapter.</h2>
+        <p>A and B identify connections, not flow direction. A nominal size beside a model is not a verified size for each end. Fixed or swivel construction is not specified for these references; confirm it on the drawing.</p>
+      </div>
+      {(["Brass", "Aluminum"] as const).map((material) => (
+        <div key={material}>
+          <h3>{material === "Brass" ? "Brass adapter references" : "Aluminum alternatives — not brass equivalents"}</h3>
+          <p>{material === "Brass" ? "Catalogue pages 17–18 list the configurations below but do not specify each end’s thread standard or size. A female / male set is not necessarily one threaded adapter." : "Catalogue pages 20–21. Where specified, NH, NPT and NPS are reproduced as listed. Confirm the mating parts and sealing surfaces before substituting any model."}</p>
+          <div className="engineering-spec-table-wrap" role="region" aria-label={`${material} adapter comparison`} tabIndex={0}>
+            <table className="engineering-spec-table" aria-label={`${material} threaded adapter models`}>
+              <thead><tr>{["LH model", "Nominal size / catalogue description", "End A", "End B", "Enquiry"].map((label) => <th key={label} scope="col">{label}</th>)}</tr></thead>
+              <tbody>{products.filter((p) => p.family === "Threaded Adapters" && p.material === material).map((p) => {
+                const [endA, endB] = adapterEnds(p);
+                return <tr key={p.code}>
+                  <th scope="row"><a href={`/products/${p.slug}`}>{p.code}</a></th>
+                  <td>{p.nominalSize}<br />{p.catalogDetail}</td><td>{endA}</td><td>{endB}</td>
+                  <td><a href={quote(`${p.code} — ${material} hose adapter`)} aria-label={`Request a quote for ${p.code}`}>Request quote</a></td>
+                </tr>;
+              })}</tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+      <div className="section-heading">
+        <h3>Need a 3/4-inch GHT × 1-inch NPT brass adapter?</h3>
+        <p>This combination is a drawing-based enquiry, not a listed brass stock item. Specify male or female on each end, mark the sealing surfaces and tell us whether the hose must swivel after installation.</p>
+        <a className="button" href={quote("Custom brass adapter: 3/4-inch GHT x 1-inch NPT — drawing review")}>Request a custom adapter quote</a>
+      </div>
+    </section>
+  );
+}
 
 export function generateStaticParams() {
   return brassSeoCategories.filter((item) => brassProducts.some((product) => product.brassCategory === item.category)).map(({ slug }) => ({ category: slug }));
@@ -88,6 +138,7 @@ export default async function BrassCategoryPage({ params }: Props) {
             </div>
 
             {config.modelComparison && <section aria-labelledby="connector-model-comparison"><div className="section-heading"><span className="eyebrow">Catalogue comparison</span><h2 id="connector-model-comparison">Shortlist a garden hose quick connector.</h2><p>These nominal sizes and the water-stop label come from the catalogue. They do not establish thread form, dimensions, pressure rating or cross-brand fit.</p></div><div className="engineering-spec-table-wrap"><table className="engineering-spec-table"><thead><tr><th scope="col">LH reference</th><th scope="col">Catalogue nominal size</th><th scope="col">Selection role</th><th scope="col">Confirm before approval</th></tr></thead><tbody>{config.modelComparison.map((model) => <tr key={model.code}><th scope="row"><a href={model.href}>{model.code}</a></th><td>{model.size}</td><td>{model.role}</td><td>{model.confirm}</td></tr>)}</tbody></table></div></section>}
+            {config.slug === "brass-hose-adapters" && <AdapterSelection />}
             <div className="section-heading split-heading">
               <div><span className="eyebrow">Product references</span><h2>{config.label}</h2></div>
               <p>{categoryProducts.length} current catalogue {categoryProducts.length === 1 ? "reference" : "references"} in this category. Final specifications follow approved technical input.</p>
@@ -140,7 +191,7 @@ export default async function BrassCategoryPage({ params }: Props) {
           <section className="section">
             <div className="container product-faq">
               <span className="eyebrow">Buyer resources</span>
-              <h2>{config.slug === "brass-quick-connectors" ? "Review connector fit and sample requirements." : "Specify and inspect the splitter with less guesswork."}</h2>
+              <h2>{config.slug === "brass-hose-adapters" ? "Check thread fit before ordering." : config.slug === "brass-quick-connectors" ? "Review connector fit and sample requirements." : "Specify and inspect the splitter with less guesswork."}</h2>
               {config.relatedResources.map((resource) => (
                 <article key={resource.href}>
                   <h3><a href={resource.href}>{resource.label}</a></h3>
