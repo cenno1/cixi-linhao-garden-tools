@@ -2,6 +2,11 @@
 
 This log is updated by the daily SEO growth loop. Do not invent unavailable metrics; use `N/A` and state the missing source.
 
+## 2026-11-17 — Garden hose adapter selection
+
+- Updated the existing brass hose adapters category: separate brass and aluminum tables from the 2026 catalogue (pp. 17–18 and 20–21), per-model enquiry links, drawing review for a custom 3/4-inch GHT × 1-inch NPT brass part, and a return link to the existing guide. Catalogue nominal ranges are not per-end thread assignments. Fixed/swivel status requires a drawing.
+- Production build, TypeScript and 10 focused tests passed locally; checked all table model destinations and the guide/category links. No live enquiry was sent. No indexing, traffic or AI visibility change claimed.
+
 ## 2026-11-10 — Garden hose quick connector category completion
 
 - Scope: Upgrade the existing /products/categories/brass-quick-connectors URL, not a new keyword-variant landing page. Content was edited November 9; its category revision date reflects that date.
