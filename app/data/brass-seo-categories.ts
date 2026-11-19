@@ -62,7 +62,7 @@ export const brassSeoCategories: BrassSeoCategory[] = [
   },
   {
     slug: "brass-hose-adapters",
-    updatedAt: "2026-11-17",
+    updatedAt: "2026-11-19",
     customBrief: "Specify a custom brass hose adapter as two separate interfaces: end A and end B. For each end, provide thread standard, size, pitch, male/female orientation and sealing surface. Include overall length, wrench access and bore requirements on the drawing.",
     category: "Brass Threaded Adapters",
     label: "Brass Hose Adapters",
@@ -73,6 +73,7 @@ export const brassSeoCategories: BrassSeoCategory[] = [
     buyerQuestions: ["Which end mates with the hose, and which with the tap or pipe?", "What standard, nominal size and gender does each mating part have?", "Does the fitting need a fixed body or a swivel, and where must it seal?", "What brass grade, finish and order quantity should the quotation cover?"],
     relatedResources: [
       { href: "/resources/ght-to-npt-brass-adapter-3-4-1-inch-guide", label: "GHT to NPT: 3/4-inch and 1-inch selection guide", description: "Distinguish hose diameter from pipe thread size, identify male and female ends and check how each joint seals." },
+      { href: "/resources/brass-aluminum-garden-hose-fittings-stuck", label: "Brass and aluminum fittings stuck together?", description: "Review mating materials, brass inserts and a sample-approval checklist before specifying a replacement adapter." },
     ],
     faqs: [
       { question: "Is LH-3619 a confirmed 3/4-inch GHT to 1-inch NPT brass adapter?", answer: "No. The catalogue identifies a brass female nipple adapter with a 3/4-inch to 1-inch nominal size entry. It does not assign those sizes or thread standards to individual ends. Send the mating-part specifications for review before selecting it." },

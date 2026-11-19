@@ -6,6 +6,7 @@ import { InquiryForm } from "./components/InquiryForm";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
 import { products } from "./data/products";
 import { customManufacturingFaqs } from "./data/custom-manufacturing";
+import { company, companyOrganization } from "./data/company";
 
 export const metadata: Metadata = {
   title: { absolute: "Custom Brass Garden Hose Fittings Manufacturer | LINHAO" },
@@ -156,8 +157,8 @@ const homepageProofPoints = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": "https://linhaogarden.com/#organization", name: "Cixi Linhao Metal Product Co., Ltd.", url: "https://linhaogarden.com", logo: "https://linhaogarden.com/images/cixi-linhao-logo.png", email: "info@lh-industrial.com", telephone: "+86-150-8845-2259", address: { "@type": "PostalAddress", addressLocality: "Cixi", addressRegion: "Zhejiang", addressCountry: "CN" }, contactPoint: { "@type": "ContactPoint", contactType: "sales", telephone: "+86-150-8845-2259", email: "info@lh-industrial.com", availableLanguage: ["English", "Chinese"] } },
-    { "@type": "WebSite", "@id": "https://linhaogarden.com/#website", url: "https://linhaogarden.com", name: "CIXI LINHAO" },
+    companyOrganization,
+    { "@type": "WebSite", "@id": `${company.url}/#website`, url: company.url, name: company.brandName, publisher: { "@id": company.organizationId } },
   ],
 };
 
