@@ -18,6 +18,66 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "brass-aluminum-garden-hose-fittings-stuck",
+    title: "Brass and Aluminum Hose Fittings Stuck Together? A Buyer Guide",
+    description: "Why garden hose fittings seize, what a brass insert does not prove, and how to specify materials and mating connections for an OEM hose assembly.",
+    topic: "Hose fitting material compatibility",
+    publishedAt: "2026-11-19",
+    commercialLink: {
+      href: "/products/categories/brass-hose-adapters",
+      label: "Compare LH adapter materials and connections",
+      description: "Cixi Linhao Metal Product Co., Ltd. lists brass and aluminum references separately. Compare the catalogue entries, then use the model-specific enquiry link to send your mating parts, material requirements and sample acceptance criteria. No listed model is claimed to be universally corrosion-proof.",
+    },
+    sections: [
+      {
+        heading: "Quick answer: check the metal pair, not just the thread size",
+        paragraphs: ["A hose fitting that will not unscrew may have corrosion, mineral deposits, damaged threads or a damaged grip. Aluminum in electrical contact with brass in a wet connection can undergo galvanic corrosion; the aluminum is the more vulnerable member of that pair. This is not proof that every stuck fitting has the same cause.",
+          "A replacement that screws on is not automatically a suitable replacement. Identify both mating materials, the thread standard, the sealing face and the intended operating conditions. Brass and aluminum are different procurement choices, not interchangeable descriptions for a gold-colored part."],
+      },
+      {
+        heading: "The recurring Reddit questions",
+        paragraphs: ["In a June 2026 HomeImprovement discussion, a homeowner could not remove a hose from an outdoor spigot despite trying hand force and pliers. A separate gardening discussion asked whether an aluminum connector with a brass insert would avoid the problem. An older LifeProTips thread raised the risk of leaving mixed-metal fittings connected.",
+          "These discussions reveal useful questions, not laboratory results or market-size measurements. Comments suggesting heat, cutting or chemicals are not installation instructions endorsed by this guide. No Reddit commenter is presented as a LINHAO customer."],
+      },
+      {
+        heading: "Why can an aluminum fitting seize on a brass connection?",
+        paragraphs: ["Galvanic corrosion needs a conductive connection between different metals and an electrolyte. Moisture containing dissolved salts can provide that electrolyte. Corrosion products can accumulate around the joint and make disassembly difficult.",
+          "ELEY warns against connecting aluminum hose fittings directly to its brass fittings. That is relevant manufacturer guidance for its equipment, not a universal service-life prediction for every hose assembly. Neither a forum photograph nor a gold finish identifies the underlying alloy or confirms the failure mechanism."],
+      },
+      {
+        heading: "Does an aluminum connector with a brass insert solve it?",
+        paragraphs: ["Do not approve a hybrid connector from that label alone. For an OEM review, request a section drawing showing the insert, outer body, threaded contact and wetted surfaces. Ask the supplier to explain how the chosen construction manages material compatibility.",
+          "A sealing washer does not demonstrate that all metal contact through the threaded joint has been interrupted. Likewise, tape, grease or a decorative coating should not be treated as a verified isolation system. Use only a protection method approved for the actual assembly, seals and water service."],
+        bullets: ["Identify the material at the mating threads, not only the visible outer shell.", "Specify the insert material, retention method and any barrier at the material interface.", "Review the full assembly after the agreed exposure and connection cycles.", "Define acceptance criteria for leakage, surface condition and ability to disconnect; do not invent a universal cycle count."],
+      },
+      {
+        heading: "If the fitting is already stuck",
+        paragraphs: ["Shut off the water and release trapped pressure before inspection. If the faucet or supply pipe moves when you try to turn the coupling, stop and obtain qualified assistance. Do not remove or defeat a backflow device just to separate a hose.",
+          "Follow the equipment manufacturer's repair instructions. This guide does not recommend heating the assembly, adding a longer lever or using aggressive chemical mixtures. Replace damaged components as specified by the manufacturer, then investigate the mating materials and thread fit before installing the same combination again."],
+      },
+      {
+        heading: "A material-compatibility brief for custom hose fittings",
+        paragraphs: ["Use the following as a proposed buyer specification, not as a claim that a LINHAO model has passed a corrosion test. Send the complete mating pair or a drawing with an enquiry; the factory cannot approve an assembly from nominal size alone."],
+        bullets: ["Component map: hose end, adapter, swivel, valve and faucet, including the material of each contacting part.", "End A and B: thread designation, size, male/female, sealing surface and required clearance.", "Material: exact alloy or buyer requirement, coating specification and any insert construction.", "Service: water conditions, temperature, pressure and whether fittings stay connected between uses.", "Validation: agree exposure conditions, connection cycles, inspection method and acceptance limits before sampling.", "Order: quantity, sample approval, labeling, packaging and application-specific documentation. Confirm terms in the quotation."],
+      },
+      {
+        heading: "Frequently asked questions",
+        paragraphs: ["Are brass hose fittings immune to corrosion? No. Material selection does not remove the need to check water conditions, assembly details and maintenance.",
+          "Does choosing aluminum mean the product is unsuitable? Not automatically. Evaluate the actual alloy, construction, mating metals and intended service. Do not transfer a restriction for one manufacturer's assembly to every aluminum component.",
+          "Will a quick connector prevent corrosion? Not merely because it disconnects quickly. Identify the metals and sealing arrangement in both halves and follow the maintenance instructions.",
+          "Can color prove a fitting is solid brass? No. Ask for the material specification and supporting documentation instead of judging by appearance.",
+          "Can I request a custom brass version of an aluminum LH adapter? Yes, for engineering review. Reference the aluminum model and specify brass explicitly; this does not establish a brass stock item, pressure rating or guaranteed corrosion resistance."],
+      },
+    ],
+    sources: [
+      { label: "Reddit: Garden hose stuck on outdoor spigot", href: "https://www.reddit.com/r/HomeImprovement/comments/1u4apzo/garden_hose_stuck_on_outdoor_spigot_tried/", note: "Community problem signal; material diagnosis and removal suggestions in comments are not verified engineering guidance." },
+      { label: "Reddit: Aluminum hose connectors with brass inserts", href: "https://www.reddit.com/r/gardening/comments/1ry5637/do_aluminum_hose_connectors_with_brass_insert/", note: "Source of the hybrid-connector buyer question, not evidence of any specific insert design's performance." },
+      { label: "Reddit: Leaving brass and aluminum fittings connected", href: "https://www.reddit.com/r/LifeProTips/comments/1dqya9e/lpt_dont_let_brass_and_aluminum_hose_fittings/", note: "Recurring maintenance concern; no search-volume or universal failure-time inference." },
+      { label: "ELEY: Galvanic corrosion in hose fittings", href: "https://www.eleyhosereels.com/blogs/outdoor-watering-resources/galvanic-corrosion-in-hose-fittings-causes-prevention-easy-repairs", note: "Manufacturer explanation and equipment-specific material-pairing guidance; not a LINHAO product certification." },
+      { label: "Canadian Conservation Institute: Caring for metal objects", href: "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects.html", note: "Primary reference for galvanic corrosion and dissimilar metals in moist environments; not a garden-hose product approval." },
+    ],
+  },
+  {
     slug: "ght-to-npt-brass-adapter-3-4-1-inch-guide",
     title: 'GHT to NPT Brass Adapters: 3/4-Inch and 1-Inch Selection Guide',
     description: 'Choose a brass adapter for 3/4-inch GHT and 3/4-inch or 1-inch NPT. Compare thread pitch, male/female ends, washer sealing and custom-order requirements.',

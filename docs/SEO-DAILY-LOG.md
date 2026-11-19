@@ -2,6 +2,15 @@
 
 This log is updated by the daily SEO growth loop. Do not invent unavailable metrics; use `N/A` and state the missing source.
 
+## 2026-11-19 — Reddit-led material compatibility guide
+
+- Topic: stuck brass/aluminum garden-hose fittings and brass-insert selection. Distinct from existing leakage, splitter and GHT-to-NPT pages.
+- Evidence: HomeImprovement thread 1u4apzo search snapshot showed +96 post votes; gardening thread 1ry5637 and LifeProTips thread 1dqya9e corroborate recurring questions, not traffic or conversion estimates. Scores are changeable snapshots, not a live popularity ranking. ELEY guidance and the Canadian Conservation Institute supply the technical basis; no forum repair shortcuts, invented tests or universal corrosion claims.
+- Changes: one new original buyer guide, source links, material/assembly RFQ checklist and two-way adapter-category internal links. Resource index and sitemap use the existing data-driven inclusion. Category revision dated November 19 for the new link.
+- Repository: fetched and fast-forwarded to main 22ce299, preserving the unrelated homepage image deletion. Publication and checks recorded separately below when complete.
+- Verification: production webpack build and TypeScript passed; 11 tests passed, including article canonical, Article schema/date, sources and reciprocal links. No visual browser check or live enquiry performed.
+- Release blocker: HTTPS push dry-run could not access/persist GitHub credentials in wincredman. Local commit only; GitHub Desktop Push origin and main merge required. No Reddit posting or live publication claimed.
+
 ## 2026-11-17 — Garden hose adapter selection
 
 - Updated the existing brass hose adapters category: separate brass and aluminum tables from the 2026 catalogue (pp. 17–18 and 20–21), per-model enquiry links, drawing review for a custom 3/4-inch GHT × 1-inch NPT brass part, and a return link to the existing guide. Catalogue nominal ranges are not per-end thread assignments. Fixed/swivel status requires a drawing.
