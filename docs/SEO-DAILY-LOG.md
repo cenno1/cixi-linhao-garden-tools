@@ -2,6 +2,18 @@
 
 This log is updated by the daily SEO growth loop. Do not invent unavailable metrics; use `N/A` and state the missing source.
 
+## 2026-11-19 — AI discovery step 1: consistent company attribution
+
+- Request: Optimize step by step for AI-assisted supplier discovery. This is a manual task; the previously stopped daily automation was not re-enabled.
+- Production baseline: main 22ce299 is deployed READY as dpl_7pB76gVrWYtCD8KsE2ny6XmZ7f1D. Live /robots.txt, /sitemap.xml, /about, /capabilities and the adapter category returned 200. Robots allows public crawling and excludes /api/; the sitemap contains 55 URLs. This does not prove Google indexing or successful requests from every crawler IP. The new materials guide returned 404 because PR #6, head b6fa1a3, remains open; no duplicate PR or index submission was created.
+- Primary action: Reuse the existing full company identity and stable #organization ID across the homepage, About and every Article author/publisher. Add visible linked company bylines and an About-to-capabilities review link. AboutPage identifies the same organization. No invented personal expert, certification, factory ownership, customer or case-study claim was added. This is an attribution improvement, not a claim that the old schema was invalid or that AI recommendation is guaranteed.
+- Date integrity: Original article publication/modification dates remain unchanged. Only About's sitemap date changes for its actual content update; no artificial all-site freshness refresh.
+- Evidence: Existing public company facts; Google Organization guidance https://developers.google.com/search/docs/appearance/structured-data/organization ; Google Article author guidance https://developers.google.com/search/docs/appearance/structured-data/article ; Schema.org AboutPage https://schema.org/AboutPage .
+- Validation: Next.js production webpack build and TypeScript passed (141 generated pages); 16 focused catalogue, SEO, category, article and identity tests passed. Four local HTTP checks returned 200. Browser navigation verified the visible article-company link, About and the capabilities #project-process destination. No full mobile performance audit, live enquiry submission or new AI visibility measurement was performed.
+- Publication: Latest main fetched and is an ancestor of the working branch. The previous blog is now pushed in open PR #6. This step is saved as a separate local commit, intended for the same PR after Push origin. HTTPS push dry-run failed in the Windows credential store; this step is not yet live. Preserve and exclude the user's unrelated deletion of public/images/custom-brass-fittings-cnc-hero.png.
+- KPI snapshot: AI citations, sampled supplier recommendations, AI referral visits and qualified inquiries are N/A pending account-specific measurement; no improvement claimed from code completion.
+- Next step / owner input: One actual completed fitting project with publishable photo or anonymized drawing; confirmed material and both interfaces; actual in-house/partner process scope and any sample/inspection record. Do not publish a case study until these facts are supplied and approved.
+
 ## 2026-11-19 — Reddit-led material compatibility guide
 
 - Topic: stuck brass/aluminum garden-hose fittings and brass-insert selection. Distinct from existing leakage, splitter and GHT-to-NPT pages.

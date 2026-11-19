@@ -5,9 +5,10 @@ import { Header } from "../../components/Header";
 import { WhatsAppFloat } from "../../components/WhatsAppFloat";
 import { blogPosts } from "../../data/blogs";
 import { products } from "../../data/products";
+import { company } from "../../data/company";
 
 type Props = { params: Promise<{ slug: string }> };
-const siteUrl = "https://linhaogarden.com";
+const siteUrl = company.url;
 const relatedProductSlugs: Record<string, string[]> = {
   "why-garden-hose-connectors-leak": ["brass-connector-set-3601", "brass-water-stop-connector-3604z", "brass-double-male-connector-3641"],
   "how-to-specify-a-durable-hose-nozzle-range": ["brass-two-way-splitter-3672a", "brass-hose-shut-off-valve-3001"],
@@ -61,8 +62,8 @@ export default async function ResourceArticlePage({ params }: Props) {
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
     mainEntityOfPage: `${siteUrl}/resources/${post.slug}`,
-    author: { "@type": "Organization", name: "CIXI LINHAO", url: siteUrl },
-    publisher: { "@type": "Organization", name: "CIXI LINHAO", logo: { "@type": "ImageObject", url: `${siteUrl}/images/cixi-linhao-logo.png` } },
+    author: { "@type": "Organization", "@id": company.organizationId, name: company.name, url: company.aboutUrl },
+    publisher: { "@type": "Organization", "@id": company.organizationId, name: company.name, url: company.url, logo: { "@type": "ImageObject", url: company.logo } },
     image: related[0] ? new URL(related[0].image, siteUrl).toString() : undefined,
   };
 
@@ -70,7 +71,7 @@ export default async function ResourceArticlePage({ params }: Props) {
     <Header />
     <main>
       <section className="article-hero"><div className="container"><span className="eyebrow eyebrow-light">{post.topic}</span><h1>{post.title}</h1><p>{post.description}</p></div></section>
-      <article className="article-content container"><p className="article-byline">Published {post.publishedAt} · CIXI LINHAO Buyer Resources</p>
+      <article className="article-content container"><p className="article-byline">Published <time dateTime={post.publishedAt}>{post.publishedAt}</time> · Buyer Resources by <a href="/about">{company.name}</a></p>
         {post.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}</section>)}
         {decisionGroups.length > 0 && <section><span className="eyebrow">Compatibility review</span><h2>Match the leak location to the connection job.</h2><p>Use the catalogue models below as a shortlist, then confirm the actual mating parts before approving a sample or production order.</p><div className="solution-benefits">{decisionGroups.map((group) => <article key={group.problem}><h3>{group.problem}</h3><p>{group.check}</p><p><strong>Catalogue models:</strong> {group.products.map((product, index) => <span key={product.slug}>{index > 0 ? ", " : ""}<a href={`/products/${product.slug}`}>{product.code}</a></span>)}</p><p><strong>Confirm before sampling:</strong> {group.confirm.join("; ")}.</p></article>)}</div></section>}
         {post.commercialLink && <section><span className="eyebrow">Commercial next step</span><h2>{post.commercialLink.label}</h2><p>{post.commercialLink.description}</p><a className="button button-secondary" href={post.commercialLink.href}>Open sourcing page →</a></section>}
